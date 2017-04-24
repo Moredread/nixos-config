@@ -34,6 +34,8 @@
   nix.buildCores = 4;
   nix.maxJobs = 4;
 
+  nixpkgs.config.allowUnfree = true;
+
   # Packages for Vagrant
   environment.systemPackages = with pkgs; [
     findutils
@@ -46,7 +48,11 @@
     vim
     dmenu
     i3status
+    firefox
     gitAndTools.gitFull
+    google-chrome
+    iotop
+    iftop
   ];
 
   services.xserver.enable = true;
