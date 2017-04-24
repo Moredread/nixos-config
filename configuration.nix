@@ -38,21 +38,21 @@
 
   # Packages for Vagrant
   environment.systemPackages = with pkgs; [
-    findutils
-    iputils
-    jq
-    nettools
-    netcat
-    nfs-utils
-    rsync
-    vim
     dmenu
-    i3status
+    findutils
     firefox
     gitAndTools.gitFull
     google-chrome
-    iotop
+    i3status
     iftop
+    iotop
+    iputils
+    jq
+    netcat
+    nettools
+    nfs-utils
+    rsync
+    vim
   ];
 
   services.xserver.enable = true;
