@@ -58,7 +58,7 @@
     rsync
     rxvt_unicode
     screen
-    vim
+    vimHugeX
     xsel
     zsh
   ];
