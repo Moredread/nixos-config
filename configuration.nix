@@ -63,6 +63,26 @@
     zsh
   ];
 
+  fonts = {
+    fonts = with pkgs; [
+      dejavu_fonts
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      ttf_bitstream_vera
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Source Code Pro" ];
+        sansSerif = [ "Source Sans Pro" ];
+        serif     = [ "Source Serif Pro" ];
+      };
+      ultimate = {
+        enable = false;
+      };
+    };
+  };
+
   services.xserver.enable = true;
   services.xserver.windowManager.i3.enable = true;
 
