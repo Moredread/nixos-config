@@ -38,6 +38,7 @@
 
   # Packages for Vagrant
   environment.systemPackages = with pkgs; [
+    coreutils
     dmenu
     findutils
     firefox
@@ -45,14 +46,21 @@
     google-chrome
     i3status
     iftop
+    ioping
     iotop
     iputils
     jq
+    neovim
     netcat
     nettools
     nfs-utils
+    ripgrep
     rsync
+    rxvt_unicode
+    screen
     vim
+    xsel
+    zsh
   ];
 
   services.xserver.enable = true;
