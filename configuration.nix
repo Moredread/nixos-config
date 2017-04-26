@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./vagrant.nix
       ./configs/base.nix
+      ./configs/users-and-groups.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -27,6 +28,7 @@
         description     = "Vagrant User";
         name            = "vagrant";
         group           = "vagrant";
+        uid = 1001;
         extraGroups     = [ "users" "vboxsf" "wheel" "docker" ];
         password        = "vagrant";
         home            = "/home/vagrant";
