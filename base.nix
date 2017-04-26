@@ -1,7 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Enable guest additions.
+  imports = [
+    ./base-testing.nix
+  ];
+
   virtualisation.virtualbox.guest.enable = true;
   virtualisation.docker.enable = true;
 
@@ -12,17 +15,20 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Packages for Vagrant
   environment.systemPackages = with pkgs; [
     aspell
     aspellDicts.de
     aspellDicts.en
+    blender
     coreutils
     dmenu
     findutils
     firefox
+    freecad
     gitAndTools.gitFull
     google-chrome
+    gource
+    gparted
     i3lock
     i3status
     iftop
@@ -30,12 +36,15 @@
     iotop
     iputils
     jq
+    libreoffice
+    llvmPackages.clang
     neovim
     netcat
     nettools
     nfs-utils
     nix-zsh-completions
     oh-my-zsh
+    pwgen
     python27Full
     python27Packages.virtualenvwrapper
     python35Full
@@ -47,10 +56,13 @@
     skype
     sloccount
     socat
-    solfege
     spice
     spotify
+    subversion
+    telnet
     vimHugeX
+    wineUnstable
+    wirelesstools
     wpa_supplicant
     wpa_supplicant_gui
     xsel
@@ -64,16 +76,17 @@
 
   fonts = {
     fonts = with pkgs; [
-#     corefonts  # Micrsoft free fonts
       dejavu_fonts
       google-fonts
       inconsolata  # monospaced
+      mononoki
       source-code-pro
       source-sans-pro
       source-serif-pro
       ttf_bitstream_vera
       ubuntu_font_family  # Ubuntu fonts
       unifont # some international languages
+#     corefonts  # Microsoft free fonts
     ];
     fontconfig = {
       defaultFonts = {
