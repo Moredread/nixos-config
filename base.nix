@@ -104,9 +104,9 @@
     xserver = {
       enable = true;
       windowManager.i3.enable = true;
-      displayManager.gdm.enable = true;
-      displayManager.gdm.autoLogin.enable = true;
-      displayManager.gdm.autoLogin.user = "vagrant";
+#      displayManager.gdm.enable = true;
+#      displayManager.gdm.autoLogin.enable = true;
+#      displayManager.gdm.autoLogin.user = "vagrant";
     };
 
     openssh.enable = true;
