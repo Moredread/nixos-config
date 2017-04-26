@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./vagrant.nix
+      ./base.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -15,88 +16,6 @@
   # remove the fsck that runs at startup. It will always fail to run, stopping
   # your boot until you press *. 
   boot.initrd.checkJournalingFS = false;
-
-  # Services to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Enable DBus
-  services.dbus.enable    = true;
-
-  # Replace nptd by timesyncd
-  services.timesyncd.enable = true;
-
-  # Enable guest additions.
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.docker.enable = true;
-
-  nix.buildCores = 4;
-  nix.maxJobs = 4;
-
-  nixpkgs.config.allowUnfree = true;
-
-  # Packages for Vagrant
-  environment.systemPackages = with pkgs; [
-    coreutils
-    dmenu
-    findutils
-    firefox
-    gitAndTools.gitFull
-    google-chrome
-    i3status
-    iftop
-    ioping
-    iotop
-    iputils
-    jq
-    neovim
-    netcat
-    nettools
-    nfs-utils
-    nix-zsh-completions
-    oh-my-zsh
-    python27Full
-    python27Packages.virtualenvwrapper
-    python35Full
-    python35Packages.virtualenvwrapper
-    ripgrep
-    rsync
-    rxvt_unicode
-    screen
-    vimHugeX
-    xsel
-    zsh
-    zsh-autosuggestions
-    zsh-completions
-    zsh-navigation-tools
-    zsh-syntax-highlighting
-  ];
-
-  fonts = {
-    fonts = with pkgs; [
-      dejavu_fonts
-      source-code-pro
-      source-sans-pro
-      source-serif-pro
-      ttf_bitstream_vera
-    ];
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "Source Code Pro" ];
-        sansSerif = [ "Source Sans Pro" ];
-        serif     = [ "Source Serif Pro" ];
-      };
-      ultimate = {
-        enable = false;
-      };
-    };
-  };
-
-  services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-
-  programs.zsh.enable = true;
 
   # Creates a "vagrant" users with password-less sudo access
   users = {
