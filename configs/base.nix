@@ -23,16 +23,16 @@
     coreutils
     dmenu
     findutils
-    idea.pycharm-professional
-    networkmanagerapplet 
     firefox
     freecad
     gitAndTools.gitFull
+    gnupg
     google-chrome
     gource
     gparted
     i3lock
     i3status
+    idea.pycharm-professional
     iftop
     ioping
     iotop
@@ -40,17 +40,21 @@
     jq
     libreoffice
     llvmPackages.clang
+    mpv
     neovim
     netcat
     nettools
+    networkmanagerapplet 
     nfs-utils
     nix-zsh-completions
     oh-my-zsh
+    polkit_gnome
     pwgen
     python27Full
     python27Packages.virtualenvwrapper
     python35Full
     python35Packages.virtualenvwrapper
+    ranger
     ripgrep
     rsync
     rxvt_unicode
@@ -63,6 +67,8 @@
     subversion
     telnet
     vimHugeX
+    vlc
+    wget
     wineUnstable
     wirelesstools
     wpa_supplicant
