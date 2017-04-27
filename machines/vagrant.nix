@@ -3,10 +3,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./vagrant.nix
-      ./configs/base.nix
-      ./configs/users-and-groups.nix
+      ../hardware-configuration.nix
+      ../vagrant.nix
+      ../configs/base.nix
+      ../configs/users-and-groups.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -17,6 +17,8 @@
   # remove the fsck that runs at startup. It will always fail to run, stopping
   # your boot until you press *. 
   boot.initrd.checkJournalingFS = false;
+
+  networking.networkmanager.enable = true;
 
   # Creates a "vagrant" users with password-less sudo access
   users = {

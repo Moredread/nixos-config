@@ -23,6 +23,8 @@
     coreutils
     dmenu
     findutils
+    idea.pycharm-professional
+    networkmanagerapplet 
     firefox
     freecad
     gitAndTools.gitFull
