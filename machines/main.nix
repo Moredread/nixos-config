@@ -35,6 +35,9 @@
 #    xserver.videoDrivers = [ "nouveau" ];
   };
 
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableHardening = true;
+
   nix = {
     buildCores = lib.mkDefault 8;
     maxJobs = lib.mkDefault 8;
