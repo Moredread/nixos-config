@@ -12,34 +12,46 @@
 
   environment.systemPackages = with pkgs; [
     ansible
+    apg
+    arp-scan
+    ascii
     aspellDicts.de
     aspellDicts.en
+    bc
     blender
+    bridge-utils
+    chromium
+    cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     cmake
     coreutils
+    ctags
+    ddrescue
+    diffstat
     dmenu
+    dmidecode
+    dos2unix
+    electrum
+    exiv2
+    ffmpeg
     findutils
     firefox
     freecad
     freetype
     gajim
     gcc
-    gitAndTools.gitFull
+    gitFull
     glxinfo
     gnumake
     gnupg
     google-chrome
-    chromium
     gource
     gparted
+    hdparm
+    htop
     i3lock
     i3status
     i7z
-#    idea.pycharm-professional
     iftop
-    unrar
-    unzip
-    p7zip
     ioping
     iotop
     iptables
@@ -48,26 +60,33 @@
     keepassx2
     libreoffice
     llvmPackages.clang
+    lm_sensors
+    lsof
+    mdadm
+    minicom
     mpv
-    ffmpeg
-    smartmontools
     mumble
+    ncdu
     neovim
     netcat
     nettools
-    electrum
     networkmanagerapplet 
-#    nfs-utils
     nix-zsh-completions
     nmap
     ntfs3g
     oh-my-zsh
+    p7zip
+    parted
     pavucontrol
+    picocom
     pkgconfig
     polkit_gnome
+    posix_man_pages
+    pv
     pwgen
     python27Full
     python27Packages.virtualenvwrapper
+    python2nix
     python35Full
     python35Packages.virtualenvwrapper
     qsyncthingtray
@@ -81,20 +100,22 @@
     screen
     skype
     sloccount
+    smartmontools
     socat
     spice
     spotify
-#    steam
     subversion
     syncthing
     syncthing-inotify
     telnet
     udiskie
+    unrar
+    unzip
     vagrant
     vimHugeX
     vlc
     wget
-    wirelesstools
+    wireshark
     wpa_supplicant
     wpa_supplicant_gui
     xsel
@@ -105,12 +126,17 @@
     zsh-navigation-tools
     zsh-syntax-highlighting
     zstd
-    wireshark
+#    idea.pycharm-professional
+#    nfs-utils
+#    steam
+#    wirelesstools
   ];
 
   fonts = {
     fonts = with pkgs; [
       dejavu_fonts
+      fira
+      fira-mono
       google-fonts
       inconsolata  # monospaced
       mononoki
@@ -154,6 +180,18 @@
     SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
     KERNEL=="hidraw*", ATTRS{idVendor}=="534c", ATTRS{idProduct}=="0001",  MODE="0666", GROUP="dialout"
     '';
+
+    # cups, for printing documents
+    printing.enable = true;
+    printing.gutenprint = true; # lots of printer drivers
+
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      # publish.enable = true;
+      # publish.addresses = true;
+      # publish.workstation = true;
+    };
   };
 
   programs = {
@@ -178,5 +216,46 @@
     };
   };
 
+  # Select internationalisation properties.
+#  i18n.consoleKeyMap = "qwertz/de";
+
+  nix = {
+    useSandbox = true;
+    buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
+
+    extraOptions = ''
+      # To not get caught by the '''"nix-collect-garbage -d" makes
+      # "nixos-rebuild switch" unusable when nixos.org is down"''' issue:
+      gc-keep-outputs = true
+      # For 'nix-store -l $(which vim)'
+      log-servers = http://hydra.nixos.org/log
+      # Number of seconds to wait for binary-cache to accept() our connect()
+      connect-timeout = 15
+    '';
+
+    # Automatic garbage collection
+    # gc.automatic = true;
+    # gc.dates = "03:15";
+    # gc.options = "--delete-older-than 14d";
+  };
+
+
+  environment.interactiveShellInit = ''
+    # A nix query helper function
+    nq()
+    {
+      case "$@" in
+        -h|--help|"")
+          printf "nq: A tiny nix-env wrapper to search for packages in package name, attribute name and description fields\n";
+          printf "\nUsage: nq <case insensitive regexp>\n";
+          return;;
+      esac
+      nix-env -qaP --description \* | grep -i "$@"
+    }
+    #export HISTCONTROL=ignoreboth   # ignorespace + ignoredups
+    #export HISTSIZE=1000000         # big big history
+    #export HISTFILESIZE=$HISTSIZE
+    #shopt -s histappend             # append to history, don't overwrite it
+  '';
 
 }

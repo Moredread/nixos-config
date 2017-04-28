@@ -38,10 +38,7 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableHardening = true;
 
-  nix = {
-    buildCores = lib.mkDefault 8;
-    maxJobs = lib.mkDefault 8;
-  };
+  
 
 #  security.grsecurity.enable = true;
 
@@ -64,10 +61,12 @@
 
   hardware = {
     pulseaudio.enable = true;
+    pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     opengl.driSupport32Bit = true;
     opengl.driSupport = true;
     opengl.enable = true;
+    sane.enable = true; # scanner support
   };
 
   nixpkgs.config = {
