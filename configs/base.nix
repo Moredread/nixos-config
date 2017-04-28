@@ -29,13 +29,17 @@
     gnumake
     gnupg
     google-chrome
+    chromium
     gource
     gparted
     i3lock
     i3status
     i7z
-    idea.pycharm-professional
+#    idea.pycharm-professional
     iftop
+    unrar
+    unzip
+    p7zip
     ioping
     iotop
     iptables
@@ -45,12 +49,15 @@
     libreoffice
     llvmPackages.clang
     mpv
+    ffmpeg
+    smartmontools
     mumble
     neovim
     netcat
     nettools
+    electrum
     networkmanagerapplet 
-    nfs-utils
+#    nfs-utils
     nix-zsh-completions
     nmap
     ntfs3g
@@ -77,7 +84,7 @@
     socat
     spice
     spotify
-    steam
+#    steam
     subversion
     syncthing
     syncthing-inotify
@@ -98,6 +105,7 @@
     zsh-navigation-tools
     zsh-syntax-highlighting
     zstd
+    wireshark
   ];
 
   fonts = {
@@ -140,15 +148,34 @@
 
     # Replace nptd by timesyncd
     timesyncd.enable = true;
+
+    udev.extraRules = ''
+    # Trezor
+    SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="534c", ATTRS{idProduct}=="0001",  MODE="0666", GROUP="dialout"
+    '';
   };
 
   programs = {
-    chromium.enable = true;
     fish.enable = true;
     java.enable = true;
     mosh.enable = true;
     wireshark.enable = true;
     zsh.enable = true;
+
+    chromium = {
+        enable = true;
+        # Imperatively installed extensions will seamlessly merge with these.
+        # Removing extensions here will remove them from chromium, no matter how
+        # they were installed.
+        extensions = [
+          "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
+#          "bodncoafpihbhpfljcaofnebjkaiaiga" # appear.in screen sharing
+          "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
+          "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor
+#          "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
+        ];
+    };
   };
 
 

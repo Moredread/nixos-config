@@ -66,6 +66,14 @@
     pulseaudio.enable = true;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     opengl.driSupport32Bit = true;
+    opengl.driSupport = true;
+    opengl.enable = true;
+  };
+
+  nixpkgs.config = {
+    packageOverrides = pkgs: rec { 
+         gajim = pkgs.gajim.override { enableNotifications = true; };
+    };
   };
 
   powerManagement.cpuFreqGovernor = "ondemand";
