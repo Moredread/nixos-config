@@ -11,6 +11,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    ansible
     aspellDicts.de
     aspellDicts.en
     blender
@@ -31,6 +32,7 @@
     gparted
     i3lock
     i3status
+    i7z
     idea.pycharm-professional
     iftop
     ioping
@@ -48,9 +50,10 @@
     networkmanagerapplet 
     nfs-utils
     nix-zsh-completions
+    nmap
     ntfs3g
     oh-my-zsh
-  	pavucontrol
+    pavucontrol
     pkgconfig
     polkit_gnome
     pwgen
@@ -74,9 +77,11 @@
     spotify
     steam
     subversion
+    syncthing
     syncthing-inotify
     telnet
     udiskie
+    vagrant
     vimHugeX
     vlc
     wget
