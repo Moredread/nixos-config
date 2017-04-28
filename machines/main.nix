@@ -19,13 +19,20 @@
   networking.hostName = "minuteman";
 
   time.timeZone = "Europe/Berlin";
+  time.hardwareClockInLocalTime = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services = {
+    thermald.enable = true;
+    xserver.videoDrivers = [ "nvidia" ];
+#    xserver.videoDrivers = [ "nouveau" ];
+  };
 
   nix = {
     buildCores = lib.mkDefault 8;
     maxJobs = lib.mkDefault 8;
   };
+
+#  security.grsecurity.enable = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
