@@ -25,6 +25,7 @@
     gajim
     gcc
     gitAndTools.gitFull
+    glxinfo
     gnumake
     gnupg
     google-chrome
@@ -37,11 +38,13 @@
     iftop
     ioping
     iotop
+    iptables
     iputils
     jq
     keepassx2
     libreoffice
     llvmPackages.clang
+    mosh
     mpv
     mumble
     neovim
