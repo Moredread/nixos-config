@@ -44,7 +44,6 @@
     keepassx2
     libreoffice
     llvmPackages.clang
-    mosh
     mpv
     mumble
     neovim
@@ -145,6 +144,7 @@
 
   programs = {
     zsh.enable = true;
+    mosh.enable = true;
   };
 
 

@@ -18,6 +18,14 @@
   networking.networkmanager.enable = true;
   networking.hostName = "minuteman";
 
+  networking.firewall.allowedTCPPorts = [
+    22000  # syncthing
+  ];
+
+  networking.firewall.allowedUDPPorts = [
+    21027  # syncthing
+  ];
+
   time.timeZone = "Europe/Berlin";
   time.hardwareClockInLocalTime = true;
 
