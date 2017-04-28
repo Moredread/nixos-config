@@ -5,27 +5,26 @@
     ./base-testing.nix
   ];
 
-  virtualisation.virtualbox.guest.enable = true;
+#  virtualisation.virtualbox.guest.enable = true;
   virtualisation.docker.enable = true;
-
-  nix = {
-    buildCores = 4;
-    maxJobs = 4;
-  };
 
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    aspell
     aspellDicts.de
     aspellDicts.en
     blender
+    cmake
     coreutils
     dmenu
     findutils
     firefox
     freecad
+    freetype
+    gajim
+    gcc
     gitAndTools.gitFull
+    gnumake
     gnupg
     google-chrome
     gource
@@ -38,25 +37,34 @@
     iotop
     iputils
     jq
+    keepassx2
     libreoffice
     llvmPackages.clang
     mpv
+    mumble
     neovim
     netcat
     nettools
     networkmanagerapplet 
     nfs-utils
     nix-zsh-completions
+    ntfs3g
     oh-my-zsh
+  	pavucontrol
+    pkgconfig
     polkit_gnome
     pwgen
     python27Full
     python27Packages.virtualenvwrapper
     python35Full
     python35Packages.virtualenvwrapper
+    qsyncthingtray
     ranger
     ripgrep
     rsync
+    rustNightly.cargo
+    rustNightly.rustc
+    rustfmt
     rxvt_unicode
     screen
     skype
@@ -64,12 +72,14 @@
     socat
     spice
     spotify
+    steam
     subversion
+    syncthing-inotify
     telnet
+    udiskie
     vimHugeX
     vlc
     wget
-    wineUnstable
     wirelesstools
     wpa_supplicant
     wpa_supplicant_gui
@@ -80,6 +90,7 @@
     zsh-completions
     zsh-navigation-tools
     zsh-syntax-highlighting
+    zstd
   ];
 
   fonts = {
