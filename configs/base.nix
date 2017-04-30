@@ -88,6 +88,7 @@
     python27Packages.virtualenvwrapper
     python2nix
     python35Full
+    python35Packages.ipython
     python35Packages.virtualenvwrapper
     qsyncthingtray
     ranger
