@@ -6,7 +6,6 @@
     ./base-extras.nix
   ];
 
-  # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "us";
@@ -17,6 +16,10 @@
   virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.variables = {
+      EDITOR = pkgs.lib.mkOverride 0 "vim";
+  };
 
   environment.systemPackages = with pkgs; [
     ansible
@@ -182,6 +185,7 @@
   };
 
   programs = {
+    bash.enableCompletion = true;
     fish.enable = true;
     java.enable = true;
     mosh.enable = true;
