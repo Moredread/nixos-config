@@ -3,6 +3,7 @@
 {
   imports = [
     ./base-testing.nix
+    ./base-extras.nix
   ];
 
 #  virtualisation.virtualbox.guest.enable = true;
@@ -12,30 +13,21 @@
 
   environment.systemPackages = with pkgs; [
     ansible
-    apg
-    arp-scan
-    ascii
     aspellDicts.de
     aspellDicts.en
-    bc
     blender
     bridge-utils
     chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     cmake
     coreutils
-    ctags
-    ddrescue
-    diffstat
     dmenu
     dmidecode
     dos2unix
     electrum
-    exiv2
     ffmpeg
     findutils
     firefox
-    freecad
     freetype
     gajim
     gcc
@@ -56,14 +48,12 @@
     iotop
     iptables
     iputils
-    jq
     keepassx2
     libreoffice
     llvmPackages.clang
     lm_sensors
     lsof
     mdadm
-    minicom
     mpv
     mumble
     ncdu
@@ -75,10 +65,10 @@
     nmap
     ntfs3g
     oh-my-zsh
+    openvpn
     p7zip
     parted
     pavucontrol
-    picocom
     pkgconfig
     polkit_gnome
     posix_man_pages
@@ -102,20 +92,21 @@
     sloccount
     smartmontools
     socat
-    spice
     spotify
     subversion
     syncthing
     syncthing-inotify
     telnet
+    thunderbird
     udiskie
     unrar
     unzip
+    urxvt_font_size
+    urxvt_perls
     vagrant
     vimHugeX
     vlc
     wget
-    wireshark
     wpa_supplicant
     wpa_supplicant_gui
     xsel
@@ -130,6 +121,7 @@
 #    nfs-utils
 #    steam
 #    wirelesstools
+#    wireshark
   ];
 
   fonts = {
@@ -198,7 +190,7 @@
     fish.enable = true;
     java.enable = true;
     mosh.enable = true;
-    wireshark.enable = true;
+#    wireshark.enable = true;
     zsh.enable = true;
 
     chromium = {
@@ -208,7 +200,6 @@
         # they were installed.
         extensions = [
           "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
-#          "bodncoafpihbhpfljcaofnebjkaiaiga" # appear.in screen sharing
           "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
           "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor
 #          "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
@@ -222,6 +213,7 @@
   nix = {
     useSandbox = true;
     buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
+    maxJobs = lib.mkDefault 10;
 
     extraOptions = ''
       # To not get caught by the '''"nix-collect-garbage -d" makes
@@ -234,9 +226,9 @@
     '';
 
     # Automatic garbage collection
-    # gc.automatic = true;
-    # gc.dates = "03:15";
-    # gc.options = "--delete-older-than 14d";
+    gc.automatic = true;
+    gc.dates = "03:15";
+    gc.options = "--delete-older-than 14d";
   };
 
 
