@@ -53,6 +53,7 @@
     };
 
   boot.initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
+  boot.initrd.luks.devices."root-crypt".allowDiscards = true;
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";
