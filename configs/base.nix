@@ -120,8 +120,6 @@
 #    idea.pycharm-professional
 #    nfs-utils
 #    steam
-#    wirelesstools
-#    wireshark
   ];
 
   fonts = {
@@ -204,7 +202,6 @@
     fish.enable = true;
     java.enable = true;
     mosh.enable = true;
-#    wireshark.enable = true;
     zsh.enable = true;
 
     chromium = {
