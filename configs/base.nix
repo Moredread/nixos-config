@@ -6,6 +6,13 @@
     ./base-extras.nix
   ];
 
+  # Select internationalisation properties.
+  i18n = {
+    consoleFont = "Lat2-Terminus16";
+    consoleKeyMap = "us";
+    defaultLocale = "en_US.UTF-8";
+  };
+
 #  virtualisation.virtualbox.guest.enable = true;
   virtualisation.docker.enable = true;
 
