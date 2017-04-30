@@ -21,6 +21,10 @@
   time.timeZone = "Europe/Berlin";
   time.hardwareClockInLocalTime = true;
 
+  environment.systemPackages = with pkgs; [
+    redshift
+  ];
+
   services = {
     thermald.enable = true;
 
@@ -51,6 +55,14 @@
       openDefaultPorts = true;
       user = "addy";
       dataDir = "/home/addy/.config/syncthing";
+    };
+
+    redshift = {
+      enable = true;
+      latitude = "49.417";
+      longitude = "8.717";
+      temperature.day = 6500;
+      temperature.night = 3500;
     };
   };
 
