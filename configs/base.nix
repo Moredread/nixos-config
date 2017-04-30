@@ -209,7 +209,6 @@
           "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
           "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
           "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor
-#          "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
         ];
     };
   };
