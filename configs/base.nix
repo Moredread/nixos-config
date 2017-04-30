@@ -46,6 +46,7 @@
     gnumake
     gnupg
     google-chrome
+    google-chrome-beta
     gource
     gparted
     hdparm
@@ -82,6 +83,7 @@
     pkgconfig
     polkit_gnome
     posix_man_pages
+    psmisc
     pv
     pwgen
     python27Full
