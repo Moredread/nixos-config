@@ -173,30 +173,6 @@
     # Replace nptd by timesyncd
     timesyncd.enable = true;
 
-    udev.extraRules = ''
-    # Trezor
-    SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
-    KERNEL=="hidraw*", ATTRS{idVendor}=="534c", ATTRS{idProduct}=="0001",  MODE="0666", GROUP="dialout"
-    '';
-
-    # cups, for printing documents
-    printing.enable = true;
-    printing.gutenprint = true; # lots of printer drivers
-
-    avahi = {
-      enable = true;
-      nssmdns = true;
-      # publish.enable = true;
-      # publish.addresses = true;
-      # publish.workstation = true;
-    };
-
-    syncthing = {
-      enable = true;
-      useInotify = true;
-      user = "addy";
-      dataDir = "/home/addy/.config/syncthing";
-    };
   };
 
   programs = {
