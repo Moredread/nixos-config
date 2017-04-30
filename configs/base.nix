@@ -147,7 +147,7 @@
         serif     = [ "Source Serif Pro" ];
       };
       ultimate = {
-        enable = false;
+        enable = true;
       };
     };
   };
