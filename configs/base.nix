@@ -161,7 +161,14 @@
 #      displayManager.gdm.autoLogin.user = "vagrant";
     };
 
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      forwardX11 = true;
+      permitRootLogin = "no";
+      passwordAuthentication = false;
+      challengeResponseAuthentication = false;
+    };
+
     dbus.enable    = true;
     locate.enable = true;
 
