@@ -193,6 +193,7 @@
 
     syncthing = {
       enable = true;
+      useInotify = true;
       user = "addy";
       dataDir = "/home/addy/.config/syncthing";
     };
