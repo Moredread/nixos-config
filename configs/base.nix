@@ -163,6 +163,7 @@
 
     openssh.enable = true;
     dbus.enable    = true;
+    locate.enable = true;
 
     # Replace nptd by timesyncd
     timesyncd.enable = true;
@@ -183,6 +184,12 @@
       # publish.enable = true;
       # publish.addresses = true;
       # publish.workstation = true;
+    };
+
+    syncthing = {
+      enable = true;
+      user = "addy";
+      dataDir = "/home/addy/.config/syncthing";
     };
   };
 
