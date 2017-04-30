@@ -153,10 +153,11 @@
   services = {
     xserver = {
       enable = true;
+
       windowManager.i3.enable = true;
-#      displayManager.gdm.enable = true;
-#      displayManager.gdm.autoLogin.enable = true;
-#      displayManager.gdm.autoLogin.user = "vagrant";
+
+      layout = "us";
+      xkbOptions = "ctrl:nocaps";
     };
 
     openssh = {
@@ -167,12 +168,10 @@
       challengeResponseAuthentication = false;
     };
 
-    dbus.enable    = true;
+    acpid.enable = true;
+    dbus.enable = true;
     locate.enable = true;
-
-    # Replace nptd by timesyncd
     timesyncd.enable = true;
-
   };
 
   programs = {
