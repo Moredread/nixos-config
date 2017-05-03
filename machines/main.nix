@@ -66,8 +66,8 @@
     };
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableHardening = true;
+#  virtualisation.virtualbox.host.enable = true;
+#  virtualisation.virtualbox.host.enableHardening = true;
 
 #  security.grsecurity.enable = true;
 
