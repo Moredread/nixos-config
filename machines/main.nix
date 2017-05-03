@@ -44,6 +44,7 @@
     avahi = {
       enable = true;
       nssmdns = true;
+      ipv6 = true;
       # publish.enable = true;
       # publish.addresses = true;
       # publish.workstation = true;
@@ -93,6 +94,7 @@
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
+    pulseaudio.zeroconf.discovery.enable = true;
     opengl.driSupport32Bit = true;
     opengl.driSupport = true;
     opengl.enable = true;
