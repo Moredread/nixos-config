@@ -13,7 +13,7 @@
 
   boot.loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
 
-  boot.blacklistedKernelModules = [ "i915" ];
+#  boot.blacklistedKernelModules = [ "i915" ];
 
   networking.networkmanager.enable = true;
   networking.hostName = "minuteman";
@@ -91,19 +91,20 @@
     };
 
   hardware = {
+    cpu.amd.updateMicrocode = true;
+    cpu.intel.updateMicrocode = true;
+    enableAllFirmware = true;
+    opengl.driSupport32Bit = true;
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.zeroconf.discovery.enable = true;
-    opengl.driSupport32Bit = true;
-    opengl.driSupport = true;
-    opengl.enable = true;
     sane.enable = true; # scanner support
   };
 
   nixpkgs.config = {
     packageOverrides = pkgs: rec { 
-         gajim = pkgs.gajim.override { enableNotifications = true; };
+      gajim = pkgs.gajim.override { enableNotifications = true; };
     };
   };
 

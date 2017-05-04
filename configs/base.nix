@@ -30,6 +30,7 @@
     chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     cmake
+    colordiff
     coreutils
     dmenu
     dmidecode
@@ -37,14 +38,14 @@
     electrum
     ffmpeg
     findutils
-    firefox
+    firefox-beta-bin
     freetype
     gajim
     gcc
     gitFull
-    glxinfo
     gnumake
     gnupg
+    gnupg1
     google-chrome
     google-chrome-beta
     gource
@@ -59,6 +60,7 @@
     iotop
     iptables
     iputils
+    kdiff3
     keepassx2
     libreoffice
     llvmPackages.clang
@@ -119,11 +121,13 @@
     vagrant
     vimHugeX
     vlc
+    weechat
     wget
     wpa_supplicant
     wpa_supplicant_gui
     xsel
     youtube-dl
+    zdfmediathk
     zsh
     zsh-autosuggestions
     zsh-completions
