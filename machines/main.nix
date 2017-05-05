@@ -59,7 +59,7 @@
     };
 
     redshift = {
-      enable = true;
+      enable = false;
       latitude = "49.417";
       longitude = "8.717";
       temperature.day = 6500;
