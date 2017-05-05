@@ -79,7 +79,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
-      options = [ "ssd_spread,noatime,discard,ssd,autodefrag,compress=lzo,space_cache" ];
+      options = [ "noatime,discard,ssd,autodefrag,compress=zlib,space_cache" ];
     };
 
   boot.initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
