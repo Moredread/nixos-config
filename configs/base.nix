@@ -212,8 +212,12 @@
         extensions = [
           "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
           "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
-          "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor
+          "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor wallet
+          "ldjkgaaoikpmhmkelcgkgacicjfbofhh" # Instapaper
         ];
+        homepageLocation = "https://google.com";
+        defaultSearchProviderSearchURL = "https://encrypted.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
+        defaultSearchProviderSuggestURL = "https://encrypted.google.com/complete/search?output=chrome&q={searchTerms}";
     };
   };
 
