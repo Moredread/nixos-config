@@ -72,8 +72,6 @@
 #  virtualisation.virtualbox.host.enable = true;
 #  virtualisation.virtualbox.host.enableHardening = true;
 
-#  security.grsecurity.enable = true;
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
