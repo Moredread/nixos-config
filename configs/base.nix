@@ -96,9 +96,6 @@
     ranger
     ripgrep
     rsync
-    rustNightly.cargo
-    rustNightly.rustc
-    rustfmt
     rxvt_unicode
     screen
     scons
