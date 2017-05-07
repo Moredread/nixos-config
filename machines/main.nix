@@ -106,6 +106,9 @@
     packageOverrides = pkgs: rec { 
       gajim = pkgs.gajim.override { enableNotifications = true; };
     };
+    chromium = {
+#      enableWideVine = true;
+    };
   };
 
   powerManagement.cpuFreqGovernor = "ondemand";
