@@ -46,8 +46,6 @@
     gnumake
     gnupg
     gnupg1
-    google-chrome
-    google-chrome-beta
     gource
     gparted
     hdparm
