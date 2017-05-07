@@ -8,6 +8,7 @@
       group = "addy";
       shell = pkgs.zsh;
       extraGroups = [
+        "adbusers"
         "adm"
         "atd"
         "audio"

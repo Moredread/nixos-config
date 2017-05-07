@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     #teamviewer  # changes hash all the time
     anki
+    criu
     nix-generate-from-cpan
     nix-prefetch-scripts
     nix-repl

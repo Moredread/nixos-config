@@ -38,7 +38,7 @@
     electrum
     ffmpeg
     findutils
-    firefox-beta-bin
+    firefox-bin
     freetype
     gajim
     gcc
@@ -103,11 +103,13 @@
     rustfmt
     rxvt_unicode
     screen
+    scons
     skype
     sloccount
     smartmontools
     socat
     spotify
+    steam
     subversion
     syncthing
     syncthing-inotify
@@ -136,7 +138,6 @@
     zstd
 #    idea.pycharm-professional
 #    nfs-utils
-#    steam
   ];
 
   fonts = {
@@ -191,11 +192,16 @@
     timesyncd.enable = true;
   };
 
+  security.dhparams.enable = true;
+
   programs = {
+    adb.enable = true;
     bash.enableCompletion = true;
     fish.enable = true;
     java.enable = true;
     mosh.enable = true;
+    mtr.enable = true;
+    wireshark.enable = true;
     zsh.enable = true;
 
     chromium = {
@@ -235,6 +241,7 @@
     gc.options = "--delete-older-than 14d";
   };
 
+  sound.mediaKeys.enable = true;
 
   environment.interactiveShellInit = ''
     # A nix query helper function

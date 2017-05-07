@@ -11,6 +11,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
 
+  boot.loader.grub.memtest86.enable = true;
+
   boot.loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
 
 #  boot.blacklistedKernelModules = [ "i915" ];
@@ -45,9 +47,9 @@
       enable = true;
       nssmdns = true;
       ipv6 = true;
-      # publish.enable = true;
+      publish.enable = true;
       # publish.addresses = true;
-      # publish.workstation = true;
+      publish.workstation = true;
     };
 
     syncthing = {
