@@ -18,6 +18,7 @@
   # your boot until you press *. 
   boot.initrd.checkJournalingFS = false;
 
+  virtualisation.virtualbox.guest.enable = true;
   networking.networkmanager.enable = true;
 
   # Creates a "vagrant" users with password-less sudo access
