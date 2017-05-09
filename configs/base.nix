@@ -239,6 +239,11 @@
     gc.automatic = true;
     gc.dates = "03:15";
     gc.options = "--delete-older-than 14d";
+
+    autoOptimiseStore = true;
+
+    optimise.automatic = true;
+    optimise.dates = [ "03:30" ];
   };
 
   sound.mediaKeys.enable = true;
