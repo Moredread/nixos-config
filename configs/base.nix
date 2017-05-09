@@ -43,6 +43,7 @@
     gajim
     gcc
     gitFull
+    gnucash
     gnumake
     gnupg
     gnupg1
@@ -97,8 +98,8 @@
     ripgrep
     rsync
     rxvt_unicode
-    screen
     scons
+    screen
     skype
     sloccount
     smartmontools
