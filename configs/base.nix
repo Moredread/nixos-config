@@ -170,7 +170,7 @@
 
       windowManager.i3.enable = true;
 
-      layout = "us";
+      layout = lib.mkDefault "us";
       xkbOptions = "ctrl:nocaps";
     };
 
@@ -218,7 +218,6 @@
   };
 
   # Select internationalisation properties.
-#  i18n.consoleKeyMap = "qwertz/de";
 
   nix = {
     useSandbox = true;

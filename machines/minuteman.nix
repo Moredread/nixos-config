@@ -2,8 +2,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ../configs/base.nix
+    [ 
+      ../configs/base-desktop.nix
       ../configs/users-and-groups.nix
     ];
 
@@ -15,62 +15,9 @@
 
   boot.loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
 
-#  boot.blacklistedKernelModules = [ "i915" ];
-
-  networking.networkmanager.enable = true;
   networking.hostName = "minuteman";
 
-  time.timeZone = "Europe/Berlin";
-  time.hardwareClockInLocalTime = true;
-
-  environment.systemPackages = with pkgs; [
-    redshift
-  ];
-
-  services = {
-    thermald.enable = true;
-
-    xserver.videoDrivers = [ "nvidia" ];
-#    xserver.videoDrivers = [ "nouveau" ];
-
-    udev.extraRules = ''
-    # Trezor
-    SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
-    KERNEL=="hidraw*", ATTRS{idVendor}=="534c", ATTRS{idProduct}=="0001",  MODE="0666", GROUP="dialout"
-    '';
-
-    # cups, for printing documents
-    printing.enable = true;
-    printing.gutenprint = true; # lots of printer drivers
-
-    avahi = {
-      enable = true;
-      nssmdns = true;
-      ipv6 = true;
-      publish.enable = true;
-      # publish.addresses = true;
-      publish.workstation = true;
-    };
-
-    syncthing = {
-      enable = true;
-      useInotify = true;
-      openDefaultPorts = true;
-      user = "addy";
-      dataDir = "/home/addy/.config/syncthing";
-    };
-
-    redshift = {
-      enable = false;
-      latitude = "49.417";
-      longitude = "8.717";
-      temperature.day = 6500;
-      temperature.night = 3500;
-    };
-  };
-
-  virtualisation.virtualbox.host.enable = true;
-#  virtualisation.virtualbox.host.enableHardening = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
@@ -89,38 +36,4 @@
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";
       fsType = "ext4";
     };
-
-  hardware = {
-    cpu.amd.updateMicrocode = true;
-    cpu.intel.updateMicrocode = true;
-    enableAllFirmware = true;
-    opengl.driSupport32Bit = true;
-    pulseaudio.enable = true;
-    pulseaudio.package = pkgs.pulseaudioFull;
-    pulseaudio.support32Bit = true; # This might be needed for Steam games
-    pulseaudio.zeroconf.discovery.enable = true;
-    sane.enable = true; # scanner support
-  };
-
-  nixpkgs.config = {
-    packageOverrides = pkgs: rec { 
-      gajim = pkgs.gajim.override { enableNotifications = true; };
-    };
-    chromium = {
-#      enableWideVine = true;
-    };
-  };
-
-  powerManagement.cpuFreqGovernor = "ondemand";
-
-  security.sudo.configFile =
-    ''
-      Defaults:root,%wheel env_keep+=LOCALE_ARCHIVE
-      Defaults:root,%wheel env_keep+=NIX_PATH
-      Defaults:root,%wheel env_keep+=TERMINFO_DIRS
-      Defaults env_keep+=SSH_AUTH_SOCK
-      Defaults lecture = never
-      root   ALL=(ALL) SETENV: ALL
-      %wheel ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
-    '';
 }
