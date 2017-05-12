@@ -21,12 +21,20 @@
 
   networking.hostName = "grable";
 
-#  i18n.consoleKeyMap = "de";
+  i18n.consoleKeyMap = "de";
+
+
 
   services = {
+    avahi.publish.addresses = lib.mkDefault false;
+    
     xserver.videoDrivers = [ "intel" ];
-    xserver.synaptics.enable = true;
-    xserver.synaptics.twoFingerScroll = true;
     xserver.layout = "de";
+    
+    xserver.libinput = {
+      enable = true;
+    };
+
+    tlp.enable = true;
   };
 }

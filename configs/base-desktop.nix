@@ -11,6 +11,8 @@
   time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
+    blink
+    dropbox
     redshift
   ];
 
@@ -32,12 +34,12 @@
       nssmdns = true;
       ipv6 = true;
       publish.enable = true;
-      # publish.addresses = true;
+      publish.addresses = lib.mkDefault false;
       publish.workstation = true;
     };
 
     syncthing = {
-#      enable = true;
+      enable = true;
       useInotify = true;
       openDefaultPorts = true;
       user = "addy";
@@ -77,8 +79,6 @@
 #      enableWideVine = true;
     };
   };
-
-  powerManagement.cpuFreqGovernor = "ondemand";
 
   security.sudo.configFile =
     ''

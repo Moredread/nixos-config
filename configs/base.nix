@@ -8,11 +8,10 @@
 
   i18n = {
     consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "us";
+    consoleKeyMap = lib.mkDefault "us";
     defaultLocale = "en_US.UTF-8";
   };
 
-#  virtualisation.virtualbox.guest.enable = true;
   virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -121,6 +120,8 @@
     vlc
     weechat
     wget
+    powertop
+    glxinfo
     wpa_supplicant
     wpa_supplicant_gui
     xsel

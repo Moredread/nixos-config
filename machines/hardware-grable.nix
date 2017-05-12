@@ -15,10 +15,17 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/d88cabd4-4c91-44b7-a1bd-a74f5696a3c3";
       fsType = "btrfs";
-      options = [ "subvol=subvol/nixos,compress,autodefrag,ssd,discard" ];
+      options = [ "subvol=subvol/nixos,compress,autodefrag,ssd,discard,noatime" ];
+    };
+
+  fileSystems."/home/addy" =
+    { device = "/dev/disk/by-uuid/d88cabd4-4c91-44b7-a1bd-a74f5696a3c3";
+      fsType = "btrfs";
+      options = [ "subvol=/home/addy,compress,autodefrag,ssd,discard,noatime" ];
     };
 
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/834fd809-35c2-4e86-911b-6fe68a6e79c3";
+  boot.initrd.luks.devices."root".allowDiscards = true;
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/a336e280-9f33-4b4e-9899-48c3a82cdfee";
