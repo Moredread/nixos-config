@@ -23,16 +23,16 @@
 
   i18n.consoleKeyMap = "de";
 
-
-
   services = {
     avahi.publish.addresses = lib.mkDefault false;
+
+    xserver = {
+      videoDrivers = [ "intel" ];
+      layout = "de";
     
-    xserver.videoDrivers = [ "intel" ];
-    xserver.layout = "de";
-    
-    xserver.libinput = {
-      enable = true;
+      libinput = {
+        enable = true;
+      };
     };
 
     tlp.enable = true;
