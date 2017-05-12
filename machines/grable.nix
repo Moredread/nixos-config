@@ -23,8 +23,10 @@
 
   i18n.consoleKeyMap = "de";
 
+#  hardware.bumblebee.enable = true;
+
   services = {
-    avahi.publish.addresses = lib.mkDefault false;
+    avahi.publish.addresses = true;
 
     xserver = {
       videoDrivers = [ "intel" ];
