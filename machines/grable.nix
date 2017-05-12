@@ -5,7 +5,7 @@
     [
       ../configs/base-desktop.nix
       ../configs/users-and-groups.nix
-      ../hardware-configuration.nix
+      ./hardware-grable.nix
     ];
 
   # Use the GRUB 2 boot loader.
