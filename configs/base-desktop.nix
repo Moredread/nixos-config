@@ -11,9 +11,15 @@
   time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
+    aria2
     blink
     dropbox
+    gimp
+    light
     redshift
+    spark
+    speedtest-cli
+    xorg.xbacklight
   ];
 
   services = {
