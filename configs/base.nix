@@ -221,7 +221,7 @@
   # Select internationalisation properties.
 
   nix = {
-    useSandbox = true;
+    #useSandbox = true;
     buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
     maxJobs = lib.mkDefault 10;
 
