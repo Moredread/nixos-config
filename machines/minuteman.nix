@@ -17,8 +17,6 @@
 
   networking.hostName = "minuteman";
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -33,6 +31,8 @@
   boot.initrd.luks.devices."root-crypt".allowDiscards = true;
 
   powerManagement.cpuFreqGovernor = "ondemand";
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";

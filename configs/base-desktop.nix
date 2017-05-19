@@ -41,7 +41,7 @@
       nssmdns = true;
       ipv6 = true;
       publish.enable = true;
-      publish.addresses = lib.mkDefault false;
+      publish.addresses = true;
       publish.workstation = true;
     };
 
@@ -60,11 +60,20 @@
       temperature.day = 6500;
       temperature.night = 3500;
     };
+
+    xserver = {
+      layout = "de";
+
+      libinput = {
+        enable = true;
+      };
+    };
   };
+
+  i18n.consoleKeyMap = "de";
 
   virtualisation.virtualbox.host.enable = true;
 #  virtualisation.virtualbox.host.enableHardening = true;
-
 
   hardware = {
     cpu.amd.updateMicrocode = true;

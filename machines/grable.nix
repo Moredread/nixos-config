@@ -26,16 +26,7 @@
 #  hardware.bumblebee.enable = true;
 
   services = {
-    avahi.publish.addresses = true;
-
-    xserver = {
-      videoDrivers = [ "intel" ];
-      layout = "de";
-    
-      libinput = {
-        enable = true;
-      };
-    };
+    xserver.videoDrivers = [ "intel" ];
 
     tlp.enable = true;
   };
