@@ -24,7 +24,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
-      options = [ "noatime,discard,ssd,autodefrag,compress=zlib,space_cache" ];
+      options = [ "relatime,discard,ssd,autodefrag,compress=zlib,space_cache" ];
     };
 
   boot.initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
@@ -37,5 +37,6 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";
       fsType = "ext4";
+        options = [ "relatime,discard" ];
     };
 }
