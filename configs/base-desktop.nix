@@ -16,6 +16,7 @@
     dropbox
     gimp
     light
+    profanity
     redshift
     spark
     speedtest-cli
