@@ -12,19 +12,63 @@
 
   environment.systemPackages = with pkgs; [
     aria2
+    blender
     blink
     borgbackup
+    chromium
     dropbox
+    firefox-bin
+    gajim
     gimp
+    gnucash
     imagemagick
+    kdiff3
+    keepassx2
+    libreoffice
     light
     profanity
+    qsyncthingtray
     rclone
     redshift
+    skype
     spark
     speedtest-cli
+    spotify
+    steam
+    syncthing
+    syncthing-inotify
+    thunderbird
     xorg.xbacklight
+    zdfmediathk
   ];
+
+  fonts = {
+    fonts = with pkgs; [
+      dejavu_fonts
+      fira
+      fira-mono
+      google-fonts
+      inconsolata  # monospaced
+      mononoki
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      ttf_bitstream_vera
+      ubuntu_font_family  # Ubuntu fonts
+      unifont # some international languages
+#     corefonts  # Microsoft free fonts
+    ];
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "Source Code Pro" ];
+        sansSerif = [ "Source Sans Pro" ];
+        serif     = [ "Source Serif Pro" ];
+      };
+      ultimate = {
+        enable = true;
+      };
+    };
+  };
 
   services = {
     thermald.enable = true;
@@ -65,12 +109,18 @@
     };
 
     xserver = {
-      layout = "de";
-
       libinput = {
         enable = true;
       };
+
+      enable = true;
+
+      windowManager.i3.enable = true;
+
+      layout = lib.mkDefault "us";
+      xkbOptions = "ctrl:nocaps";
     };
+
   };
 
   i18n.consoleKeyMap = "de";

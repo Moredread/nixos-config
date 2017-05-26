@@ -24,9 +24,7 @@
     ansible
     aspellDicts.de
     aspellDicts.en
-    blender
     bridge-utils
-    chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     cmake
     colordiff
@@ -37,12 +35,9 @@
     electrum
     ffmpeg
     findutils
-    firefox-bin
     freetype
-    gajim
     gcc
     gitFull
-    gnucash
     gnumake
     gnupg
     gnupg1
@@ -58,17 +53,16 @@
     iotop
     iptables
     iputils
-    kdiff3
-    keepassx2
-    libreoffice
     llvmPackages.clang
     lm_sensors
     lsof
     mdadm
+    mercurialFull
     mpv
     mumble
     ncdu
     neovim
+    python35Packages.neovim
     netcat
     nettools
     networkmanagerapplet 
@@ -92,24 +86,18 @@
     python35Full
     python35Packages.ipython
     python35Packages.virtualenvwrapper
-    qsyncthingtray
     ranger
     ripgrep
     rsync
     rxvt_unicode
     scons
     screen
-    skype
     sloccount
     smartmontools
     socat
-    spotify
-    steam
+
     subversion
-    syncthing
-    syncthing-inotify
     telnet
-    thunderbird
     udiskie
     unrar
     unzip
@@ -126,7 +114,6 @@
     wpa_supplicant_gui
     xsel
     youtube-dl
-    zdfmediathk
     zsh
     zsh-autosuggestions
     zsh-completions
@@ -137,44 +124,9 @@
 #    nfs-utils
   ];
 
-  fonts = {
-    fonts = with pkgs; [
-      dejavu_fonts
-      fira
-      fira-mono
-      google-fonts
-      inconsolata  # monospaced
-      mononoki
-      source-code-pro
-      source-sans-pro
-      source-serif-pro
-      ttf_bitstream_vera
-      ubuntu_font_family  # Ubuntu fonts
-      unifont # some international languages
-#     corefonts  # Microsoft free fonts
-    ];
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "Source Code Pro" ];
-        sansSerif = [ "Source Sans Pro" ];
-        serif     = [ "Source Serif Pro" ];
-      };
-      ultimate = {
-        enable = true;
-      };
-    };
-  };
+
 
   services = {
-    xserver = {
-      enable = true;
-
-      windowManager.i3.enable = true;
-
-      layout = lib.mkDefault "us";
-      xkbOptions = "ctrl:nocaps";
-    };
-
     openssh = {
       enable = true;
       forwardX11 = true;
