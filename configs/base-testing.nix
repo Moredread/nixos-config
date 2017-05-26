@@ -15,7 +15,7 @@
     solfege
     sshfsFuse
     stdmanpages
-    sysdig
+#    sysdig
     tig
     unoconv
     virtmanager
@@ -23,6 +23,6 @@
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    sysdig
+#    sysdig
   ];
 }

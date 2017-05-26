@@ -13,10 +13,13 @@
   environment.systemPackages = with pkgs; [
     aria2
     blink
+    borgbackup
     dropbox
     gimp
+    imagemagick
     light
     profanity
+    rclone
     redshift
     spark
     speedtest-cli
