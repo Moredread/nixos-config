@@ -126,7 +126,7 @@
 
   };
 
-  i18n.consoleKeyMap = "de";
+  i18n.consoleKeyMap = lib.mkDefault "de";
 
   virtualisation.virtualbox.host.enable = true;
 #  virtualisation.virtualbox.host.enableHardening = true;
