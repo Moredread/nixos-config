@@ -23,7 +23,7 @@
 
   i18n.consoleKeyMap = "de";
 
-#  hardware.bumblebee.enable = true;
+  hardware.bumblebee.enable = true;
 
   services = {
     xserver.videoDrivers = [ "intel" ];

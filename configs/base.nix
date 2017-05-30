@@ -29,6 +29,7 @@
     cmake
     colordiff
     coreutils
+    docker_compose
     dmenu
     dmidecode
     dos2unix
@@ -110,8 +111,6 @@
     wget
     powertop
     glxinfo
-    wpa_supplicant
-    wpa_supplicant_gui
     xsel
     youtube-dl
     zsh
