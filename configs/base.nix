@@ -96,7 +96,6 @@
     sloccount
     smartmontools
     socat
-
     subversion
     telnet
     udiskie
@@ -191,7 +190,7 @@
     gc.dates = "03:15";
     gc.options = "--delete-older-than 14d";
 
-    autoOptimiseStore = true;
+    #autoOptimiseStore = true;
 
     optimise.automatic = true;
     optimise.dates = [ "03:30" ];
