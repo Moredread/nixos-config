@@ -17,6 +17,7 @@
     borgbackup
     chromium
     dropbox
+    evince
     firefox-bin
     gajim
     gimp
@@ -39,6 +40,7 @@
     syncthing-inotify
     thunderbird
     xorg.xbacklight
+    xpdf
     zdfmediathk
   ];
 
