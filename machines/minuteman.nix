@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      ../configs/base-desktop.nix
+      ../configs/base.nix
       ../configs/users-and-groups.nix
     ];
 
