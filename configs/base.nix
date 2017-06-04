@@ -110,12 +110,12 @@
     dropbox
     electrum
     evince
+    exfat
+    exfat-utils
     ffmpeg
     findutils
     firefox-bin
     freetype
-    gajim
-    gcc
     gimp
     gitFull
     glxinfo
@@ -205,7 +205,6 @@
     vagrant
     vimHugeX
     vlc
-    weechat
     wget
     xorg.xbacklight
     xpdf
@@ -235,7 +234,6 @@
     dbus.enable = true;
     locate.enable = true;
     timesyncd.enable = true;
-
     thermald.enable = true;
 
     udev.extraRules = ''
