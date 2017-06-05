@@ -321,7 +321,24 @@
     mosh.enable = true;
     mtr.enable = true;
     #wireshark.enable = true;
+
+    # https://www.reddit.com/r/linuxquestions/comments/56jdxx/ohmyzsh_under_nixos/
     zsh.enable = true;
+    zsh.interactiveShellInit = ''
+    export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
+
+    COMPLETION_WAITING_DOTS="true"
+
+    zstyle :omz:plugins:ssh-agent identities id_ed25519 id_rsa sfb_key
+
+    # Customize your oh-my-zsh options here
+    ZSH_THEME="agnoster"
+    plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws)
+
+    source $ZSH/oh-my-zsh.sh
+    '';
+
+    zsh.promptInit = ""; # Clear this to avoid a conflict with oh-my-zsh
 
     chromium = {
         enable = true;
