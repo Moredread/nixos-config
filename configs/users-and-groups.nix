@@ -13,6 +13,7 @@
         "atd"
         "audio"
         "cdrom"
+        "config"
         "dialout"
         "docker"
         "git"
@@ -24,8 +25,6 @@
         "tracing"
         "transmission"
         "tty"
-        "usbmon"
-        "usbtmc"
         "vboxusers"
         "video"
         "wheel"
@@ -50,8 +49,7 @@
     addy = { name = "addy"; };
     plugdev = { gid = 500; };
     tracing = { gid = 501; };
-    usbtmc = { gid = 502; };
+    config = { gid = 502; };
     wireshark = { gid = 503; };
-    usbmon = { gid = 504; };
   };
 }
