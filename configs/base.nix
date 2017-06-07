@@ -122,6 +122,7 @@
     gparted
     hdparm
     htop
+    gitAndTools.hub
     i3lock
     i3status
     i7z
@@ -325,7 +326,7 @@
 
     # Customize your oh-my-zsh options here
     ZSH_THEME="agnoster"
-    plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws)
+    plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github)
 
     source $ZSH/oh-my-zsh.sh
     '';
