@@ -26,8 +26,17 @@
   i18n.consoleKeyMap = "de";
 
   services = {
-    xserver.videoDrivers = [ "intel" ];
-    xserver.layout = "de";
+  #    xserver.videoDrivers = [ "intel" ];
+    xserver = {
+      videoDrivers = [ "modesetting" ];
+      deviceSection = ''
+        Option "DRI" "3"
+        Option "AccelMethod" "sna"
+        Option "TearFree" "true"
+      '';
+      useGlamor = true;
+      layout = "de";
+    };
 
     tlp.enable = true;
   };
