@@ -102,8 +102,6 @@
     bridge-utils
     chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
-    cmake
-    colordiff
     coreutils
     dmenu
     dmidecode
@@ -122,7 +120,6 @@
     gitFull
     glxinfo
     gnucash
-    gnumake
     gnupg
     gnupg1
     gource
@@ -142,7 +139,6 @@
     keepassx2
     libreoffice
     light
-    llvmPackages.clang
     lm_sensors
     lsof
     mdadm
@@ -384,8 +380,6 @@
     optimise.automatic = true;
     optimise.dates = [ "03:30" ];
   };
-
-  sound.mediaKeys.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
