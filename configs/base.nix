@@ -261,11 +261,11 @@
     };
 
     redshift = {
-      enable = false;
+      enable = true;
       latitude = "49.417";
       longitude = "8.717";
       temperature.day = 6500;
-      temperature.night = 3500;
+      temperature.night = 3800;
     };
 
     xserver = {
