@@ -56,9 +56,6 @@
   };
 
   nixpkgs.config = {
-    packageOverrides = pkgs: rec { 
-      gajim = pkgs.gajim.override { enableNotifications = true; };
-    };
     chromium = {
 #      enableWideVine = true;
     };
@@ -179,13 +176,11 @@
     ripgrep
     rsync
     rxvt_unicode
-    scons
     screen
     skype
     sloccount
     smartmontools
     socat
-    spark
     speedtest-cli
     spotify
     steam
@@ -209,10 +204,10 @@
     youtube-dl
     zdfmediathk
     zsh
-    zsh-autosuggestions
-    zsh-completions
-    zsh-navigation-tools
-    zsh-syntax-highlighting
+#    zsh-autosuggestions
+#    zsh-completions
+#    zsh-navigation-tools
+#    zsh-syntax-highlighting
     zstd
 #    idea.pycharm-professional
 #    nfs-utils
