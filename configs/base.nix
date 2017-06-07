@@ -148,7 +148,7 @@
     neovim
     netcat
     nettools
-    networkmanagerapplet 
+    networkmanagerapplet
     nix-zsh-completions
     nmap
     ntfs3g
