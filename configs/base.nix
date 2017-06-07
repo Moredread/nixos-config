@@ -278,6 +278,8 @@
       windowManager.i3.enable = true;
 
       xkbOptions = "ctrl:nocaps";
+
+      useGlamor = true;
     };
 
 
