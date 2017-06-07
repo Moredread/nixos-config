@@ -229,6 +229,7 @@
     };
 
     acpid.enable = true;
+    compton.enable = true;
     dbus.enable = true;
     locate.enable = true;
     timesyncd.enable = true;
