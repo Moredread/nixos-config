@@ -21,12 +21,13 @@
 
   networking.hostName = "grable";
 
-  i18n.consoleKeyMap = "de";
-
   hardware.bumblebee.enable = true;
+
+  i18n.consoleKeyMap = "de";
 
   services = {
     xserver.videoDrivers = [ "intel" ];
+    xserver.layout = "de";
 
     tlp.enable = true;
   };

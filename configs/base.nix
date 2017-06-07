@@ -77,7 +77,6 @@
 
   i18n = {
     consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = lib.mkDefault "us";
     defaultLocale = "en_US.UTF-8";
   };
 
@@ -282,7 +281,6 @@
 
       windowManager.i3.enable = true;
 
-      layout = lib.mkDefault "us";
       xkbOptions = "ctrl:nocaps";
     };
 
