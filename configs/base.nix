@@ -58,6 +58,14 @@
   };
 
   nixpkgs.config = {
+    packageOverrides = pkgs: rec {
+      gajim = pkgs.gajim.override { enableNotifications = true; };
+      # temporary fix until tray support is available in upstream
+      profanity = pkgs.lib.overrideDerivation pkgs.profanity (attrs: {
+        buildInputs = attrs.buildInputs ++ [ pkgs.gnome2.gtk ];
+      });
+    };
+    profanity.traySupport = true;
     chromium = {
 #      enableWideVine = true;
     };
