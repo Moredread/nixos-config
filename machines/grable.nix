@@ -26,9 +26,8 @@
   i18n.consoleKeyMap = "de";
 
   services = {
-  #    xserver.videoDrivers = [ "intel" ];
     xserver = {
-      videoDrivers = [ "modesetting" ];
+      videoDrivers = [ "intel" ];
       deviceSection = ''
         Option "DRI" "3"
         Option "AccelMethod" "sna"
