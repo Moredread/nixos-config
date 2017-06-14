@@ -2,7 +2,7 @@
 
 {
   imports =
-    [ 
+    [
       ../configs/base.nix
       ../configs/users-and-groups.nix
     ];

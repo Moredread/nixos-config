@@ -6,6 +6,8 @@
     ./base-extras.nix
   ];
 
+  boot.cleanTmpDir = true;
+
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Berlin";
