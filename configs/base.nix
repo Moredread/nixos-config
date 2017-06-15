@@ -234,7 +234,7 @@
     };
 
     acpid.enable = true;
-    compton.enable = true;
+    #    compton.enable = true;
     dbus.enable = true;
     locate.enable = true;
     timesyncd.enable = lib.mkDefault true;
