@@ -229,7 +229,7 @@
     compton.enable = true;
     dbus.enable = true;
     locate.enable = true;
-    timesyncd.enable = true;
+    timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
 
     udev.extraRules = ''
