@@ -12,8 +12,9 @@
   boot.loader.grub.version = 2;
 
   boot.loader.grub.memtest86.enable = true;
-
   boot.loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
+
+  boot.cleanTmpDir = true;
 
   networking.hostName = "minuteman";
 
