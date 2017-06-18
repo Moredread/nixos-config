@@ -35,8 +35,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  i18n.consoleKeyMap = "de";
-  services.xserver.layout = "de";
+  i18n.consoleKeyMap = "us";
+  services.xserver.layout = "us";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";
