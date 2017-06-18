@@ -237,6 +237,7 @@
     #    compton.enable = true;
     dbus.enable = true;
     locate.enable = true;
+    # mkDefault, so that it works with vm
     timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
 
