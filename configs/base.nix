@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./base-testing.nix
-    ./base-extras.nix
+    #./base-testing.nix
+    #./base-extras.nix
   ];
 
   boot.cleanTmpDir = true;
@@ -325,7 +325,7 @@
     #fish.enable = true;
     java.enable = true;
     mosh.enable = true;
-    mtr.enable = true;
+    #mtr.enable = true;
     #wireshark.enable = true;
 
     # https://www.reddit.com/r/linuxquestions/comments/56jdxx/ohmyzsh_under_nixos/
