@@ -43,7 +43,6 @@
   };
 
   virtualisation.virtualbox.host.enable = true;
-#  virtualisation.virtualbox.host.enableHardening = true;
 
   hardware = {
     cpu.amd.updateMicrocode = true;
