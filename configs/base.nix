@@ -95,76 +95,76 @@
   };
 
   environment.systemPackages = with pkgs; [
-    ansible
-    aria2
-    aspellDicts.de
-    aspellDicts.en
+    #ansible
+    #aria2
+    #aspellDicts.de
+    #aspellDicts.en
     autocutsel
     bashInteractive
-    blender
-    blink
-    borgbackup
-    bridge-utils
+    #blender
+    #blink
+    #borgbackup
+    #bridge-utils
     chromium
-    cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
+    #cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
-    dmidecode
+    #dmidecode
     docker_compose
-    dos2unix
+    #dos2unix
     dropbox
-    electrum
+    #electrum
     evince
-    exfat
-    exfat-utils
+    #exfat
+    #exfat-utils
     ffmpeg
     findutils
     firefox-bin
-    freetype
-    gimp
+    #freetype
+    #gimp
     gitFull
     glxinfo
-    gnucash
+    #gnucash
     gnupg
     gnupg1
-    gource
-    gparted
-    hdparm
+    #gource
+    #gparted
+    #hdparm
     htop
     gitAndTools.hub
     i3lock
     i3status
     i7z
     iftop
-    imagemagick
-    ioping
+    #imagemagick
+    #ioping
     iotop
     iptables
     iputils
-    kdiff3
+    #kdiff3
     keepassx2
-    libreoffice
+    #libreoffice
     light
     lm_sensors
     lsof
     mdadm
-    mercurialFull
+    #mercurialFull
     mpv
-    mumble
+    #mumble
     ncdu
     neovim
     netcat
     nettools
     networkmanagerapplet
-    nix-zsh-completions
-    nmap
+    #nix-zsh-completions
+    #nmap
     ntfs3g
     oh-my-zsh
     openvpn
     p7zip
-    parted
+    #parted
     pavucontrol
-    pkgconfig
+    #pkgconfig
     polkit_gnome
     posix_man_pages
     powertop
@@ -178,41 +178,40 @@
     python35Full
     python35Packages.ipython
     python35Packages.neovim
-    python35Packages.virtualenvwrapper
     qsyncthingtray
-    ranger
-    rclone
+    #ranger
+    #rclone
     redshift
     ripgrep
     rsync
     rxvt_unicode
     screen
     skype
-    sloccount
-    smartmontools
-    socat
-    speedtest-cli
+    #sloccount
+    #smartmontools
+    #socat
+    #speedtest-cli
     spotify
-    steam
-    subversion
+    #steam
+    #subversion
     syncthing
     syncthing-inotify
-    telnet
+    #telnet
     thunderbird
     udiskie
     unrar
     unzip
     urxvt_font_size
     urxvt_perls
-    vagrant
+    #vagrant
     vimHugeX
-    vlc
+    #vlc
     wget
     xorg.xbacklight
-    xpdf
+    #xpdf
     xsel
     youtube-dl
-    zdfmediathk
+    #zdfmediathk
     zsh
 #    zsh-autosuggestions
 #    zsh-completions
@@ -322,7 +321,7 @@
     #adb.enable = true;
     bash.enableCompletion = true;
     #fish.enable = true;
-    java.enable = true;
+    #java.enable = true;
     mosh.enable = true;
     #mtr.enable = true;
     #wireshark.enable = true;
