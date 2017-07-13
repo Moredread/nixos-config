@@ -340,6 +340,7 @@
     plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github)
 
     alias nixos-edit='vim /etc/nixos/**/*.nix -p'
+    alias vim-update='vim -c :PlugUpdate'
 
     source $ZSH/oh-my-zsh.sh
     '';
