@@ -38,6 +38,8 @@
   i18n.consoleKeyMap = "us";
   services.xserver.layout = "us";
 
+  nix.buildCores = lib.mkForce 8;
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7dd8692c-96aa-4ab0-aaae-de8acbf745ff";
       fsType = "ext4";
