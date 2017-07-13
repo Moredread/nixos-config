@@ -53,7 +53,7 @@
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.zeroconf.discovery.enable = true;
-    sane.enable = true; # scanner support
+    #sane.enable = true; # scanner support
   };
 
   nixpkgs.config = {
