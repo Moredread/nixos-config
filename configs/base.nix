@@ -367,7 +367,7 @@
   nix = {
     useSandbox = true;
     buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
-    maxJobs = lib.mkDefault 10;
+    maxJobs = lib.mkDefault 4;
 
     extraOptions = ''
       # To not get caught by the '''"nix-collect-garbage -d" makes
