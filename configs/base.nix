@@ -130,6 +130,7 @@
     #gource
     #gparted
     #hdparm
+    flvstreamer
     htop
     gitAndTools.hub
     i3lock
