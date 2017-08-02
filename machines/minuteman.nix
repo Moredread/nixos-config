@@ -37,8 +37,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  i18n.consoleKeyMap = "us";
-  services.xserver.layout = "us";
+  i18n.consoleKeyMap = "de";
+  services.xserver.layout = "de";
 
   nix.buildCores = lib.mkForce 8;
 
