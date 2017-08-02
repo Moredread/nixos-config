@@ -112,7 +112,7 @@
     #borgbackup
     #bridge-utils
     chromium
-    #cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
+    cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
     #dmidecode
@@ -165,6 +165,7 @@
     networkmanagerapplet
     #nix-zsh-completions
     #nmap
+    nox
     ntfs3g
     oh-my-zsh
     openvpn
@@ -215,6 +216,7 @@
     #vlc
     wget
     xorg.xbacklight
+    xbrightness
     #xpdf
     xsel
     youtube-dl
