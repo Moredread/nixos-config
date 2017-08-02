@@ -18,6 +18,8 @@
 
   networking.hostName = "minuteman";
 
+  time.hardwareClockInLocalTime = true;
+
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
