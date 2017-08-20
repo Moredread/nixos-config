@@ -121,8 +121,8 @@
     dropbox
     #electrum
     evince
-    #exfat
-    #exfat-utils
+    exfat
+    exfat-utils
     ffmpeg
     findutils
     firefox-bin
