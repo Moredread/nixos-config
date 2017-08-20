@@ -241,10 +241,9 @@
     };
 
     acpid.enable = true;
-    #    compton.enable = true;
     dbus.enable = true;
     locate.enable = true;
-    # mkDefault, so that it works with vm
+    # mkDefault, so that it works with VM
     timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
 
@@ -287,12 +286,9 @@
     };
 
     xserver = {
-      libinput = {
-        enable = true;
-      };
-
       enable = true;
 
+      libinput.enable = true;
       windowManager.i3.enable = true;
 
       xkbOptions = "ctrl:nocaps";
