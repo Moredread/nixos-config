@@ -51,5 +51,6 @@
     tracing = { gid = 501; };
     config = { gid = 502; };
     wireshark = { gid = 503; };
+    adbusers = { gid = 504; };
   };
 }

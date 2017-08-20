@@ -37,6 +37,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  programs.adb.enable = true;
+
   i18n.consoleKeyMap = "de";
   services.xserver.layout = "de";
 
