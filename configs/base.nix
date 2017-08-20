@@ -102,12 +102,12 @@
 
   environment.systemPackages = with pkgs; [
     #ansible
-    #aria2
+    aria2
     #aspellDicts.de
     #aspellDicts.en
     autocutsel
     bashInteractive
-    #blender
+    blender
     #blink
     #borgbackup
     #bridge-utils
@@ -127,10 +127,10 @@
     findutils
     firefox-bin
     #freetype
-    #gimp
+    gimp
     gitFull
     glxinfo
-    #gnucash
+    gnucash
     gnupg
     gnupg1
     #gource
@@ -150,7 +150,7 @@
     iputils
     #kdiff3
     keepassx2
-    #libreoffice
+    libreoffice
     light
     lm_sensors
     lsof
@@ -187,7 +187,7 @@
     python35Packages.ipython
     python35Packages.neovim
     qsyncthingtray
-    #ranger
+    ranger
     #rclone
     #redshift
     ripgrep
@@ -196,9 +196,9 @@
     screen
     skype
     #sloccount
-    #smartmontools
+    smartmontools
     #socat
-    #speedtest-cli
+    speedtest-cli
     spotify
     #steam
     #subversion
@@ -220,7 +220,7 @@
     #xpdf
     xsel
     youtube-dl
-    #zdfmediathk
+    zdfmediathk
     zsh
     #zsh-autosuggestions
     #zsh-completions
