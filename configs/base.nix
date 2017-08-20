@@ -189,7 +189,7 @@
     qsyncthingtray
     #ranger
     #rclone
-    redshift
+    #redshift
     ripgrep
     rsync
     rxvt_unicode
@@ -222,13 +222,13 @@
     youtube-dl
     #zdfmediathk
     zsh
-#    zsh-autosuggestions
-#    zsh-completions
-#    zsh-navigation-tools
-#    zsh-syntax-highlighting
+    #zsh-autosuggestions
+    #zsh-completions
+    #zsh-navigation-tools
+    #zsh-syntax-highlighting
     zstd
-#    idea.pycharm-professional
-#    nfs-utils
+    #idea.pycharm-professional
+    #nfs-utils
   ];
 
   services = {
