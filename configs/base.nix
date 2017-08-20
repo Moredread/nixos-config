@@ -389,10 +389,10 @@
     gc.dates = "03:15";
     gc.options = "--delete-older-than 14d";
 
-    #autoOptimiseStore = true;
+    autoOptimiseStore = true;
 
-    optimise.automatic = true;
-    optimise.dates = [ "03:30" ];
+    #optimise.automatic = true;
+    #optimise.dates = [ "03:30" ];
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
