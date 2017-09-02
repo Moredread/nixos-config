@@ -45,6 +45,7 @@
   virtualisation.virtualbox.host.enable = true;
 
   hardware = {
+    bluetooth.enable = true;
     cpu.amd.updateMicrocode = true;
     cpu.intel.updateMicrocode = true;
     enableAllFirmware = true;
