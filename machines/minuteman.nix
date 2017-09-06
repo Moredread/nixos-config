@@ -39,8 +39,8 @@
 
   programs.adb.enable = true;
 
-  i18n.consoleKeyMap = "de";
-  services.xserver.layout = "de";
+  i18n.consoleKeyMap = "us";
+  services.xserver.layout = "us";
 
   nix.buildCores = lib.mkForce 8;
 
