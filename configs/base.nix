@@ -259,7 +259,7 @@
 
     # cups, for printing documents
     printing.enable = true;
-    printing.gutenprint = true; # lots of printer drivers
+    printing.drivers = [ pkgs.gutenprint ];
 
     avahi = {
       enable = true;
