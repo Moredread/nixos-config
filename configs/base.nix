@@ -104,8 +104,8 @@
   environment.systemPackages = with pkgs; [
     #ansible
     aria2
-    #aspellDicts.de
-    #aspellDicts.en
+    aspellDicts.de
+    aspellDicts.en
     autocutsel
     bashInteractive
     blender
@@ -118,7 +118,7 @@
     dmenu
     #dmidecode
     docker_compose
-    #dos2unix
+    dos2unix
     dropbox
     #electrum
     evince
@@ -135,8 +135,8 @@
     gnupg
     gnupg1
     #gource
-    #gparted
-    #hdparm
+    gparted
+    hdparm
     flvstreamer
     htop
     gitAndTools.hub
@@ -149,7 +149,7 @@
     iotop
     iptables
     iputils
-    #kdiff3
+    kdiff3
     keepassx2
     libreoffice
     light
@@ -171,7 +171,7 @@
     oh-my-zsh
     openvpn
     p7zip
-    #parted
+    parted
     pavucontrol
     #pkgconfig
     polkit_gnome
@@ -214,7 +214,7 @@
     urxvt_perls
     #vagrant
     vimHugeX
-    #vlc
+    vlc
     wget
     xorg.xbacklight
     xbrightness
