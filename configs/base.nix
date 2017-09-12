@@ -289,8 +289,16 @@
     xserver = {
       enable = true;
 
+      displayManager.lightdm = {
+        enable = true;
+        autoLogin.enable = true;
+        autoLogin.user = "addy";
+      };
+
       libinput.enable = true;
       windowManager.i3.enable = true;
+      desktopManager.default = "none";
+      windowManager.default = "i3";
 
       xkbOptions = "ctrl:nocaps";
 
