@@ -13,22 +13,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d88cabd4-4c91-44b7-a1bd-a74f5696a3c3";
+    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
       fsType = "btrfs";
-      options = [ "subvol=subvol/nixos,compress,autodefrag,ssd,discard" ];
+      options = [ "compress,autodefrag,ssd,discard" ];
     };
 
-  fileSystems."/home/addy" =
-    { device = "/dev/disk/by-uuid/d88cabd4-4c91-44b7-a1bd-a74f5696a3c3";
-      fsType = "btrfs";
-      options = [ "subvol=/home/addy,compress,autodefrag,ssd,discard" ];
-    };
-
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/834fd809-35c2-4e86-911b-6fe68a6e79c3";
+  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/457c3e3b-e3c9-483c-a266-348421cb2a4b";
   boot.initrd.luks.devices."root".allowDiscards = true;
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/a336e280-9f33-4b4e-9899-48c3a82cdfee";
+    { device = "/dev/disk/by-uuid/f57d3072-85db-4e38-9c81-b92bc3c2b9a6";
       fsType = "ext4";
       options = [ "discard" ];
     };

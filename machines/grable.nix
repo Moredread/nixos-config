@@ -13,11 +13,6 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.memtest86.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.extraEntries = ''
-    menuentry 'Arch Linux' {
-      configfile (hd0,msdos3)/grub/grub.cfg
-    }
-  '';
 
   networking.hostName = "grable";
 
