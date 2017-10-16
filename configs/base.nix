@@ -103,49 +103,70 @@
 
   environment.systemPackages = with pkgs; [
     #ansible
+    #blink
+    #borgbackup
+    #bridge-utils
+    #dmidecode
+    #electrum
+    #freetype
+    #gource
+    #idea.pycharm-professional
+    #imagemagick
+    #ioping
+    #mercurialFull
+    #mumble
+    #nfs-utils
+    #nix-zsh-completions
+    #nmap
+    #pkgconfig
+    #rclone
+    #redshift
+    #sloccount
+    #socat
+    #steam
+    #subversion
+    #telnet
+    #vagrant
+    #xpdf
+    #zsh-autosuggestions
+    #zsh-completions
+    #zsh-navigation-tools
+    #zsh-syntax-highlighting
     aria2
     aspellDicts.de
     aspellDicts.en
     autocutsel
     bashInteractive
     blender
-    #blink
-    #borgbackup
-    #bridge-utils
+    borgbackup
     chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
-    #dmidecode
     docker_compose
     dos2unix
     dropbox
-    #electrum
     evince
     exfat
     exfat-utils
     ffmpeg
     findutils
     firefox-bin
-    #freetype
+    flvstreamer
     gimp
+    gitAndTools.hub
     gitFull
     glxinfo
     gnucash
     gnupg
     gnupg1
-    #gource
     gparted
     hdparm
-    flvstreamer
     htop
-    gitAndTools.hub
     i3lock
     i3status
     i7z
     iftop
-    #imagemagick
-    #ioping
     iotop
     iptables
     iputils
@@ -156,16 +177,12 @@
     lm_sensors
     lsof
     mdadm
-    #mercurialFull
     mpv
-    #mumble
     ncdu
     neovim
     netcat
     nettools
     networkmanagerapplet
-    #nix-zsh-completions
-    #nmap
     nox
     ntfs3g
     oh-my-zsh
@@ -173,7 +190,6 @@
     p7zip
     parted
     pavucontrol
-    #pkgconfig
     polkit_gnome
     posix_man_pages
     powertop
@@ -189,47 +205,33 @@
     python35Packages.neovim
     qsyncthingtray
     ranger
-    #rclone
-    #redshift
     ripgrep
     rsync
     rxvt_unicode
     screen
     skype
-    #sloccount
     smartmontools
-    #socat
     speedtest-cli
     spotify
-    #steam
-    #subversion
     syncthing
     syncthing-inotify
-    #telnet
+    telnet
     thunderbird
     udiskie
     unrar
     unzip
     urxvt_font_size
     urxvt_perls
-    #vagrant
     vimHugeX
     vlc
     wget
-    xorg.xbacklight
     xbrightness
-    #xpdf
+    xorg.xbacklight
     xsel
     youtube-dl
     zdfmediathk
     zsh
-    #zsh-autosuggestions
-    #zsh-completions
-    #zsh-navigation-tools
-    #zsh-syntax-highlighting
     zstd
-    #idea.pycharm-professional
-    #nfs-utils
   ];
 
   services = {
