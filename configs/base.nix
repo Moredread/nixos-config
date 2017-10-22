@@ -93,7 +93,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.variables = {
-      EDITOR = pkgs.lib.mkOverride 0 "vim";
+      EDITOR = pkgs.lib.mkOverride 0 "nvim";
   };
 
   environment.systemPackages = with pkgs; [
@@ -141,6 +141,7 @@
     docker_compose
     dos2unix
     dropbox
+    electrum
     evince
     exfat
     exfat-utils
@@ -167,6 +168,7 @@
     iputils
     kdiff3
     keepassx2
+    lftp
     libreoffice
     light
     lm_sensors
@@ -178,6 +180,7 @@
     netcat
     nettools
     networkmanagerapplet
+    nixops
     nox
     ntfs3g
     oh-my-zsh
