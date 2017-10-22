@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    #./base-testing.nix
-    #./base-extras.nix
-  ];
-
   boot.cleanTmpDir = true;
 
   networking.networkmanager.enable = true;
