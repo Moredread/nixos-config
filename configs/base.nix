@@ -340,6 +340,7 @@
   programs = {
     #adb.enable = true;
     bash.enableCompletion = true;
+    command-not-found.enable = true;
     #fish.enable = true;
     #java.enable = true;
     mosh.enable = true;
