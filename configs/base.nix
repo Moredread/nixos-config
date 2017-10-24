@@ -251,6 +251,7 @@
     # mkDefault, so that it works with VM
     timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
+    pcscd.enable = true;
 
     udev.extraRules = ''
     # Trezor
