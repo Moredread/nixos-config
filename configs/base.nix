@@ -1,7 +1,18 @@
 { config, lib, pkgs, ... }:
 
 {
-  boot.cleanTmpDir = true;
+  boot = {
+    cleanTmpDir = true;
+    tmpOnTmpfs = true;
+
+    loader.grub = {
+      ipxe.netboot-xyz = ''
+        #!ipxe
+        dhcp
+        chain --autofree https://boot.netboot.xyz
+      '';
+    };
+  };
 
   networking.networkmanager.enable = true;
 
