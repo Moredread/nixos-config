@@ -19,6 +19,7 @@
   time.timeZone = "Europe/Berlin";
 
   fonts = {
+    enableDefaultFonts = true;
     fonts = with pkgs; [
       dejavu_fonts
       fira
@@ -37,14 +38,14 @@
 #     corefonts  # Microsoft free fonts
     ];
     fontconfig = {
+      hinting.autohint = true;
       defaultFonts = {
         monospace = [ "Source Code Pro" ];
         sansSerif = [ "Source Sans Pro" ];
         serif     = [ "Source Serif Pro" ];
       };
-      ultimate = {
-        enable = true;
-      };
+      ultimate.enable = true;
+      penultimate.enable = true;
     };
   };
 
