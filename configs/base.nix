@@ -66,18 +66,11 @@
   nixpkgs.config = {
     packageOverrides = pkgs: rec {
       gajim = pkgs.gajim.override { enableNotifications = true; };
-      # gutenprint = pkgs.gutenprint.overrideAttrs (attrs: {
-      #   src = pkgs.fetchurl {
-      #     url = "mirror://sourceforge/gimp-print/gutenprint-5.2.13.tar.bz2";
-      #     sha256 = "0hi7s0y59306p4kp06sankfa57k2805khbknkvl9d036hdfp9afr";
-      #   };
-      # });
-      # temporary fix until tray support is available in upstream
       profanity = pkgs.lib.overrideDerivation pkgs.profanity (attrs: {
-        buildInputs = attrs.buildInputs ++ [ pkgs.gnome2.gtk ];
+        buildInputs = attrs.buildInputs ++ [ pkgs.python3 ];
+        enableParallelBuilding = true;
       });
     };
-    profanity.traySupport = true;
     chromium = {
 #      enableWideVine = true;
     };
