@@ -234,6 +234,15 @@
     alias vim-update='vim -c :PlugUpdate'
 
     source $ZSH/oh-my-zsh.sh
+
+    function savepath {
+        pwd > ~/.last_dir
+    }
+
+    # restore last saved path
+    if [ -f ~/.last_dir ]
+        then cd `cat ~/.last_dir`
+    fi
     '';
 
     zsh.promptInit = ""; # Clear this to avoid a conflict with oh-my-zsh
