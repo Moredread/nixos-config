@@ -311,7 +311,7 @@
       useGlamor = true;
     };
 
-
+    dbus.packages = [ pkgs.blueman ];
   };
 
   # adapted from https://gist.github.com/joedicastro/a19a9dfd21470783240c739657747f5d
