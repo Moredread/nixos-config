@@ -120,6 +120,7 @@
     timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
     pcscd.enable = true;
+    trezord.enable = true;
 
     udev.extraRules = ''
     # Trezor
