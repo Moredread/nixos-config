@@ -27,8 +27,8 @@
     firefox.enable = true;
     browserpass.enable = true;
     htop.enable = true;
-    htop.detailedCpuTime = true;
-    htop.treeView = true;
+    #htop.detailedCpuTime = true;
+    #htop.treeView = true;
     lesspipe.enable = true;
     man.enable = true;
   };
