@@ -290,8 +290,8 @@
     #optimise.dates = [ "03:30" ];
   };
 
-  networking.firewall.allowedUDPPorts = [ 6923 6965 ]; # bittorrent + dht
-  networking.firewall.allowedTCPPorts = [ 6923 6965 ];
+  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 ]; # bittorrent + dht
+  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 ];
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
