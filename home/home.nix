@@ -5,6 +5,7 @@ let
 in {
   home.packages = with pkgs; [
     apg
+    atool
     blender
     borgbackup
     calibre
@@ -13,14 +14,14 @@ in {
     minecraft
     mplayer
     mpv
-    unstable.nixops
     paperkey
     python3Packages.mps-youtube
     sloccount
     subversion
+    nixops
+    vlc
     youtube-dl
     yubioath-desktop
-    vlc
   ];
 
   programs = {
