@@ -77,9 +77,6 @@
         enableParallelBuilding = true;
       });
     };
-    chromium = {
-#      enableWideVine = true;
-    };
   };
 
   security.sudo.configFile =
