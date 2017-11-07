@@ -36,6 +36,9 @@ in {
     man.enable = true;
   };
 
+  xsession.enable = true;
+  xsession.windowManager.command = "${pkgs.i3}/bin/i3";
+
   #services.blueman-applet.enable = true;
   #services.keepassx.enable = true;
   #services.network-manager-applet.enable = true;
