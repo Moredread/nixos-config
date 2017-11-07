@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> {};
+in {
   home.packages = with pkgs; [
     apg
     blender
@@ -11,6 +13,7 @@
     minecraft
     mplayer
     mpv
+    unstable.nixops
     paperkey
     python3Packages.mps-youtube
     sloccount
