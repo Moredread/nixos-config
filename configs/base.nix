@@ -229,7 +229,9 @@
     plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github)
 
     alias nixos-edit='vim /etc/nixos/**/*.nix -p'
+    alias home-edit='vim ~/.config/nixpkgs/home.nix'
     alias vim-update='vim -c :PlugUpdate'
+    alias vim='nvim'
 
     source $ZSH/oh-my-zsh.sh
 
