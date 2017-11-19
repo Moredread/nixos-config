@@ -15,12 +15,18 @@ in {
     minecraft
     mplayer
     mpv
+    nixops
     paperkey
     python3Packages.mps-youtube
+    skype
     sloccount
+    steam
+    unzip
+    daemontools
     subversion
     nixops
     vlc
+    thunderbird
     youtube-dl
     yubioath-desktop
   ];

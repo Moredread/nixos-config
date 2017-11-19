@@ -44,8 +44,6 @@
     dmenu
     docker_compose
     dos2unix
-    dropbox
-    electrum
     evince
     exfat
     exfat-utils
@@ -53,11 +51,9 @@
     findutils
     firefox-bin
     flvstreamer
-    gimp
     gitAndTools.hub
     gitFull
     glxinfo
-    gnucash
     gnupg
     gnupg1
     gparted
@@ -111,14 +107,12 @@
     rsync
     rxvt_unicode
     screen
-    skype
+    #skype
     smartmontools
     speedtest-cli
-    spotify
     syncthing
     syncthing-inotify
     telnet
-    thunderbird
     udiskie
     urxvt_font_size
     urxvt_perls
@@ -128,8 +122,6 @@
     xbrightness
     xorg.xbacklight
     xsel
-    youtube-dl
-    zdfmediathk
     zsh
     zstd
   ];
