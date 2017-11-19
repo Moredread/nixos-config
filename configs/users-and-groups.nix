@@ -15,6 +15,7 @@
         "cdrom"
         "config"
         "dialout"
+        "disk"
         "docker"
         "git"
         "libvirtd"

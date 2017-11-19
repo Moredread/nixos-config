@@ -9,6 +9,7 @@ in {
     blender
     borgbackup
     calibre
+    daemontools
     evince
     love
     minecraft

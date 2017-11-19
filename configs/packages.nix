@@ -120,8 +120,6 @@
     telnet
     thunderbird
     udiskie
-    unrar
-    unzip
     urxvt_font_size
     urxvt_perls
     vimHugeX
