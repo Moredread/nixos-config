@@ -2,12 +2,14 @@
 
 let
   unstable = import <nixos-unstable> {};
+  local = import /home/addy/nixpkgs {};
 in {
   imports = [
     configs/wm.nix
   ];
 
   home.packages = with pkgs; [
+    #steam
     apg
     atool
     blender
@@ -15,25 +17,31 @@ in {
     calibre
     daemontools
     evince
+    kate
+    kget
+    krename
+    krusader
+    local.electrum
     love
     minecraft
     mplayer
     mpv
     nixops
+    nixops
     paperkey
+    python36Packages.virtualenv
     python3Packages.mps-youtube
     skype
     sloccount
-    #steam
-    unzip
-    daemontools
     subversion
-    nixops
-    vlc
     thunderbird
+    unrar
+    unzip
+    vlc
+    xorg.xvinfo
     youtube-dl
     yubioath-desktop
-    xorg.xvinfo
+    zip
   ];
 
   programs = {
