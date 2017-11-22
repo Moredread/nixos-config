@@ -9,7 +9,7 @@ in {
 
   services = {
     blueman-applet.enable = true;
-    keepassx.enable = true;
+    #keepassx.enable = true;
     network-manager-applet.enable = true;
     gpg-agent.enable = true;
   };

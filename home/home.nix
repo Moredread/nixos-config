@@ -24,7 +24,7 @@ in {
     python3Packages.mps-youtube
     skype
     sloccount
-    steam
+    #steam
     unzip
     daemontools
     subversion
