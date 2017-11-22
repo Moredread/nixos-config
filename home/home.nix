@@ -33,6 +33,7 @@ in {
     thunderbird
     youtube-dl
     yubioath-desktop
+    xorg.xvinfo
   ];
 
   programs = {

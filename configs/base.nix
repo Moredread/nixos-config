@@ -231,12 +231,15 @@
     ZSH_THEME="agnoster"
     plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github)
 
-    alias nixos-edit='vim /etc/nixos/**/*.nix -p'
-    alias home-edit='vim ~/.config/nixpkgs/home.nix'
-    alias vim-update='vim -c :PlugUpdate'
+    source $ZSH/oh-my-zsh.sh
+
+    setopt extendedglob
+
+    alias edit-nixos='nvim /etc/nixos/**/*.nix~*/home/* -p'
+    alias edit-home='nvim /etc/nixos/home/**/*.nix -p'
+    alias vim-update='nvim -c :PlugUpdate'
     alias vim='nvim'
 
-    source $ZSH/oh-my-zsh.sh
 
     function savepath {
         pwd > ~/.last_dir

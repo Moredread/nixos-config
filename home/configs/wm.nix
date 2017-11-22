@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
-{
+let
+  myStuff = {
+    i3.modKey = "Mod4";
+  };
+in {
   xsession.enable = true;
-  xsession.windowManager.i3.enable = true;
 
   services = {
     blueman-applet.enable = true;
@@ -11,86 +14,89 @@
     gpg-agent.enable = true;
   };
 
-  xsession.windowManager.i3.config.keybindings = {
-          "Mod4+Return" = "exec i3-sensible-terminal";
-          "Mod4+Shift+q" = "kill";
-          "Mod4+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+  xsession.windowManager.i3 = {
+    enable = true;
 
-          "Mod4+Left" = "focus left";
-          "Mod4+Down" = "focus down";
-          "Mod4+Up" = "focus up";
-          "Mod4+Right" = "focus right";
+    config.keybindings = with myStuff.i3; {
+      "${modKey}+Return" = "exec i3-sensible-terminal";
+      "${modKey}+Shift+q" = "kill";
+      "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
 
-          "Mod4+h" = "split h";
-          "Mod4+v" = "split v";
-          "Mod4+f" = "fullscreen toggle";
+      "${modKey}+Left" = "focus left";
+      "${modKey}+Down" = "focus down";
+      "${modKey}+Up" = "focus up";
+      "${modKey}+Right" = "focus right";
 
-          "Mod4+s" = "layout stacking";
-          "Mod4+w" = "layout tabbed";
-          "Mod4+e" = "layout toggle split";
+      "${modKey}+h" = "split h";
+      "${modKey}+v" = "split v";
+      "${modKey}+f" = "fullscreen toggle";
 
-          "Mod4+Shift+space" = "floating toggle";
+      "${modKey}+s" = "layout stacking";
+      "${modKey}+w" = "layout tabbed";
+      "${modKey}+e" = "layout toggle split";
 
-          "Mod4+1" = "workspace 1";
-          "Mod4+2" = "workspace 2";
-          "Mod4+3" = "workspace 3";
-          "Mod4+4" = "workspace 4";
-          "Mod4+5" = "workspace 5";
-          "Mod4+6" = "workspace 6";
-          "Mod4+7" = "workspace 7";
-          "Mod4+8" = "workspace 8";
-          "Mod4+9" = "workspace 9";
+      "${modKey}+Shift+space" = "floating toggle";
 
-          "Mod4+Shift+1" = "move container to workspace 1";
-          "Mod4+Shift+2" = "move container to workspace 2";
-          "Mod4+Shift+3" = "move container to workspace 3";
-          "Mod4+Shift+4" = "move container to workspace 4";
-          "Mod4+Shift+5" = "move container to workspace 5";
-          "Mod4+Shift+6" = "move container to workspace 6";
-          "Mod4+Shift+7" = "move container to workspace 7";
-          "Mod4+Shift+8" = "move container to workspace 8";
-          "Mod4+Shift+9" = "move container to workspace 9";
+      "${modKey}+1" = "workspace 1";
+      "${modKey}+2" = "workspace 2";
+      "${modKey}+3" = "workspace 3";
+      "${modKey}+4" = "workspace 4";
+      "${modKey}+5" = "workspace 5";
+      "${modKey}+6" = "workspace 6";
+      "${modKey}+7" = "workspace 7";
+      "${modKey}+8" = "workspace 8";
+      "${modKey}+9" = "workspace 9";
 
-          "Mod4+Shift+c" = "reload";
-          "Mod4+Shift+r" = "restart";
-          "Mod4+Shift+e" = "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
+      "${modKey}+Shift+1" = "move container to workspace 1";
+      "${modKey}+Shift+2" = "move container to workspace 2";
+      "${modKey}+Shift+3" = "move container to workspace 3";
+      "${modKey}+Shift+4" = "move container to workspace 4";
+      "${modKey}+Shift+5" = "move container to workspace 5";
+      "${modKey}+Shift+6" = "move container to workspace 6";
+      "${modKey}+Shift+7" = "move container to workspace 7";
+      "${modKey}+Shift+8" = "move container to workspace 8";
+      "${modKey}+Shift+9" = "move container to workspace 9";
 
-          "Mod4+r" = "mode resize";
-        };
+      "${modKey}+Shift+c" = "reload";
+      "${modKey}+Shift+r" = "restart";
+      "${modKey}+Shift+e" = "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
 
-  xsession.windowManager.i3.extraConfig = with pkgs; ''
-    workspace 1 output DVI-I-1
-    workspace 2 output DVI-I-1
-    workspace 3 output DVI-I-1
-    workspace 4 output DVI-I-1
-    workspace 5 output DVI-I-1
-    workspace 6 output DP-1
-    workspace 7 output DP-1
-    workspace 8 output DP-1
-    workspace 9 output DP-1
-    workspace 10 output DP-1
+      "${modKey}+r" = "mode resize";
+   };
 
-    bindsym XF86AudioLowerVolume exec ${pamixer}/bin/amixer -q set Master 5%-
-    bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/amixer -q set Master 5%+
-    bindsym XF86AudioMute exec ${pamixer}/bin/amixer -q set Master toggle
-    bindsym XF86AudioMicMute exec ${pamixer}/bin/amixer -q set Capture toggle
-    bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/xbacklight -dec 5
-    bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/xbacklight -inc 5
-    bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
-    bindsym XF86Calculator exec ${i3lock}/bin/i3lock
+    extraConfig = with pkgs; ''
+      workspace 1 output DVI-I-1
+      workspace 2 output DVI-I-1
+      workspace 3 output DVI-I-1
+      workspace 4 output DVI-I-1
+      workspace 5 output DVI-I-1
+      workspace 6 output DP-1
+      workspace 7 output DP-1
+      workspace 8 output DP-1
+      workspace 9 output DP-1
+      workspace 10 output DP-1
 
-    bindsym Print exec ${scrot}/bin/scrot
+      bindsym XF86AudioLowerVolume exec ${pamixer}/bin/amixer -q set Master 5%-
+      bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/amixer -q set Master 5%+
+      bindsym XF86AudioMute exec ${pamixer}/bin/amixer -q set Master toggle
+      bindsym XF86AudioMicMute exec ${pamixer}/bin/amixer -q set Capture toggle
+      bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/xbacklight -dec 5
+      bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/xbacklight -inc 5
+      bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
+      bindsym XF86Calculator exec ${i3lock}/bin/i3lock
 
-    exec xrandr --output DP-1 --mode 1920x1080 --left-of DVI-I-1
-    exec dropboxd &
-    exec xss-lock -v -- i3lock -n &
-    exec xautolock -locker i3lock -time 5 -detectsleep &
-    exec lxsession &
-    #exec autocutsel -fork &
-    #exec autocutsel -selection PRIMARY -fork &
-    exec QSyncthingTray &
+      bindsym Print exec ${scrot}/bin/scrot
+
+      #exec ${xorg.xrandr}/bin/xrandr --output DP-1 --mode 1920x1080 --left-of DVI-I-1
+      exec ${dropbox}/bin/dropbox &
+      exec xss-lock -v -- ${i3lock}/bin/i3lock -n &
+      exec xautolock -locker ${i3lock}/bin/i3lock -time 5 -detectsleep &
+      exec lxsession &
+      #exec autocutsel -fork &
+      #exec autocutsel -selection PRIMARY -fork &
+      exec ${qsyncthingtray}/bin/QSyncthingTray &
     '';
 
-  xsession.windowManager.i3.config.fonts = [ "DejaVu Sans Mono 10" ];
-
+    config.fonts = [ "DejaVu Sans Mono 10" ];
+  };
 }
