@@ -18,6 +18,18 @@
       options = [ "compress,autodefrag,ssd,discard" ];
     };
 
+  fileSystems."/media/bitcoin" =
+    { device = "/dev/mapper/btc";
+      fsType = "btrfs";
+      options = [ "relatime,discard,ssd,autodefrag,space_cache" ];
+      encrypted = {
+        enable = true;
+        blkDev = "/dev/disk/by-partlabel/cryptbay";
+        keyFile = "/mnt-root/etc/keys/bitcoin";
+        label = "btc";
+      };
+    };
+
   boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/457c3e3b-e3c9-483c-a266-348421cb2a4b";
   boot.initrd.luks.devices."root".allowDiscards = true;
 
