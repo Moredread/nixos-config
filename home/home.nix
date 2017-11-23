@@ -34,6 +34,7 @@ in {
     skype
     sloccount
     subversion
+    spotify
     thunderbird
     unrar
     unzip
