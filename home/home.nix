@@ -2,7 +2,7 @@
 
 let
   unstable = import <nixos-unstable> {};
-  local = import /home/addy/nixpkgs {};
+  electrum3 = pkgs.callPackage ./pkgs/electrum3.nix {};
 in {
   imports = [
     configs/wm.nix
@@ -14,6 +14,7 @@ in {
     atool
     blender
     borgbackup
+    electrum3
     calibre
     daemontools
     evince
@@ -21,12 +22,10 @@ in {
     kget
     krename
     krusader
-    local.electrum
     love
     minecraft
     mplayer
     mpv
-    nixops
     nixops
     paperkey
     python36Packages.virtualenv
