@@ -28,6 +28,16 @@ in {
       "${modKey}+Up" = "focus up";
       "${modKey}+Right" = "focus right";
 
+      "${modKey}+Shift+Left" = "move left";
+      "${modKey}+Shift+Down" = "move down";
+      "${modKey}+Shift+Up" = "move up";
+      "${modKey}+Shift+Right" = "move right";
+
+      "${modKey}+Shift+j" = "move left";
+      "${modKey}+Shift+l" = "move down";
+      "${modKey}+Shift+k" = "move up";
+      "${modKey}+Shift+semicolon" = "move right";
+
       "${modKey}+h" = "split h";
       "${modKey}+v" = "split v";
       "${modKey}+f" = "fullscreen toggle";
