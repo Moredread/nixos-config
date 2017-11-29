@@ -19,6 +19,7 @@ in {
     #steam
     apg
     atool
+    bind.dnsutils
     blender
     borgbackup
     electrum3
@@ -43,6 +44,7 @@ in {
     spotify
     thunderbird
     unrar
+    ripgrep
     unzip
     vlc
     xorg.xvinfo
