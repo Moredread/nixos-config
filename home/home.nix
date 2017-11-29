@@ -8,6 +8,13 @@ in {
     configs/wm.nix
   ];
 
+  home.keyboard.layout = "de";
+  home.language = {
+    paper = "de";
+    monetary = "de";
+    address = "de";
+  };
+
   home.packages = with pkgs; [
     #steam
     apg
