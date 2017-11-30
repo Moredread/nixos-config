@@ -87,10 +87,10 @@ in {
       workspace 9 output DP-1
       workspace 10 output DP-1
 
-      bindsym XF86AudioLowerVolume exec ${pamixer}/bin/amixer -q set Master 5%-
-      bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/amixer -q set Master 5%+
-      bindsym XF86AudioMute exec ${pamixer}/bin/amixer -q set Master toggle
-      bindsym XF86AudioMicMute exec ${pamixer}/bin/amixer -q set Capture toggle
+      bindsym XF86AudioLowerVolume exec ${alsaUtils}/bin/amixer -q set Master 5%-
+      bindsym XF86AudioRaiseVolume exec ${alsaUtils}/bin/amixer -q set Master 5%+
+      bindsym XF86AudioMute exec ${alsaUtils}/bin/amixer -q set Master toggle
+      bindsym XF86AudioMicMute exec ${alsaUtils}/bin/amixer -q set Capture toggle
       bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/xbacklight -dec 5
       bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/xbacklight -inc 5
       bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
