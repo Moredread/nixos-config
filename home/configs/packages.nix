@@ -18,6 +18,8 @@ in {
     calibre
     daemontools
     dmidecode
+    docker
+    docker_compose
     dropbox
     dunst
     electrum3
