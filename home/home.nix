@@ -16,7 +16,6 @@ in {
   };
 
   home.packages = with pkgs; [
-    #steam
     apg
     atool
     bind.dnsutils
@@ -64,5 +63,6 @@ in {
     #htop.treeView = true;
     lesspipe.enable = true;
     man.enable = true;
+    neovim.enable = true;
   };
 }
