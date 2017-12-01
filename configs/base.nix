@@ -237,9 +237,10 @@
 
     alias edit-nixos='nvim /etc/nixos/**/*.nix~*/home/* -p'
     alias edit-home='nvim /etc/nixos/home/**/*.nix -p'
+    alias home-edit='edit-home'
+    alias nixos-edit='edit-nixos'
     alias vim-update='nvim -c :PlugUpdate'
     alias vim='nvim'
-
 
     function savepath {
         pwd > ~/.last_dir
