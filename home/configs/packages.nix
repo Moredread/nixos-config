@@ -2,6 +2,7 @@
 let
   unstable = import <nixos-unstable> {};
   electrum3 = pkgs.callPackage ../pkgs/electrum3.nix {};
+  gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 in {
   home.packages = with pkgs; [
     apg
@@ -29,6 +30,7 @@ in {
     gitAndTools.gitSVN
     gitAndTools.hub
     gitFull
+    gitwatch
     glxinfo
     gnupg
     gnupg1

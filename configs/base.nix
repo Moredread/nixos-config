@@ -229,7 +229,7 @@
 
     # Customize your oh-my-zsh options here
     ZSH_THEME="agnoster"
-    plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github)
+    plugins=(git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github taskwarrior)
 
     source $ZSH/oh-my-zsh.sh
 
