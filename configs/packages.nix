@@ -1,127 +1,53 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    #ansible
-    #blink
-    #borgbackup
-    #bridge-utils
-    #dmidecode
-    #electrum
-    #freetype
-    #gource
-    #idea.pycharm-professional
-    #imagemagick
-    #ioping
-    #mercurialFull
-    #mumble
-    #nfs-utils
-    #nix-zsh-completions
-    #nmap
-    #pkgconfig
-    #rclone
-    #redshift
-    #sloccount
-    #socat
-    #steam
-    #subversion
-    #telnet
-    #vagrant
-    #xpdf
-    #zsh-autosuggestions
-    #zsh-completions
-    #zsh-navigation-tools
-    #zsh-syntax-highlighting
-    aria2
-    aspellDicts.de
-    aspellDicts.en
     autocutsel
+    bridge-utils
     bashInteractive
-    blender
-    borgbackup
     chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
-    docker_compose
-    dos2unix
-    evince
     exfat
     exfat-utils
-    ffmpeg
-    findutils
-    firefox-bin
-    flvstreamer
-    gitAndTools.hub
-    gitFull
-    glxinfo
-    gnupg
-    gnupg1
     gparted
     hdparm
     htop
-    i3lock
-    i3status
     i7z
     iftop
     iotop
     iptables
     iputils
-    kdiff3
-    keepassx2
     lftp
-    libreoffice
     light
     lm_sensors
     lsof
     mdadm
     mpv
     ncdu
-    neovim
     netcat
     nettools
-    networkmanagerapplet
     nixops
-    nox
     ntfs3g
     oh-my-zsh
-    openvpn
-    p7zip
-    parted
-    pavucontrol
-    polkit_gnome
-    posix_man_pages
-    powertop
-    profanity
     psmisc
     pv
     pwgen
     python27Full
     python27Packages.virtualenvwrapper
-    python2nix
     python35Full
-    python35Packages.ipython
     python35Packages.neovim
     qsyncthingtray
-    ranger
-    ripgrep
     rsync
-    rxvt_unicode
+    gitAndTools.gitSVN
+    ripgrep
     screen
-    #skype
     smartmontools
-    speedtest-cli
-    syncthing
-    syncthing-inotify
-    telnet
-    udiskie
     urxvt_font_size
     urxvt_perls
     vimHugeX
     vlc
     wget
-    xbrightness
-    xorg.xbacklight
-    xsel
     zsh
     zstd
   ];
