@@ -14,7 +14,6 @@ in {
     bind.dnsutils
     blender
     borgbackup
-    borgbackup
     calibre
     daemontools
     dmidecode

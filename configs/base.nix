@@ -241,6 +241,7 @@
     alias nixos-edit='edit-nixos'
     alias vim-update='nvim -c :PlugUpdate'
     alias vim='nvim'
+    alias ncd='pushd /etc/nixos'
 
     function savepath {
         pwd > ~/.last_dir
