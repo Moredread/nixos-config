@@ -4,6 +4,7 @@
   imports =
     [
       ../configs/base.nix
+      ../configs/unifi.nix
       ../configs/users-and-groups.nix
       ./hardware-grable.nix
     ];
