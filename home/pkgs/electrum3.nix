@@ -23,11 +23,11 @@ let
 in
 stdenv.mkDerivation ((python3Packages.buildPythonApplication rec {
   name = "electrum-${version}";
-  version = "3.0.2";
+  version = "3.0.3";
 
   src = fetchurl {
     url = "https://download.electrum.org/${version}/Electrum-${version}.tar.gz";
-    sha256 = "4dff75bc5f496f03ad7acbe33f7cec301955ef592b0276f2c518e94e47284f53";
+    sha256 = "09h3s1mbkliwh8758prbdk3sm19bnma7wy3k10pl9q9fkarbhp75";
   };
 
   propagatedBuildInputs = with python3Packages; [
