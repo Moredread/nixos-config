@@ -57,6 +57,7 @@ in {
       "${modKey}+7" = "workspace 7";
       "${modKey}+8" = "workspace 8";
       "${modKey}+9" = "workspace 9";
+      "${modKey}+0" = "workspace 10";
 
       "${modKey}+Shift+1" = "move container to workspace 1";
       "${modKey}+Shift+2" = "move container to workspace 2";
@@ -67,6 +68,7 @@ in {
       "${modKey}+Shift+7" = "move container to workspace 7";
       "${modKey}+Shift+8" = "move container to workspace 8";
       "${modKey}+Shift+9" = "move container to workspace 9";
+      "${modKey}+Shift+0" = "move container to workspace 10";
 
       "${modKey}+Shift+c" = "reload";
       "${modKey}+Shift+r" = "restart";
