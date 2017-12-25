@@ -18,6 +18,8 @@ in {
     daemontools
     dmidecode
     docker
+    vagrant
+    nix-prefetch-scripts
     docker_compose
     dropbox
     dunst
@@ -39,6 +41,7 @@ in {
     i3lock
     i3status
     idea.pycharm-professional
+    inkscape
     kate
     kdiff3
     keepassx2
