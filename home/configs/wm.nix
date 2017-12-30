@@ -100,14 +100,7 @@ in {
 
       bindsym Print exec ${scrot}/bin/scrot
 
-      #exec ${xorg.xrandr}/bin/xrandr --output DP-1 --mode 1920x1080 --left-of DVI-I-1
       exec ${dropbox}/bin/dropbox &
-      exec xss-lock -v -- ${i3lock}/bin/i3lock -n &
-      exec xautolock -locker ${i3lock}/bin/i3lock -time 5 -detectsleep &
-      exec lxsession &
-      #exec autocutsel -fork &
-      #exec autocutsel -selection PRIMARY -fork &
-      exec ${qsyncthingtray}/bin/QSyncthingTray &
     '';
 
     config.fonts = [ "DejaVu Sans Mono 10" ];
