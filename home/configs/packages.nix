@@ -9,6 +9,9 @@ in {
     aspellDicts.de
     aspellDicts.en
     atool
+    arduino
+    ino
+    fritzing
     autocutsel
     bind.dnsutils
     blender
@@ -41,6 +44,7 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
+    iperf
     kate
     kdiff3
     keepassx2
