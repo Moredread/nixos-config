@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
   unstable = import <nixos-unstable> {};
-  electrum3 = pkgs.callPackage ../pkgs/electrum3.nix {};
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 in {
   home.packages = with pkgs; [
@@ -23,7 +22,7 @@ in {
     docker_compose
     dropbox
     dunst
-    electrum3
+    electrum
     evince
     ffmpeg
     findutils
