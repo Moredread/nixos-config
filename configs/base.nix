@@ -276,16 +276,16 @@
   };
 
   nix = {
+    package = pkgs.nixUnstable;
+
     useSandbox = true;
     buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
-    maxJobs = lib.mkDefault 4;
+    maxJobs = lib.mkDefault 8;
 
     extraOptions = ''
       # To not get caught by the '''"nix-collect-garbage -d" makes
       # "nixos-rebuild switch" unusable when nixos.org is down"''' issue:
       gc-keep-outputs = true
-      # For 'nix-store -l $(which vim)'
-      log-servers = http://hydra.nixos.org/log
       # Number of seconds to wait for binary-cache to accept() our connect()
       connect-timeout = 15
     '';
@@ -295,7 +295,7 @@
     gc.dates = "03:15";
     gc.options = "--delete-older-than 14d";
 
-    autoOptimiseStore = true;
+    #autoOptimiseStore = true;
 
     #optimise.automatic = true;
     #optimise.dates = [ "03:30" ];
