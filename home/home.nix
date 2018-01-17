@@ -8,9 +8,10 @@
 
   home.keyboard.layout = "de";
   home.language = {
-    paper = "de";
-    monetary = "de";
-    address = "de";
+    base = "en_US.utf8";
+    paper = "de_DE.utf8";
+    monetary = "de_DE.utf8";
+    address = "de_DE.utf8";
   };
 
 
