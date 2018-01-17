@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  unstable = import <nixos-unstable> {};
+  #unstable = import <nixos-unstable> {};
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 in {
   home.packages = with pkgs; [
