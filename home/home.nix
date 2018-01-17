@@ -14,5 +14,5 @@
     address = "de_DE.utf8";
   };
 
-
+  systemd.user.startServices = true;
 }

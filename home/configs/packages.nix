@@ -8,6 +8,7 @@ in {
     aria2
     aspellDicts.de
     aspellDicts.en
+    awscli
     atool
     arduino
     ino
@@ -60,7 +61,7 @@ in {
     mumble
     neovim
     networkmanagerapplet
-    nixops
+    nixopsUnstable
     nmap
     nox
     p7zip
