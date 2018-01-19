@@ -51,6 +51,7 @@ in {
     keepassx2
     kget
     krename
+    todo-txt-cli
     krusader
     libreoffice
     love
