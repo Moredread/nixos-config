@@ -246,6 +246,8 @@
     alias vim='nvim'
     alias ncd='pushd /etc/nixos'
     alias t='todo.sh'
+    alias v='nvim'
+    alias upgrade='sudo sh -c "nix-channel --update; nixos-rebuild switch"; home-manager switch'
 
     function savepath {
         pwd > ~/.last_dir
