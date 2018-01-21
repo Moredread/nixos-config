@@ -46,7 +46,7 @@ in {
       "${modKey}+w" = "layout tabbed";
       "${modKey}+e" = "layout toggle split";
 
-      "${modKey}+Shift+space" = "floating toggle";
+      "${modKey}+Shift+f" = "floating toggle";
 
       "${modKey}+1" = "workspace 1";
       "${modKey}+2" = "workspace 2";
@@ -73,6 +73,9 @@ in {
       "${modKey}+Shift+c" = "reload";
       "${modKey}+Shift+r" = "restart";
       "${modKey}+Shift+e" = "exec i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes' 'i3-msg exit'";
+
+      "${modKey}+Shift+space" = "move scratchpad";
+      "${modKey}+space" = "scratchpad show";
 
       "${modKey}+r" = "mode resize";
    };
