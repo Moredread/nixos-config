@@ -9,10 +9,10 @@ in {
 
   services = {
     blueman-applet.enable = true;
-    keepassx.enable = true;
     dunst.enable = true;
     network-manager-applet.enable = true;
     gpg-agent.enable = true;
+    qsyncthingtray.enable = true;
   };
 
   xsession.windowManager.i3 = {
@@ -99,8 +99,6 @@ in {
       bindsym XF86Calculator exec ${i3lock}/bin/i3lock
 
       bindsym Print exec ${scrot}/bin/scrot
-
-      exec ${dropbox}/bin/dropbox &
     '';
 
     config.fonts = [ "DejaVu Sans Mono 10" ];

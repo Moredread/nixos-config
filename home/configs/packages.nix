@@ -1,19 +1,18 @@
 { pkgs, ... }:
 let
-  #unstable = import <nixos-unstable> {};
+  unstable = import <nixos-unstable> {};
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 in {
   home.packages = with pkgs; [
+    #steam
     apg
+    arduino
     aria2
     aspellDicts.de
     aspellDicts.en
-    awscli
     atool
-    arduino
-    ino
-    fritzing
     autocutsel
+    awscli
     bind.dnsutils
     blender
     borgbackup
@@ -21,9 +20,8 @@ in {
     daemontools
     dmidecode
     docker
-    vagrant
-    nix-prefetch-scripts
     docker_compose
+    dos2unix
     dropbox
     dunst
     electrum
@@ -32,6 +30,7 @@ in {
     findutils
     firefox-bin
     flvstreamer
+    fritzing
     gitAndTools.gitFull
     gitAndTools.gitSVN
     gitAndTools.hub
@@ -45,13 +44,13 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
+    ino
     iperf
     kate
     kdiff3
     keepassx2
     kget
     krename
-    todo-txt-cli
     krusader
     libreoffice
     love
@@ -62,6 +61,7 @@ in {
     mumble
     neovim
     networkmanagerapplet
+    nix-prefetch-scripts
     nixopsUnstable
     nmap
     nox
@@ -76,7 +76,6 @@ in {
     python3Packages.mps-youtube
     ranger
     rclone
-    ripgrep
     rsync
     rxvt_unicode
     screen
@@ -85,16 +84,18 @@ in {
     socat
     speedtest-cli
     spotify
-    #steam
     subversion
     syncthing
     syncthing-inotify
     taskwarrior
     telnet
     thunderbird
+    todo-txt-cli
     udiskie
     unrar
+    unstable.ripgrep
     unzip
+    vagrant
     vlc
     xbrightness
     xorg.xbacklight
