@@ -282,26 +282,15 @@
     package = pkgs.nixUnstable;
 
     useSandbox = true;
-    buildCores = 0;  # 0 means auto-detect number of CPUs (and use all)
+    buildCores = 0;
     maxJobs = lib.mkDefault 8;
 
     extraOptions = ''
-      # To not get caught by the '''"nix-collect-garbage -d" makes
-      # "nixos-rebuild switch" unusable when nixos.org is down"''' issue:
       gc-keep-outputs = true
-      # Number of seconds to wait for binary-cache to accept() our connect()
       connect-timeout = 15
     '';
 
-    # Automatic garbage collection
-    #gc.automatic = true;
-    gc.dates = "03:15";
-    gc.options = "--delete-older-than 14d";
-
     autoOptimiseStore = true;
-
-    #optimise.automatic = true;
-    #optimise.dates = [ "03:30" ];
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 ]; # bittorrent + dht
