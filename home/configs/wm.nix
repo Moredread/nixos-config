@@ -12,7 +12,7 @@ in {
     dunst.enable = true;
     network-manager-applet.enable = true;
     gpg-agent.enable = true;
-    qsyncthingtray.enable = true;
+    syncthing.tray = true;
   };
 
   xsession.windowManager.i3 = {
