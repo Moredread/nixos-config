@@ -32,6 +32,7 @@ in {
     firefox-bin
     flvstreamer
     fritzing
+    gimp
     gitAndTools.gitFull
     gitAndTools.gitSVN
     gitAndTools.hub
@@ -75,11 +76,13 @@ in {
     profanity
     python36Packages.virtualenv
     python3Packages.mps-youtube
+    qrencode
     ranger
     rclone
     rsync
     rxvt_unicode
     screen
+    scrot
     skype
     sloccount
     socat
