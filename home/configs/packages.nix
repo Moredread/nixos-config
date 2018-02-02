@@ -98,6 +98,7 @@ in {
     udiskie
     unrar
     unstable.ripgrep
+    xsane
     unzip
     vagrant
     vlc
