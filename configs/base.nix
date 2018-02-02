@@ -42,6 +42,7 @@
       ttf_bitstream_vera
       ubuntu_font_family  # Ubuntu fonts
       unifont # some international languages
+      libertine
 #     corefonts  # Microsoft free fonts
     ];
     fontconfig = {
