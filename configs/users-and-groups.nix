@@ -48,10 +48,6 @@
 
   users.extraGroups = {
     addy = { name = "addy"; };
-    plugdev = { gid = 500; };
-    tracing = { gid = 501; };
-    config = { gid = 502; };
-    wireshark = { gid = 503; };
-    adbusers = { gid = 504; };
+    config = { gid = 500; };
   };
 }
