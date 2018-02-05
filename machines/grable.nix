@@ -16,6 +16,7 @@
   boot.loader.grub.device = "/dev/sda";
 
   networking.hostName = "grable";
+  networking.hostId = "1a9f9479";
 
   hardware.bumblebee.enable = true;
 
