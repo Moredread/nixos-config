@@ -6,7 +6,7 @@ in {
   home.packages = with pkgs; [
     #steam
     apg
-    arduino
+    unstable.arduino
     aria2
     aspellDicts.de
     aspellDicts.en
@@ -46,7 +46,7 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
-    ino
+    unstable.ino
     iperf
     kate
     kdiff3

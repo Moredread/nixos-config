@@ -8,7 +8,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
 
     cleanTmpDir = true;
     tmpOnTmpfs = true;
@@ -266,7 +266,7 @@
     zsh.promptInit = ""; # Clear this to avoid a conflict with oh-my-zsh
 
     chromium = {
-        enable = true;
+        #enable = true;
         # Imperatively installed extensions will seamlessly merge with these.
         # Removing extensions here will remove them from chromium, no matter how
         # they were installed.
