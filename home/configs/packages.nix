@@ -2,10 +2,12 @@
 let
   unstable = import <nixos-unstable> {};
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
+  slic3r-prusa-mine = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
 in {
   home.packages = with pkgs; [
     #steam
     apg
+    slic3r-prusa-mine
     unstable.arduino
     aria2
     aspellDicts.de
