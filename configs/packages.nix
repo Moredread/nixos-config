@@ -4,7 +4,6 @@
     autocutsel
     bridge-utils
     bashInteractive
-    chromium
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
