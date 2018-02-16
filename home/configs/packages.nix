@@ -49,6 +49,8 @@ in {
     idea.pycharm-professional
     inkscape
     unstable.ino
+    unstable.wineFull
+    unstable.winetricks
     iperf
     kate
     kdiff3
