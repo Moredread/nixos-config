@@ -153,7 +153,6 @@
 
     syncthing = {
       enable = true;
-      useInotify = true;
       openDefaultPorts = true;
       user = "addy";
       dataDir = "/home/addy/.config/syncthing";
