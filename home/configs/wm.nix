@@ -12,6 +12,9 @@ in {
     dunst.enable = true;
     network-manager-applet.enable = true;
     gpg-agent.enable = true;
+    gpg-agent.defaultCacheTtl = 3600;
+    gpg-agent.defaultCacheTtlSsh = 3600;
+    #gpg-agent.enableSshSupport = true;
     syncthing.tray = true;
   };
 
