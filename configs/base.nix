@@ -293,7 +293,7 @@
       connect-timeout = 15
     '';
 
-    autoOptimiseStore = true;
+    #autoOptimiseStore = true;
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 ]; # bittorrent + dht
