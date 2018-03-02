@@ -7,18 +7,16 @@ in {
   home.packages = with pkgs; [
     #steam
     apg
-    slic3r-prusa-mine
-    unstable.arduino
     aria2
     aspellDicts.de
     aspellDicts.en
     atool
     autocutsel
+    avrdude
     awscli
     bind.dnsutils
     blender
     borgbackup
-    todo-txt-cli
     calibre
     daemontools
     dmidecode
@@ -29,11 +27,13 @@ in {
     dunst
     electrum
     evince
+    exfat-utils
     ffmpeg
     findutils
     firefox-bin
     flvstreamer
     fritzing
+    fuse_exfat
     gimp
     gitAndTools.gitFull
     gitAndTools.gitSVN
@@ -48,9 +48,6 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
-    unstable.ino
-    unstable.wineFull
-    unstable.winetricks
     iperf
     kate
     kdiff3
@@ -88,6 +85,7 @@ in {
     screen
     scrot
     skype
+    slic3r-prusa-mine
     sloccount
     socat
     speedtest-cli
@@ -99,10 +97,14 @@ in {
     telnet
     thunderbird
     todo-txt-cli
+    todo-txt-cli
     udiskie
     unrar
+    unstable.arduino
+    unstable.ino
     unstable.ripgrep
-    xsane
+    unstable.wineFull
+    unstable.winetricks
     unzip
     vagrant
     vlc
@@ -110,6 +112,7 @@ in {
     xorg.xbacklight
     xorg.xvinfo
     xpdf
+    xsane
     xsel
     youtube-dl
     yubioath-desktop
