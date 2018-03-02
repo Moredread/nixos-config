@@ -15,7 +15,19 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
       fsType = "btrfs";
-      options = [ "compress,autodefrag,ssd,discard" ];
+      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/root" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
+      fsType = "btrfs";
+      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
+      fsType = "btrfs";
+      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/nix" ];
     };
 
   fileSystems."/media/bitcoin" =
