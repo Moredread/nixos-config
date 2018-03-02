@@ -58,8 +58,9 @@
     };
   };
 
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
 
   hardware = {
     bluetooth.enable = true;
@@ -101,8 +102,6 @@
     consoleFont = "Lat2-Terminus16";
     defaultLocale = "en_US.UTF-8";
   };
-
-  virtualisation.docker.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
