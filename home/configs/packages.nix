@@ -71,6 +71,7 @@ in {
     nmap
     notmuch
     nox
+    offlineimap
     p7zip
     paperkey
     pavucontrol
