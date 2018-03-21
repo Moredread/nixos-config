@@ -17,6 +17,9 @@
   boot.loader.grub.memtest86.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
+  boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
+  environment.systemPackages = [ pkgs.wireguard ];
+
   networking.hostName = "grable";
   networking.hostId = "1a9f9479";
 
