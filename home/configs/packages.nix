@@ -5,6 +5,7 @@ let
   slic3r-prusa-mine = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
 in {
   home.packages = with pkgs; [
+    #slic3r-prusa-mine
     #steam
     apg
     aria2
@@ -49,6 +50,7 @@ in {
     idea.pycharm-professional
     inkscape
     iperf
+    jetbrains.clion
     kate
     kdiff3
     keepassx2
@@ -85,7 +87,6 @@ in {
     screen
     scrot
     skype
-    slic3r-prusa-mine
     sloccount
     socat
     speedtest-cli
