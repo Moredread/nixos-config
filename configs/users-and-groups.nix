@@ -20,6 +20,7 @@
         "git"
         "libvirtd"
         "networkmanager"
+        "sabnzbd"
         "plugdev"
         "scanner"
         "systemd-journal"

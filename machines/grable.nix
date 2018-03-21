@@ -4,7 +4,9 @@
   imports =
     [
       ../configs/base.nix
+      ../configs/emby.nix
       ../configs/unifi.nix
+      ../configs/sabnzbd.nix
       ../configs/users-and-groups.nix
       ./hardware-grable.nix
     ];
