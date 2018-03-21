@@ -24,6 +24,11 @@
 
   i18n.consoleKeyMap = "de";
 
+  nix = {
+    buildCores = 8;
+    maxJobs = 8;
+  };
+
   services = {
     xserver = {
       videoDrivers = [ "intel" ];

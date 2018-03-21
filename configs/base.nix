@@ -277,7 +277,7 @@
     package = pkgs.nixUnstable;
 
     useSandbox = true;
-    buildCores = 0;
+    buildCores = lib.mkDefault 0;
     maxJobs = lib.mkDefault 8;
 
     extraOptions = ''
