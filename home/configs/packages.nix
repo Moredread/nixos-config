@@ -7,6 +7,7 @@ in {
   home.packages = with pkgs; [
     #slic3r-prusa-mine
     #steam
+    alot
     apg
     aria2
     aspellDicts.de
@@ -69,6 +70,7 @@ in {
     nix-prefetch-scripts
     nixopsUnstable
     nmap
+    notmuch
     nox
     p7zip
     paperkey
@@ -77,6 +79,7 @@ in {
     posix_man_pages
     powertop
     profanity
+    python36Packages.afew
     python36Packages.virtualenv
     python3Packages.mps-youtube
     qrencode
