@@ -6,7 +6,7 @@
     configs/wm.nix
   ];
 
-  home.keyboard.layout = "de";
+  home.keyboard.layout = "en_US";
   home.language = {
     base = "en_US.utf8";
     paper = "de_DE.utf8";
