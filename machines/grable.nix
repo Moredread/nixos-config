@@ -12,20 +12,16 @@
     ];
 
   # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.memtest86.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
   environment.systemPackages = [ pkgs.wireguard ];
 
   networking.hostName = "grable";
-  networking.hostId = "1a9f9479";
+  networking.hostId = "1a9f9478";
 
-  hardware.bumblebee.enable = true;
-
-  i18n.consoleKeyMap = "de";
+  #i18n.consoleKeyMap = "en_US";
 
   nix = {
     buildCores = 8;

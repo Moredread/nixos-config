@@ -8,49 +8,37 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
+    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/root" ];
+      options = [ "subvol=subvol/root" ];
     };
 
+  boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/ca5de9e4-7c1e-4805-aa80-96d59f54be5e";
+
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
+    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/home" ];
+      options = [ "subvol=subvol/home" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/c33a7ce5-cf2e-4774-9caa-0fa0421804a7";
+    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "compress,autodefrag,ssd,discard,subvol=subvol/nix" ];
+      options = [ "subvol=subvol/nix" ];
     };
-
-  fileSystems."/media/bitcoin" =
-    { device = "/dev/mapper/btc";
-      fsType = "btrfs";
-      options = [ "relatime,discard,ssd,autodefrag,space_cache" ];
-      encrypted = {
-        enable = true;
-        blkDev = "/dev/disk/by-partlabel/cryptbay";
-        keyFile = "/mnt-root/etc/keys/bitcoin";
-        label = "btc";
-      };
-    };
-
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/457c3e3b-e3c9-483c-a266-348421cb2a4b";
-  boot.initrd.luks.devices."root".allowDiscards = true;
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/f57d3072-85db-4e38-9c81-b92bc3c2b9a6";
-      fsType = "ext4";
-      options = [ "discard" ];
+    { device = "/dev/nvme0n1p1";
+      fsType = "vfat";
     };
 
   swapDevices = [ ];
 
+  nix.maxJobs = lib.mkDefault 8;
+  #powerManagement.cpuFreqGovernor = "performance";
 }
