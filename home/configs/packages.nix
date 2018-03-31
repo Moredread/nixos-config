@@ -6,7 +6,6 @@ let
 in {
   home.packages = with pkgs; [
     #slic3r-prusa-mine
-    #steam
     alot
     apg
     aria2
@@ -94,6 +93,7 @@ in {
     socat
     speedtest-cli
     spotify
+    steam
     subversion
     syncthing
     syncthing-inotify
