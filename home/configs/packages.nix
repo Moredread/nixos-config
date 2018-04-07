@@ -113,6 +113,7 @@ in {
     vagrant
     vlc
     xbrightness
+    xorg.xev
     xorg.xbacklight
     xorg.xvinfo
     xpdf
@@ -120,6 +121,8 @@ in {
     xsel
     youtube-dl
     yubioath-desktop
+    tome4
+    chromium
     zip
   ];
 }

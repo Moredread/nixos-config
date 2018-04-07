@@ -7,6 +7,7 @@
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
+    p7zip
     exfat
     exfat-utils
     gparted
