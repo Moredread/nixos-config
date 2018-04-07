@@ -37,9 +37,9 @@
         Option "TearFree" "true"
       '';
       useGlamor = true;
-      layout = "de";
+      layout = "en_US";
     };
 
-    tlp.enable = true;
+    #tlp.enable = true;
   };
 }
