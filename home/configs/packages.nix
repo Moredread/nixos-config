@@ -6,6 +6,7 @@ let
 in {
   home.packages = with pkgs; [
     #slic3r-prusa-mine
+    afew
     alot
     apg
     aria2
@@ -79,7 +80,6 @@ in {
     posix_man_pages
     powertop
     profanity
-    python36Packages.afew
     python36Packages.virtualenv
     python3Packages.mps-youtube
     qrencode
@@ -97,7 +97,6 @@ in {
     steam
     subversion
     syncthing
-    syncthing-inotify
     taskwarrior
     telnet
     thunderbird
