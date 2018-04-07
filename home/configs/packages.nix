@@ -20,6 +20,7 @@ in {
     blender
     borgbackup
     calibre
+    chromium
     daemontools
     dmidecode
     docker
@@ -75,6 +76,8 @@ in {
     offlineimap
     p7zip
     paperkey
+    pass
+    pass-otp
     pavucontrol
     polkit_gnome
     posix_man_pages
@@ -102,6 +105,7 @@ in {
     thunderbird
     todo-txt-cli
     todo-txt-cli
+    tome4
     udiskie
     unrar
     unstable.arduino
@@ -113,16 +117,14 @@ in {
     vagrant
     vlc
     xbrightness
-    xorg.xev
     xorg.xbacklight
+    xorg.xev
     xorg.xvinfo
     xpdf
     xsane
     xsel
     youtube-dl
     yubioath-desktop
-    tome4
-    chromium
     zip
   ];
 }
