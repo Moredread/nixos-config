@@ -7,6 +7,7 @@
   ];
 
   home.keyboard.layout = "en_US";
+  home.keyboard.options = [ "compose:rctrl" "caps:none" ];
   home.language = {
     base = "en_US.utf8";
     paper = "de_DE.utf8";
