@@ -111,4 +111,12 @@ in {
 
     config.fonts = [ "DejaVu Sans Mono 10" ];
   };
+
+  home.packages = with pkgs; [
+    adapta-gtk-theme
+    gnome3.adwaita-icon-theme
+    lxappearance
+    xorg.xcursorthemes
+    zuki-themes
+  ];
 }

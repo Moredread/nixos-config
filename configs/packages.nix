@@ -2,14 +2,14 @@
 {
   environment.systemPackages = with pkgs; [
     autocutsel
-    bridge-utils
     bashInteractive
+    bridge-utils
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     dmenu
-    p7zip
     exfat
     exfat-utils
+    gitAndTools.gitSVN
     gparted
     hdparm
     htop
@@ -30,6 +30,7 @@
     nixops
     ntfs3g
     oh-my-zsh
+    p7zip
     psmisc
     pv
     pwgen
@@ -38,13 +39,13 @@
     python35Full
     python35Packages.neovim
     qsyncthingtray
-    rsync
-    gitAndTools.gitSVN
     ripgrep
+    rsync
     screen
     smartmontools
     urxvt_font_size
     urxvt_perls
+    usbutils
     vimHugeX
     vlc
     wget
