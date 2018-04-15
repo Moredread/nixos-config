@@ -44,6 +44,7 @@ in {
     gitFull
     gitwatch
     glxinfo
+    gnumake
     gnupg
     gnupg1
     gource
