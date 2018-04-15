@@ -72,9 +72,9 @@
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.zeroconf.discovery.enable = true;
-    sane.enable = true; # scanner support
-    sane.snapshot = true;
-    sane.netConf = "192.168.42.123";
+    #sane.enable = true; # scanner support
+    #sane.snapshot = true;
+    #sane.netConf = "192.168.42.123";
   };
 
   nixpkgs.config = {
