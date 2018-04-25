@@ -42,7 +42,6 @@ in {
     gitAndTools.gitFull
     gitAndTools.gitSVN
     gitAndTools.hub
-    gitFull
     gitwatch
     glxinfo
     gnome3.dconf
@@ -55,7 +54,6 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
-    ino
     iperf
     jetbrains.clion
     kate
@@ -111,7 +109,6 @@ in {
     taskwarrior
     telnet
     thunderbird
-    todo-txt-cli
     todo-txt-cli
     tome4
     udiskie
