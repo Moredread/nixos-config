@@ -21,7 +21,7 @@
   networking.hostName = "grable";
   networking.hostId = "1a9f9478";
 
-  #i18n.consoleKeyMap = "en_US";
+  powerManagement.powertop.enable = true;
 
   nix = {
     buildCores = 8;
