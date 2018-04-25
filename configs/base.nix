@@ -245,7 +245,8 @@
     alias vim='${pkgs.neovim}/bin/nvim'
     alias ncd='pushd /etc/nixos'
     alias v='nvim'
-    alias upgrade='sudo sh -c "nix-channel --update; nixos-rebuild switch"; home-manager switch'
+    alias upgrade='sudo sh -c "nix-channel --update; nixos-rebuild switch"; nix-channel --update; home-manager switch'
+    alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
 
