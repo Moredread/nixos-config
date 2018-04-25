@@ -1,13 +1,11 @@
 { pkgs, ... }:
 let
-  unstable = import <nixos-unstable> {};
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
-  slic3r-prusa-mine = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
 in {
   home.packages = with pkgs; [
-    #slic3r-prusa-mine
-    afew
-    alot
+    #afew
+    #alot
+    #notmuch
     apg
     aria2
     aspellDicts.de
@@ -72,7 +70,6 @@ in {
     nix-prefetch-scripts
     nixopsUnstable
     nmap
-    notmuch
     nox
     offlineimap
     p7zip
@@ -89,11 +86,13 @@ in {
     qrencode
     ranger
     rclone
+    ripgrep
     rsync
     rxvt_unicode
     screen
     scrot
     skype
+    slic3r-prusa3d
     sloccount
     socat
     speedtest-cli
@@ -109,14 +108,11 @@ in {
     tome4
     udiskie
     unrar
-    unstable.arduino
-    unstable.ino
-    unstable.ripgrep
-    unstable.wineFull
-    unstable.winetricks
     unzip
     vagrant
     vlc
+    wineFull
+    winetricks
     xbrightness
     xorg.xbacklight
     xorg.xev
