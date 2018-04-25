@@ -42,6 +42,8 @@ in {
     gitFull
     gitwatch
     glxinfo
+    gnome3.dconf
+    gnome3.dconf-editor
     gnumake
     gnupg
     gnupg1
