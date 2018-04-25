@@ -7,6 +7,7 @@ in {
     #alot
     #notmuch
     apg
+    arduino
     aria2
     aspellDicts.de
     aspellDicts.en
@@ -15,6 +16,7 @@ in {
     avrdude
     awscli
     bind.dnsutils
+    binutils
     blender
     borgbackup
     calibre
@@ -29,6 +31,7 @@ in {
     electrum
     evince
     exfat-utils
+    feh
     ffmpeg
     findutils
     firefox-bin
@@ -52,6 +55,7 @@ in {
     i3status
     idea.pycharm-professional
     inkscape
+    ino
     iperf
     jetbrains.clion
     kate
@@ -75,9 +79,11 @@ in {
     nox
     offlineimap
     p7zip
+    pamixer
     paperkey
     pass
     pass-otp
+    pasystray
     pavucontrol
     polkit_gnome
     posix_man_pages
