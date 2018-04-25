@@ -4,7 +4,7 @@ let
   myStuff = {
     i3.modKey = "Mod4";
     brightnessStep = "2.5";
-    volumeStep = "2.5";
+    volumeStep = "2";
   };
 in {
   xsession.enable = true;
@@ -97,14 +97,14 @@ in {
       workspace 9 output DP-1
       workspace 10 output DP-1
 
-      bindsym XF86AudioLowerVolume exec ${alsaUtils}/bin/amixer -q set Master ${myStuff.volumeStep}%-
-      bindsym XF86AudioRaiseVolume exec ${alsaUtils}/bin/amixer -q set Master ${myStuff.volumeStep}%+
-      bindsym XF86AudioMute exec ${alsaUtils}/bin/amixer -q set Master toggle
-      bindsym XF86AudioMicMute exec ${alsaUtils}/bin/amixer -q set Capture toggle
+      bindsym XF86AudioLowerVolume exec ${pamixer}/bin/pamixer -d ${myStuff.volumeStep}
+      bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/pamixer -i ${myStuff.volumeStep}
+      bindsym XF86AudioMute exec ${pamixer}/bin/pamixer -t
+      bindsym XF86AudioMicMute exec ${pamixer}/bin/pamixer --source "alsa_input.pci-0000_00_1f.3.analog-stereo" -t
       bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/xbacklight -dec ${myStuff.brightnessStep}
       bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/xbacklight -inc ${myStuff.brightnessStep}
       bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
-      bindsym XF86Calculator exec ${i3lock}/bin/i3lock
+      bindsym XF86Sleep exec ${i3lock}/bin/i3lock
 
       bindsym Print exec ${scrot}/bin/scrot
     '';
