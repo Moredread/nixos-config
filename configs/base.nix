@@ -215,7 +215,7 @@
     command-not-found.enable = true;
     dconf.enable = true;
     #fish.enable = true;
-    #java.enable = true;
+    java.enable = true;
     mosh.enable = true;
     #mtr.enable = true;
     #wireshark.enable = true;
