@@ -88,8 +88,10 @@ in {
     powertop
     profanity
     python36Packages.virtualenv
+    httpie
     python3Packages.mps-youtube
     qrencode
+    qsyncthingtray
     ranger
     rclone
     ripgrep

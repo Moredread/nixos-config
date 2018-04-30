@@ -7,6 +7,8 @@ let
     volumeStep = "2";
   };
 in {
+  imports = [ ../modules/pasystray.nix ];
+
   xsession.enable = true;
 
   services = {
@@ -17,6 +19,7 @@ in {
     gpg-agent.defaultCacheTtl = 3600;
     gpg-agent.defaultCacheTtlSsh = 3600;
     #gpg-agent.enableSshSupport = true;
+    pasystray.enable = true;
     syncthing.tray = true;
   };
 

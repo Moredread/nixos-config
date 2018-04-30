@@ -38,7 +38,6 @@
     python27Packages.virtualenvwrapper
     python35Full
     python35Packages.neovim
-    qsyncthingtray
     ripgrep
     rsync
     screen
