@@ -309,6 +309,8 @@
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 ]; # bittorrent + dht
   networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 ];
   #networking.firewall.enable = false;
+  #networking.firewall.logRefusedPackets = true;
+  networking.firewall.checkReversePath = "loose";
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.09";
