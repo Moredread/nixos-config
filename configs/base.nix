@@ -22,7 +22,10 @@
     };
   };
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.macAddress = "stable";
+  };
 
   time.timeZone = "Europe/Berlin";
 
