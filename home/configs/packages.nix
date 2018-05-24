@@ -43,6 +43,8 @@ in {
     gitAndTools.gitSVN
     gitAndTools.hub
     gitwatch
+    linux-steam-integration
+    jq
     glxinfo
     gnome3.dconf
     gnome3.dconf-editor
@@ -50,11 +52,13 @@ in {
     gnupg
     gnupg1
     gource
+    httpie
     i3lock
     i3status
     idea.pycharm-professional
     inkscape
     iperf
+    isync
     jetbrains.clion
     kate
     kdiff3
@@ -88,7 +92,6 @@ in {
     powertop
     profanity
     python36Packages.virtualenv
-    httpie
     python3Packages.mps-youtube
     qrencode
     qsyncthingtray
@@ -118,7 +121,7 @@ in {
     unzip
     vagrant
     vlc
-    wineFull
+    wine
     winetricks
     xbrightness
     xorg.xbacklight

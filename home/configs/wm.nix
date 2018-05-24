@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   myStuff = {
@@ -6,8 +6,72 @@ let
     brightnessStep = "2.5";
     volumeStep = "2";
   };
+  unstable = import <nixos-unstable> {};
+
+  i3status-rust-config = pkgs.writeText "i3status-rust-config.toml" ''
+      theme = "slick"
+
+      [icons]
+      name = "awesome"
+
+      [[block]]
+      block = "music"
+      player = "spotify"
+      buttons = ["play", "next"]
+
+      [[block]]
+      block = "net"
+      device = "wlp2s0"
+      ssid = true
+      ip = true
+      speed_up = true
+      graph_up = false
+      interval = 5
+
+      [[block]]
+      block = "disk_space"
+      path = "/"
+      alias = "/"
+      info_type = "available"
+      unit = "GB"
+      interval = 20
+
+      [[block]]
+      block = "memory"
+      display_type = "memory"
+      format_mem = "{Mup}%"
+      format_swap = "{SUp}%"
+
+      [[block]]
+      block = "cpu"
+      interval = 1
+
+      [[block]]
+      block = "load"
+      interval = 1
+      format = "{1m}"
+
+      [[block]]
+      block = "backlight"
+      device = "intel_backlight"
+
+      [[block]]
+      block = "battery"
+      interval = 10
+      show = "both"
+
+      [[block]]
+      block = "time"
+      interval = 60
+      format = "%a %d/%m %R"
+    '';
 in {
   imports = [ ../modules/pasystray.nix ];
+
+  nixpkgs.overlays = [ (self: super: {
+    #i3status-rust = unstable.i3status-rust.overrideDerivation ( oldAttrs: { buildInputs = [ self.alsaUtils self.font-awesome-ttf self.powerline-fonts ] ++ oldAttrs.buildInputs; });
+    i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
+  })];
 
   xsession.enable = true;
 
@@ -113,6 +177,11 @@ in {
     '';
 
     config.fonts = [ "DejaVu Sans Mono 10" ];
+
+    config.bars = [ {
+      statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
+    }
+    ];
   };
 
   home.packages = with pkgs; [

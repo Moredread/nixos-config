@@ -8,8 +8,8 @@ in {
     packageOverrides = pkgs: {
       unifi = unstable.unifi;
       emby = unstable.emby;
-      sane-backends = unstable.sane-backends;
-      sane-backends-git = unstable.sane-backends-git;
+      #sane-backends = unstable.sane-backends;
+      #sane-backends-git = unstable.sane-backends-git;
     };
   };
 }
