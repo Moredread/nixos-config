@@ -32,22 +32,24 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
+      corefonts  # Microsoft free fonts
+      font-awesome_4
       dejavu_fonts
       fira
       fira-mono
       google-fonts
       inconsolata  # monospaced
+      libertine
       mononoki
       overpass
       oxygenfonts
+      powerline-fonts
       source-code-pro
       source-sans-pro
       source-serif-pro
       ttf_bitstream_vera
       ubuntu_font_family  # Ubuntu fonts
       unifont # some international languages
-      libertine
-#     corefonts  # Microsoft free fonts
     ];
     fontconfig = {
       hinting.autohint = true;
