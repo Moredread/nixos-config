@@ -9,6 +9,7 @@
     dmenu
     exfat
     exfat-utils
+    fwupd
     gitAndTools.gitSVN
     gparted
     hdparm

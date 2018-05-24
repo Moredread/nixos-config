@@ -124,6 +124,9 @@
       challengeResponseAuthentication = false;
     };
 
+    #flatpak.enable = true;
+
+    fwupd.enable = true;
     acpid.enable = true;
     dbus.enable = true;
     locate.enable = true;

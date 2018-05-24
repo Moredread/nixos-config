@@ -3,9 +3,8 @@ let
   gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 in {
   home.packages = with pkgs; [
-    #afew
-    #alot
-    #notmuch
+    afew
+    alot
     apg
     arduino
     aria2
@@ -78,6 +77,7 @@ in {
     nix-prefetch-scripts
     nixopsUnstable
     nmap
+    notmuch
     nox
     offlineimap
     p7zip
