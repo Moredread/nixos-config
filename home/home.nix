@@ -4,6 +4,7 @@
     configs/packages.nix
     configs/programs.nix
     configs/wm.nix
+    configs/overrides.nix
   ];
 
   home.keyboard.layout = "en_US";
