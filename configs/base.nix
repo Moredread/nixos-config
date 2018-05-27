@@ -151,7 +151,7 @@
 
     # cups, for printing documents
     printing.enable = true;
-    printing.drivers = [ pkgs.gutenprint ];
+    printing.drivers = with pkgs; [ gutenprint hplip ];
 
     avahi = {
       enable = true;
