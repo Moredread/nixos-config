@@ -100,6 +100,11 @@ in {
       "${modKey}+Up" = "focus up";
       "${modKey}+Right" = "focus right";
 
+      "${modKey}+j" = "focus left";
+      "${modKey}+l" = "focus down";
+      "${modKey}+k" = "focus up";
+      "${modKey}+semicolon" = "focus right";
+
       "${modKey}+Shift+Left" = "move left";
       "${modKey}+Shift+Down" = "move down";
       "${modKey}+Shift+Up" = "move up";
