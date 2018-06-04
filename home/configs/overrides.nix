@@ -4,7 +4,7 @@ let
   overlay = self: super: {
     gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
     slic3r-prusa3d = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
-    #freecad = unstable.freecad;
+    freecad = unstable.freecad;
   };
 in
 {
