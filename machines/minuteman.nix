@@ -27,11 +27,11 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
-      options = [ "relatime,discard,ssd,autodefrag,compress=zlib,space_cache" ];
+      options = [ "relatime,ssd,autodefrag,compress=zlib,space_cache" ];
     };
 
   boot.initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
-  boot.initrd.luks.devices."root-crypt".allowDiscards = true;
+  #boot.initrd.luks.devices."root-crypt".allowDiscards = true;
 
   powerManagement.cpuFreqGovernor = "ondemand";
 
@@ -47,6 +47,6 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/fee6564b-baea-4bcb-b531-78679b083d3c";
       fsType = "ext4";
-        options = [ "relatime,discard" ];
+        options = [ "relatime" ];
     };
 }
