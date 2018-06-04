@@ -33,7 +33,7 @@ let
 in
 stdenv.mkDerivation rec {
   name = "slic3r-prusa-edition-${version}";
-  version = "1.40.0-alpha1";
+  version = "1.40.0-beta";
 
   enableParallelBuilding = true;
 
@@ -74,6 +74,10 @@ stdenv.mkDerivation rec {
 
   prePatch = ''
     sed -i 's|"/usr/include/asm-generic/ioctls.h"|<asm-generic/ioctls.h>|g' xs/src/libslic3r/GCodeSender.cpp
+    # We need to fix the library installation path, as PERL_VENDORLIB and
+    # PERL_VENDORARCH are set incorrectly. This can be seen when running cmake.
+    sed -i 's|''${PERL_VENDORARCH}|lib/slic3r-prusa3d|g' xs/CMakeLists.txt
+    sed -i 's|''${PERL_VENDORLIB}|lib/slic3r-prusa3d|g' xs/CMakeLists.txt
   '';
 
   postInstall = ''
@@ -90,7 +94,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "prusa3d";
     repo = "Slic3r";
-    sha256 = "0npbrwnzcpr26i3r9hspqiq89yxf763sf71r72br6dw3nrj1wdwi";
+    sha256 = "0yzj56kahcdxbmhx2kg0izcnjbwmlrwch0ir2c5f3ks30ph20rck";
     rev = "version_${version}";
   };
 

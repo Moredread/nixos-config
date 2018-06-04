@@ -258,14 +258,14 @@
 
     setopt extendedglob
 
+    alias vim='nvim'
     alias edit-nixos='nvim /etc/nixos/**/*.nix~*/home/* -p'
     alias edit-home='nvim /etc/nixos/home/**/*.nix -p'
     alias home-edit='edit-home'
     alias nixos-edit='edit-nixos'
     alias he='edit-home'
     alias ne='edit-nixos'
-    alias vim-update='nvim -c :PlugUpdate'
-    alias vim='${pkgs.neovim}/bin/nvim'
+    alias vim-update='vim -c :PlugUpdate'
     alias ncd='pushd /etc/nixos'
     alias v='nvim'
     alias update='sudo sh -c "nix-channel --update"; mkdir -p ~/.nix-defexpr; rm -f ~/.nix-defexpr/channels; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'

@@ -1,7 +1,5 @@
 { pkgs, ... }:
-let
-  gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
-in {
+{
   home.packages = with pkgs; [
     afew
     alot
@@ -9,6 +7,7 @@ in {
     arduino
     aria2
     aspellDicts.de
+    isync
     aspellDicts.en
     atool
     autocutsel
@@ -49,6 +48,7 @@ in {
     gnome3.dconf-editor
     gnumake
     gnupg
+    freecad
     gnupg1
     gource
     httpie

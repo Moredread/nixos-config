@@ -1,7 +1,10 @@
 { pkgs, lib, ... }:
 let
+  unstable = import <nixos-unstable> {};
   overlay = self: super: {
-    slic3r-prusa3d = super.callPackage ../pkgs/slic3r-prusa3d.nix {};
+    gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
+    slic3r-prusa3d = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
+    freecad = unstable.freecad;
   };
 in
 {
