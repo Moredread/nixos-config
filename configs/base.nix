@@ -274,6 +274,10 @@
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
 
+    alias ip="ip --color"
+    alias 4="ip -4"
+    alias 6="ip -6"
+
     function savepath {
         pwd > ~/.last_dir
     }
