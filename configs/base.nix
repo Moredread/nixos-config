@@ -189,6 +189,15 @@
       xkbOptions = "ctrl:nocaps";
 
       useGlamor = true;
+
+      inputClassSections = [
+        ''
+          Identifier "BT mouse"
+          MatchDriver "libinput"
+          MatchProduct "BM30X mouse"
+          Option "AccelSpeed" "-0.5"
+        ''
+      ];
     };
 
     dbus.packages = [ pkgs.blueman ];
