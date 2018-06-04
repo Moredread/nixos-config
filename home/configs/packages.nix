@@ -9,6 +9,7 @@ in {
     arduino
     aria2
     aspellDicts.de
+    isync
     aspellDicts.en
     atool
     autocutsel
