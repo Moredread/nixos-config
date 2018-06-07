@@ -5,6 +5,7 @@ let
     gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
     slic3r-prusa3d = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
     freecad = unstable.freecad;
+    syncthing = unstable.syncthing;
   };
 in
 {

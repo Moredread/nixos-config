@@ -6,6 +6,7 @@
     ../configs/fonts.nix
     ../configs/overrides.nix
     ../configs/packages.nix
+    ../home/configs/overrides.nix
   ];
 
   boot = {
