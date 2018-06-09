@@ -80,6 +80,7 @@
     notmuch
     nox
     offlineimap
+    google-chrome
     p7zip
     pamixer
     paperkey
