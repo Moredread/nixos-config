@@ -234,10 +234,6 @@
     alias he='edit-home'
     alias ne='edit-nixos'
     alias vim-update='vim -c :PlugUpdate'
-    alias ncd='pushd /etc/nixos'
-    alias v='nvim'
-    alias update='sudo sh -c "nix-channel --update"; mkdir -p ~/.nix-defexpr; rm -f ~/.nix-defexpr/channels; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'
-    alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
     alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
@@ -245,6 +241,16 @@
     alias ip="ip --color"
     alias 4="ip -4"
     alias 6="ip -6"
+
+    alias x="${pkgs.atool}/bin/atool -x"
+
+
+    alias ncd='pushd /etc/nixos'
+    alias v='nvim'
+    alias update='sudo sh -c "nix-channel --update"; mkdir -p ~/.nix-defexpr; rm -f ~/.nix-defexpr/channels; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'
+    alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
+
+    alias cdn="pushd /etc/nixos"
 
     function savepath {
         pwd > ~/.last_dir
