@@ -12,6 +12,9 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
 
+    # Dell 9370 needs it to not drain during sleep
+    kernelParams = [ "mem_sleep_default=deep" ];
+
     cleanTmpDir = true;
     tmpOnTmpfs = true;
 
