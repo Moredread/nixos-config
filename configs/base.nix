@@ -56,10 +56,6 @@
   nixpkgs.config = {
     packageOverrides = pkgs: rec {
       gajim = pkgs.gajim.override { enableNotifications = true; };
-      profanity = pkgs.lib.overrideDerivation pkgs.profanity (attrs: {
-        buildInputs = attrs.buildInputs ++ [ pkgs.python3 ];
-        enableParallelBuilding = true;
-      });
     };
   };
 
