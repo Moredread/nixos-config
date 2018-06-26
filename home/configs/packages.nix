@@ -7,7 +7,6 @@
     arduino
     aria2
     aspellDicts.de
-    isync
     aspellDicts.en
     atool
     autocutsel
@@ -34,6 +33,7 @@
     findutils
     firefox-bin
     flvstreamer
+    freecad
     fritzing
     fuse_exfat
     gimp
@@ -41,15 +41,13 @@
     gitAndTools.gitSVN
     gitAndTools.hub
     gitwatch
-    linux-steam-integration
-    jq
     glxinfo
     gnome3.dconf
     gnome3.dconf-editor
     gnumake
     gnupg
-    freecad
     gnupg1
+    google-chrome
     gource
     httpie
     i3lock
@@ -58,7 +56,9 @@
     inkscape
     iperf
     isync
+    isync
     jetbrains.clion
+    jq
     kate
     kdiff3
     keepassx2
@@ -66,6 +66,7 @@
     krename
     krusader
     libreoffice
+    linux-steam-integration
     love
     mercurialFull
     minecraft
@@ -80,10 +81,10 @@
     notmuch
     nox
     offlineimap
-    google-chrome
     p7zip
     pamixer
     paperkey
+    paraview
     pass
     pass-otp
     pasystray
@@ -103,6 +104,7 @@
     rxvt_unicode
     screen
     scrot
+    shellcheck
     skype
     slic3r-prusa3d
     sloccount
@@ -116,7 +118,6 @@
     telnet
     thunderbird
     todo-txt-cli
-    tome4
     udiskie
     unrar
     unzip
@@ -134,5 +135,6 @@
     youtube-dl
     yubioath-desktop
     zip
+    zotero
   ];
 }
