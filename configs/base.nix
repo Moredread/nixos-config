@@ -16,7 +16,7 @@
     kernelParams = [ "mem_sleep_default=deep" ];
 
     cleanTmpDir = true;
-    tmpOnTmpfs = true;
+    #tmpOnTmpfs = true;
 
     loader.grub = {
       ipxe.netboot-xyz = ''
