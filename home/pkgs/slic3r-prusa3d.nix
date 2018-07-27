@@ -1,6 +1,6 @@
 { stdenv, fetchFromGitHub, makeWrapper, which, cmake, perl, perlPackages,
-  boost, tbb, wxGTK30, pkgconfig, gtk3, fetchurl, gtk2, bash, libGLU,
-  glew, eigen, curl }:
+  boost, tbb, wxGTK30, pkgconfig, gtk3, fetchurl, gtk2, libGLU,
+  glew, eigen, curl, gtest, nlopt, pcre, xorg }:
 let
   AlienWxWidgets = perlPackages.buildPerlPackage rec {
     name = "Alien-wxWidgets-0.69";
@@ -33,21 +33,25 @@ let
 in
 stdenv.mkDerivation rec {
   name = "slic3r-prusa-edition-${version}";
-  version = "1.40.1-beta";
+  version = "1.41.0-alpha2";
 
   enableParallelBuilding = true;
 
   buildInputs = [
     cmake
     curl
-    perl
-    makeWrapper
     eigen
     glew
+    gtest
+    makeWrapper
+    pcre
+    perl
     tbb
     which
     Wx
     WxGLCanvas
+    xorg.libXdmcp
+    xorg.libpthreadstubs
   ] ++ (with perlPackages; [
     boost
     ClassXSAccessor
@@ -72,12 +76,12 @@ stdenv.mkDerivation rec {
     XMLSAX
   ]);
 
+  NLOPT = "${nlopt}";
+
   prePatch = ''
     sed -i 's|"/usr/include/asm-generic/ioctls.h"|<asm-generic/ioctls.h>|g' xs/src/libslic3r/GCodeSender.cpp
-    # We need to fix the library installation path, as PERL_VENDORLIB and
-    # PERL_VENDORARCH are set incorrectly. This can be seen when running cmake.
-    sed -i 's|''${PERL_VENDORARCH}|lib/slic3r-prusa3d|g' xs/CMakeLists.txt
-    sed -i 's|''${PERL_VENDORLIB}|lib/slic3r-prusa3d|g' xs/CMakeLists.txt
+    sed -i "s|\''${PERL_VENDORARCH}|$out/lib/slic3r-prusa3d|g" xs/CMakeLists.txt
+    sed -i "s|\''${PERL_VENDORLIB}|$out/lib/slic3r-prusa3d|g" xs/CMakeLists.txt
   '';
 
   postInstall = ''
@@ -94,7 +98,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "prusa3d";
     repo = "Slic3r";
-    sha256 = "1dwgks6wvfnkgpp0krpnkj21q41saf6xng5spsbjk2q455q8yfad";
+    sha256 = "02mihplg28446al231f4is9ac1dwz4qrnz0gbki1iy2a353lp406";
     rev = "version_${version}";
   };
 
