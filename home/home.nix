@@ -7,7 +7,7 @@
     configs/overrides.nix
   ];
 
-  home.keyboard.layout = "en_US";
+  home.keyboard.layout = "us";
   home.keyboard.options = [ "compose:rctrl" "caps:none" ];
   home.language = {
     base = "en_US.utf8";
