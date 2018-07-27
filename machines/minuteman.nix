@@ -17,6 +17,7 @@
   boot.cleanTmpDir = true;
 
   networking.hostName = "minuteman";
+  networking.hostId = "0eee33a8";
 
   time.hardwareClockInLocalTime = true;
 

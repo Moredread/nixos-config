@@ -26,7 +26,7 @@
         chain --autofree https://boot.netboot.xyz
       '';
     };
-    supportedFilesystems = [ "nfs" "cifs" ];
+    supportedFilesystems = [ "nfs" "cifs" "zfs" ];
   };
 
   networking.networkmanager = {
