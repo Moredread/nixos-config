@@ -26,9 +26,10 @@
     mdadm
     mpv
     ncdu
-    nfs-utils
+    neovim
     netcat
     nettools
+    nfs-utils
     nixops
     ntfs3g
     oh-my-zsh
@@ -36,10 +37,6 @@
     psmisc
     pv
     pwgen
-    python27Full
-    python27Packages.virtualenvwrapper
-    python35Full
-    python35Packages.neovim
     ripgrep
     rsync
     screen

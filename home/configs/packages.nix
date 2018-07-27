@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    afew
-    alot
     apg
     arduino
     aria2
@@ -33,12 +31,14 @@
     exfat-utils
     feh
     ffmpeg
+    file
     findutils
     firefox-bin
     flvstreamer
     freecad
     fritzing
     fuse_exfat
+    gawk
     gimp
     gitAndTools.gitFull
     gitAndTools.gitSVN
@@ -47,6 +47,7 @@
     glxinfo
     gnome3.dconf
     gnome3.dconf-editor
+    gnugrep
     gnumake
     gnupg
     gnupg1
@@ -59,7 +60,7 @@
     inkscape
     iperf
     isync
-    isync
+    iw
     jetbrains.clion
     jq
     kate
@@ -83,7 +84,6 @@
     nixopsUnstable
     nixos-icons
     nmap
-    notmuch
     nox
     offlineimap
     p7zip
@@ -98,6 +98,10 @@
     posix_man_pages
     powertop
     profanity
+    python27Full
+    python27Packages.virtualenvwrapper
+    python35Full
+    python35Packages.virtualenvwrapper
     python36Packages.virtualenv
     python3Packages.mps-youtube
     qrencode
@@ -116,6 +120,7 @@
     socat
     speedtest-cli
     spotify
+    sshfs
     steam
     subversion
     syncthing
