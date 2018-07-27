@@ -11,6 +11,7 @@
     exfat-utils
     fwupd
     gitAndTools.gitSVN
+    gitAndTools.hub
     gparted
     hdparm
     htop

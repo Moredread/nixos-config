@@ -213,7 +213,7 @@
     alias 6="ip -6"
 
     alias x="${pkgs.atool}/bin/atool -x"
-
+    alias git="${pkgs.gitAndTools.hub}/bin/hub"
 
     alias ncd='pushd /etc/nixos'
     alias v='nvim'
