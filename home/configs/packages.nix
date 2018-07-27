@@ -15,7 +15,10 @@
     bind.dnsutils
     binutils
     blender
+    blueman
     borgbackup
+    breeze-icons
+    breeze-qt5
     calibre
     chromium
     daemontools
@@ -68,6 +71,7 @@
     libreoffice
     linux-steam-integration
     love
+    mc
     mercurialFull
     minecraft
     mplayer
@@ -77,6 +81,7 @@
     networkmanagerapplet
     nix-prefetch-scripts
     nixopsUnstable
+    nixos-icons
     nmap
     notmuch
     nox

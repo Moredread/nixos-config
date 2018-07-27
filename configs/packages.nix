@@ -26,6 +26,7 @@
     mdadm
     mpv
     ncdu
+    nfs-utils
     netcat
     nettools
     nixops
