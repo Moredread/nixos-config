@@ -141,23 +141,17 @@
     xserver = {
       enable = true;
 
+      libinput.enable = true;
+      desktopManager.xterm.enable = false;
+      xkbOptions = "ctrl:nocaps";
+
+      useGlamor = true;
       displayManager.sessionCommands = '''';
       displayManager.slim = {
         enable = true;
         autoLogin  = true;
         defaultUser = "addy";
       };
-
-      libinput.enable = true;
-      #windowManager.i3.enable = true;
-      #desktopManager.default = "none";
-      #windowManager.default = "i3";
-
-      desktopManager.xterm.enable = false;
-
-      xkbOptions = "ctrl:nocaps";
-
-      useGlamor = true;
 
       inputClassSections = [
         ''
