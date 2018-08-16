@@ -32,6 +32,7 @@
   networking.networkmanager = {
     enable = true;
     wifi.macAddress = "stable";
+    wifi.powersave = true;
   };
 
   time.timeZone = "Europe/Berlin";
