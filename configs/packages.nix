@@ -31,7 +31,6 @@
     netcat
     nettools
     nfs-utils
-    nixops
     ntfs3g
     oh-my-zsh
     p7zip

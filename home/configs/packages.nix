@@ -2,31 +2,23 @@
 {
   home.packages = with pkgs; [
     apg
-    arduino
     aria2
     aspellDicts.de
     aspellDicts.en
     atool
     autocutsel
-    avrdude
-    awscli
     bind.dnsutils
     binutils
-    blender
     blueman
     borgbackup
     breeze-icons
     breeze-qt5
-    calibre
     chromium
-    daemontools
-    dmidecode
+    direnv
     docker
     docker_compose
     dos2unix
-    dropbox
     dunst
-    electrum
     evince
     exfat-utils
     feh
@@ -35,43 +27,23 @@
     findutils
     firefox-bin
     flvstreamer
-    freecad
-    fritzing
     fuse_exfat
     gawk
-    gimp
     gitAndTools.gitFull
-    gitAndTools.gitSVN
     gitAndTools.hub
     gitwatch
-    glxinfo
     gnome3.dconf
     gnome3.dconf-editor
     gnugrep
     gnumake
     gnupg
     gnupg1
-    google-chrome
     gource
-    httpie
     i3lock
-    i3status
-    idea.pycharm-professional
-    inkscape
-    iperf
-    isync
-    iw
-    jetbrains.clion
     jq
-    kate
-    kdiff3
     keepassx2
-    kget
-    krename
     krusader
-    libreoffice
     linux-steam-integration
-    love
     mc
     mercurialFull
     minecraft
@@ -81,15 +53,12 @@
     neovim
     networkmanagerapplet
     nix-prefetch-scripts
-    nixopsUnstable
     nixos-icons
     nmap
     nox
-    offlineimap
     p7zip
     pamixer
     paperkey
-    paraview
     pass
     pass-otp
     pasystray
@@ -97,17 +66,10 @@
     polkit_gnome
     posix_man_pages
     powertop
-    profanity
-    python27Full
-    python27Packages.virtualenvwrapper
-    python35Full
-    python35Packages.virtualenvwrapper
-    python36Packages.virtualenv
     python3Packages.mps-youtube
     qrencode
     qsyncthingtray
     ranger
-    rclone
     ripgrep
     rsync
     rxvt_unicode
@@ -117,7 +79,6 @@
     skype
     slic3r-prusa3d
     sloccount
-    socat
     speedtest-cli
     spotify
     sshfs
@@ -128,19 +89,11 @@
     telnet
     thunderbird
     todo-txt-cli
-    udiskie
     unrar
     unzip
-    vagrant
     vlc
-    wine
-    winetricks
     xbrightness
-    xorg.xbacklight
-    xorg.xev
-    xorg.xvinfo
     xpdf
-    xsane
     xsel
     youtube-dl
     yubioath-desktop
