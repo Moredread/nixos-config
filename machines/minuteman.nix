@@ -7,23 +7,29 @@
       ../configs/users-and-groups.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
+  boot = {
+    loader.grub.enable = true;
+    loader.grub.version = 2;
 
-  boot.loader.grub.memtest86.enable = true;
-  boot.loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
+    loader.grub.memtest86.enable = true;
+    loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
 
-  boot.cleanTmpDir = true;
+    cleanTmpDir = true;
+    tmpOnTmpfs = true;
+
+    initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+    initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
+    #initrd.luks.devices."root-crypt".allowDiscards = true;
+
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+  };
+
 
   networking.hostName = "minuteman";
   networking.hostId = "0eee33a8";
 
   time.hardwareClockInLocalTime = true;
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
@@ -31,8 +37,6 @@
       options = [ "relatime,ssd,autodefrag,compress=zlib,space_cache" ];
     };
 
-  boot.initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
-  #boot.initrd.luks.devices."root-crypt".allowDiscards = true;
 
   powerManagement.cpuFreqGovernor = "ondemand";
 
