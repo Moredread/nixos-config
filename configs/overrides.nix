@@ -3,13 +3,11 @@
 let
   baseconfig = { allowUnfree = true; };
   unstable = import <nixos-unstable> { config = baseconfig; };
-in {
-  nixpkgs.config = {
-    packageOverrides = pkgs: {
-      unifi = unstable.unifi;
-      emby = unstable.emby;
-      #sane-backends = unstable.sane-backends;
-      #sane-backends-git = unstable.sane-backends-git;
-    };
+  master = import /home/addy/nixpkgs { config = baseconfig; };
+  overlay = self: super: {
+    unifi = unstable.unifi;
+    emby = unstable.emby;
   };
+in rec {
+  nixpkgs.overlays = [ overlay ];
 }

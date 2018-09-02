@@ -8,6 +8,7 @@
     ../configs/overrides.nix
     ../configs/packages.nix
     ../home/configs/overrides.nix
+    #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
   ];
 
   boot = {

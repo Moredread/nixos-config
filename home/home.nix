@@ -17,4 +17,6 @@
   };
 
   systemd.user.startServices = true;
+
+  home.extraOutputsToInstall = ["debug"];
 }
