@@ -259,7 +259,7 @@
   };
 
   nix = {
-    package = pkgs.nixUnstable;
+    #package = pkgs.nixUnstable;
 
     useSandbox = true;
     buildCores = lib.mkDefault 0;
