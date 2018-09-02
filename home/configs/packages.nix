@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #kicad
     apg
     aria2
     aspellDicts.de
@@ -14,7 +15,10 @@
     breeze-icons
     breeze-qt5
     chromium
+    daemontools
+    dfeet
     direnv
+    dmidecode
     docker
     docker_compose
     dos2unix
@@ -29,6 +33,7 @@
     flvstreamer
     fuse_exfat
     gawk
+    gdb
     gitAndTools.gitFull
     gitAndTools.hub
     gitwatch
