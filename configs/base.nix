@@ -37,6 +37,8 @@
 
   time.timeZone = "Europe/Berlin";
 
+  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
+
   virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
