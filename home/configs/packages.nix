@@ -14,6 +14,7 @@
     borgbackup
     breeze-icons
     breeze-qt5
+    cachix
     chromium
     daemontools
     dfeet
