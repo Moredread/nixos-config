@@ -274,8 +274,9 @@
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" ];
   };
 
-  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 ]; # bittorrent + dht
-  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 ];
+  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380] ++ lib.range 27000 27036; # bittorrent + dht
+  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 ] ++ lib.range 27000 27036;
+
   #networking.firewall.enable = false;
   #networking.firewall.logRefusedPackets = true;
   networking.firewall.checkReversePath = "loose";
