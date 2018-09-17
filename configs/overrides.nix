@@ -7,6 +7,7 @@ let
   overlay = self: super: {
     unifi = unstable.unifi;
     emby = unstable.emby;
+    microcodeIntel = unstable.microcodeIntel;
   };
 in rec {
   nixpkgs.overlays = [ overlay ];
