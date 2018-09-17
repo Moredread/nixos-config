@@ -46,14 +46,14 @@
     gnupg1
     gource
     i3lock
+    inetutils
     jq
     keepassx2
     krusader
-    linux-steam-integration
+    #linux-steam-integration
     mc
     mercurialFull
     minecraft
-    mplayer
     mpv
     mumble
     neovim
@@ -65,8 +65,8 @@
     p7zip
     pamixer
     paperkey
-    pass
-    pass-otp
+    #pass
+    #pass-otp
     pasystray
     pavucontrol
     polkit_gnome
@@ -92,7 +92,6 @@
     subversion
     syncthing
     taskwarrior
-    telnet
     thunderbird
     todo-txt-cli
     unrar
