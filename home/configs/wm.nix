@@ -33,7 +33,7 @@ in {
     enable = true;
 
     config.keybindings = with myStuff.i3; {
-      "${modKey}+Return" = "exec i3-sensible-terminal";
+      "${modKey}+Return" = "exec sh -c 'WINIT_HIDPI_FACTOR=1.4 ${pkgs.alacritty}/bin/alacritty'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
 
