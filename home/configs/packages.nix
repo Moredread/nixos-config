@@ -1,7 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #kicad
+    kicad
+    #linux-steam-integration
+    pass
+    #pass-otp
+    #rxvt_unicode
+    alacritty
     apg
     aria2
     aspellDicts.de
@@ -50,12 +55,12 @@
     jq
     keepassx2
     krusader
-    #linux-steam-integration
     mc
     mercurialFull
     minecraft
     mpv
     mumble
+    mupdf
     neovim
     networkmanagerapplet
     nix-prefetch-scripts
@@ -65,8 +70,6 @@
     p7zip
     pamixer
     paperkey
-    #pass
-    #pass-otp
     pasystray
     pavucontrol
     polkit_gnome
@@ -78,7 +81,6 @@
     ranger
     ripgrep
     rsync
-    rxvt_unicode
     screen
     scrot
     shellcheck

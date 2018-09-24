@@ -41,8 +41,8 @@
     rsync
     screen
     smartmontools
-    urxvt_font_size
-    urxvt_perls
+    #urxvt_font_size
+    #urxvt_perls
     usbutils
     vimHugeX
     vlc

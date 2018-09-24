@@ -39,6 +39,7 @@
 
   time.timeZone = "Europe/Berlin";
 
+  # For Steam
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
   virtualisation.virtualbox.host.enable = true;
@@ -85,6 +86,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  environment.enableDebugInfo = true;
   environment.variables = {
       EDITOR = pkgs.lib.mkOverride 0 "nvim";
   };
@@ -199,7 +201,5 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "18.03";
-
-  environment.enableDebugInfo = true;
 
 }
