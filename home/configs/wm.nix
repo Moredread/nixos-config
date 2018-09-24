@@ -134,6 +134,7 @@ in {
   home.packages = with pkgs; [
     adapta-gtk-theme
     gnome3.adwaita-icon-theme
+    hicolor-icon-theme
     lxappearance
     xorg.xcursorthemes
     zuki-themes
