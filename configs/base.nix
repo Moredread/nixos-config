@@ -94,11 +94,10 @@
   security.dhparams.enable = true;
 
   programs = {
-    #adb.enable = true;
+    adb.enable = true;
     bash.enableCompletion = true;
     command-not-found.enable = true;
     dconf.enable = true;
-    #fish.enable = true;
     #java.enable = true;
     mosh.enable = true;
     #mtr.enable = true;
