@@ -18,5 +18,6 @@
 
   systemd.user.startServices = true;
 
-  home.extraOutputsToInstall = ["debug"];
+  home.extraOutputsToInstall = [ "debug" "doc" "info" "devdoc" ];
+  manual.html.enable = true;
 }
