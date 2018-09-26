@@ -11,7 +11,6 @@ let
   i3status-rust-config = ./i3status-rust-config.toml;
 in {
   nixpkgs.overlays = [ (self: super: {
-    #i3status-rust = unstable.i3status-rust.overrideDerivation ( oldAttrs: { buildInputs = [ self.alsaUtils self.font-awesome-ttf self.powerline-fonts ] ++ oldAttrs.buildInputs; });
     i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
   })];
 
