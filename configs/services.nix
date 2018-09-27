@@ -22,6 +22,9 @@
     pcscd.enable = true;
     trezord.enable = true;
 
+    nixosManual.enable = true;
+    nixosManual.showManual = true;
+
     udev.extraRules = with pkgs; ''
       # Trezor
       SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
