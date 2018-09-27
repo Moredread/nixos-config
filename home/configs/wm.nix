@@ -7,7 +7,12 @@ let
   };
   unstable = import <nixos-unstable> {};
 
-  i3status-rust-config = ./i3status-rust-config.toml;
+  config = (import <nixpkgs/nixos> {}).config;
+
+  i3status-rust-config =
+    if config.networking.hostName == "grable"
+    then ./i3status-rust-config.toml
+    else ./i3status-rust-config-minuteman.toml;
 in {
   nixpkgs.overlays = [ (self: super: {
     i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
@@ -31,7 +36,9 @@ in {
     enable = true;
 
     config.keybindings = with myStuff.i3; {
-      "${modKey}+Return" = "exec sh -c 'WINIT_HIDPI_FACTOR=1.4 ${pkgs.alacritty}/bin/alacritty'";
+      "${modKey}+Return" = if config.networking.hostName == "grable"
+        then "exec sh -c 'WINIT_HIDPI_FACTOR=1.4 ${pkgs.alacritty}/bin/alacritty'"
+        else "exec sh -c 'WINIT_HIDPI_FACTOR=2.0 ${pkgs.alacritty}/bin/alacritty'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
 
