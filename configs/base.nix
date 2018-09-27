@@ -139,7 +139,7 @@
     alias x="${pkgs.atool}/bin/atool -x"
     alias git="${pkgs.gitAndTools.hub}/bin/hub"
 
-    alias ncd='pushd /etc/nixos'
+    alias n='pushd /etc/nixos'
     alias v='nvim'
     alias update='sudo sh -c "nix-channel --update"; rm -rf ~/.nix-defexpr; mkdir -p ~/.nix-defexpr; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'
     alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
