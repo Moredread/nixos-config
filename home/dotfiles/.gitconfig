@@ -1,0 +1,24 @@
+[alias]
+	a = add
+	ca = commit -a
+	c = commit
+	co = checkout
+	d = diff
+	l = log
+	rh = reset --hard
+	s = status
+	t = tag
+    glog = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+
+[color]
+	diff = auto
+	color = auto
+
+[user]
+	name = André-Patrick Bubel
+	email = code@andre-bubel.de
+	signingkey = 24B45728
+[push]
+	default = simple
+[commit]
+  gpgsign = true

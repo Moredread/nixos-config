@@ -37,6 +37,17 @@
       options = [ "relatime,ssd,autodefrag,compress=zlib,space_cache" ];
     };
 
+  fileSystems."/media/nas" =
+    { device = "192.168.43.1:/mnt/pool0/public";
+      fsType = "nfs";
+      options = [ "soft" ];
+    };
+
+  fileSystems."/media/nasw" =
+    { device = "192.168.1.1:/mnt/pool0/data/public";
+      fsType = "nfs";
+      options = [ "soft" ];
+    };
 
   powerManagement.cpuFreqGovernor = "ondemand";
 

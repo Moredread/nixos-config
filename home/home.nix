@@ -18,5 +18,12 @@
 
   systemd.user.startServices = true;
 
-  home.extraOutputsToInstall = ["debug"];
+  home.extraOutputsToInstall = [ "debug" "doc" "info" "devdoc" ];
+  manual.html.enable = true;
+
+  home.file.dotfiles = {
+    source = ./dotfiles;
+    target = ".";
+    recursive = true;
+  };
 }
