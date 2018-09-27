@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 let
   myStuff = {
     i3.modKey = "Mod4";

@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    kicad
     #linux-steam-integration
-    pass
     #pass-otp
     #rxvt_unicode
     alacritty
@@ -20,6 +18,7 @@
     breeze-icons
     breeze-qt5
     cachix
+    calibre
     chromium
     daemontools
     dfeet
@@ -54,6 +53,7 @@
     inetutils
     jq
     keepassx2
+    kicad
     krusader
     mc
     mercurialFull
@@ -70,6 +70,7 @@
     p7zip
     pamixer
     paperkey
+    pass
     pasystray
     pavucontrol
     polkit_gnome
