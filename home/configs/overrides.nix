@@ -8,7 +8,6 @@ let
     #electrum = unstable.electrum;
     #freecad = unstable.freecad;
     syncthing = unstable.syncthing;
-    zathura = unstable.zathura;
     nixopsUnstable = unstable.nixopsUnstable;
     cachix = unstable.cachix;
     noti = unstable.noti;
