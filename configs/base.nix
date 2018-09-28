@@ -104,6 +104,8 @@
     #wireshark.enable = true;
 
     # https://www.reddit.com/r/linuxquestions/comments/56jdxx/ohmyzsh_under_nixos/
+    # I'd rather have it in my home config, but I like it installed for all my
+    # users...
     zsh.enable = true;
     zsh.interactiveShellInit = ''
     export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
@@ -148,7 +150,15 @@
     alias cdn="pushd /etc/nixos"
 
     function savepath {
-        pwd > ~/.last_dir
+      pwd > ~/.last_dir
+    }
+
+    function f {
+      find $2 -iname "*$1*"
+    }
+
+    function nix-run {
+      nix-shell -p $1 --run "$*"
     }
 
     # restore last saved path
