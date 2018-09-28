@@ -170,7 +170,7 @@
     zsh.promptInit = ""; # Clear this to avoid a conflict with oh-my-zsh
 
     chromium = {
-        #enable = true;
+        enable = true;
         # Imperatively installed extensions will seamlessly merge with these.
         # Removing extensions here will remove them from chromium, no matter how
         # they were installed.
@@ -207,7 +207,7 @@
 
   #networking.firewall.enable = false;
   #networking.firewall.logRefusedPackets = true;
-  networking.firewall.checkReversePath = "loose";
+  #networking.firewall.checkReversePath = "loose";
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "18.03";
