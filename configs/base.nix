@@ -28,7 +28,7 @@
         chain --autofree https://boot.netboot.xyz
       '';
     };
-    supportedFilesystems = [ "nfs" "cifs" "zfs" ];
+    supportedFilesystems = [ "nfs" "cifs" ];
   };
 
   networking.networkmanager = {
@@ -75,6 +75,7 @@
       Defaults:root,%wheel env_keep+=TERMINFO_DIRS
       Defaults env_keep+=SSH_AUTH_SOCK
       Defaults lecture = never
+      Defaults !tty_tickets
       root   ALL=(ALL) SETENV: ALL
       %wheel ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
     '';
@@ -205,9 +206,12 @@
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380] ++ lib.range 27000 27036; # bittorrent + dht
   networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 ] ++ lib.range 27000 27036;
 
+  # For wg-quick VPN
+  networking.firewall.checkReversePath = "loose";
+
   #networking.firewall.enable = false;
   #networking.firewall.logRefusedPackets = true;
-  #networking.firewall.checkReversePath = "loose";
+
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "18.03";

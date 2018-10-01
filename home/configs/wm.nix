@@ -9,10 +9,9 @@ let
 
   config = (import <nixpkgs/nixos> {}).config;
 
-  i3status-rust-config =
-    if config.networking.hostName == "grable"
-    then ./i3status-rust-config.toml
-    else ./i3status-rust-config-minuteman.toml;
+  i3status-rust-config = valueForGrableOrMinuteman ./i3status-rust-config.toml ./i3status-rust-config-minuteman.toml;
+
+  valueForGrableOrMinuteman = t: f: if config.networking.hostName == "grable" then t else f;
 in {
   nixpkgs.overlays = [ (self: super: {
     i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
@@ -36,9 +35,9 @@ in {
     enable = true;
 
     config.keybindings = with myStuff.i3; {
-      "${modKey}+Return" = if config.networking.hostName == "grable"
-        then "exec sh -c 'WINIT_HIDPI_FACTOR=1.4 ${pkgs.alacritty}/bin/alacritty'"
-        else "exec sh -c 'WINIT_HIDPI_FACTOR=2.0 ${pkgs.alacritty}/bin/alacritty'";
+      "${modKey}+Return" =
+        let factor = valueForGrableOrMinuteman "1.5" "2.0"; in
+          "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} /nix/store/18591805zyc6l8p5h2ifzd574fqxiihk-alacritty-0.2.0/bin/alacritty'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
 
@@ -125,10 +124,10 @@ in {
       bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
       bindsym XF86Sleep exec ${i3lock}/bin/i3lock
 
-      bindsym Print exec ${scrot}/bin/scrot
+      bindsym Print exec ${scrot}/bin/scrot -e 'mkdir -p ~/.sync/sync/screenshots; mv $f ~/.sync/sync/screenshots'
     '';
 
-    config.fonts = [ "DejaVu Sans Mono 10" ];
+    config.fonts = [ "DejaVu Sans Mono 12" ];
 
     config.bars = [ {
       statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
