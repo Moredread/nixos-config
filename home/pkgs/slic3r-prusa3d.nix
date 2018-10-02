@@ -37,13 +37,16 @@ stdenv.mkDerivation rec {
 
   enableParallelBuilding = true;
 
-  buildInputs = [
+  nativeBuildInputs = [
     cmake
+    gtest
+    makeWrapper
+  ];
+
+  buildInputs = [
     curl
     eigen
     glew
-    gtest
-    makeWrapper
     pcre
     perl
     tbb
@@ -76,10 +79,18 @@ stdenv.mkDerivation rec {
     XMLSAX
   ]);
 
+  # The build system uses custom logic for finding the nlopt library, which
+  # doesn't work for paths in the nix store. We need to set it manually.
   NLOPT = "${nlopt}";
 
   prePatch = ''
+    # In nix ioctls.h isn't available from the standard kernel-headers package
+    # on other distributions. As the copy in glibc seems to be identical to the
+    # one in the kernel, we use that one instead.
     sed -i 's|"/usr/include/asm-generic/ioctls.h"|<asm-generic/ioctls.h>|g' xs/src/libslic3r/GCodeSender.cpp
+
+    # PERL_VENDORARCH and PERL_VENDORLIB aren't detected correctly by the build
+    # system, so we have to override them
     sed -i "s|\''${PERL_VENDORARCH}|$out/lib/slic3r-prusa3d|g" xs/CMakeLists.txt
     sed -i "s|\''${PERL_VENDORLIB}|$out/lib/slic3r-prusa3d|g" xs/CMakeLists.txt
   '';
