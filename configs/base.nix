@@ -197,10 +197,25 @@
     extraOptions = ''
       gc-keep-outputs = true
       connect-timeout = 15
+	  builders-use-substitutes = true
     '';
 
-    binaryCaches = [ "https://cache.nixos.org" "https://moredread.cachix.org" ];
-    binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" ];
+    trustedUsers = [ "addy" ];
+
+    binaryCaches = [ "https://cache.nixos.org" "https://moredread.cachix.org" "https://moredread-nur.cachix.org" ];
+    binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
+
+    distributedBuilds = true;
+    buildMachines = [
+      {
+        hostName = "aarch64.nixos.community";
+        maxJobs = 64;
+        sshKey = "/root/.ssh/id_ed25519";
+        sshUser = "moredread";
+        system = "aarch64-linux";
+        supportedFeatures = [ "big-parallel" ];
+      }
+    ];
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380] ++ lib.range 27000 27036; # bittorrent + dht

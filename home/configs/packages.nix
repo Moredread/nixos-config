@@ -1,11 +1,13 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    nur.repos.mic92.inxi
     #linux-steam-integration
     #pass-otp
     #rxvt_unicode
     alacritty
     apg
+    arandr
     aria2
     aspellDicts.de
     aspellDicts.en
