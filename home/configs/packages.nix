@@ -71,6 +71,7 @@
     nmap
     nox
     nur.repos.mic92.inxi
+    nur.repos.mic92.nix-lsp
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
@@ -83,6 +84,7 @@
     polkit_gnome
     posix_man_pages
     powertop
+    python36Packages.python-language-server
     python3Packages.mps-youtube
     qrencode
     qsyncthingtray
