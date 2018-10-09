@@ -23,6 +23,14 @@ in {
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [ "mem_sleep_default=deep" ];
 
+    initrd.availableKernelModules = [
+      "aes_x86_64"
+      "aesni_intel"
+      "cryptd"
+      "crypto_simd"
+      "ghash_clmulni_intel"
+    ];
+
     cleanTmpDir = true;
     tmpOnTmpfs = true;
 
