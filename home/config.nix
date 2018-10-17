@@ -13,4 +13,9 @@
       inherit pkgs;
     };
   };
+
+  kodi = {
+    enableControllers = true;
+    enableAdvancedLauncher = true;
+  };
 }
