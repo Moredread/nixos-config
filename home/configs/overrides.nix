@@ -17,20 +17,20 @@ in
 {
   nixpkgs.config = {
     retroarch = {
-      #enableDolphin = true;
-      #enableMGBA = true;
+      enableDolphin = true;
+      enableMGBA = true;
       #enableMAME = true;
-      #enableScummVM = true;
-      #enableSnes9x = true;
-      #enableSnes9xNext = true;
+      enableScummVM = true;
+      enableSnes9x = true;
+      enableSnes9xNext = true;
     };
     allowUnfree = true;
   };
   nixpkgs.overlays = [ overlay ];
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/NUR/archive/759731081383d8aee4bb9255b8e22852f4abf5a7.tar.gz";
-      sha256 = "1v2nnm8jp0lq484fl3d9hic3m78yc2h4h8nrfhidgq2mj38pn5fj";
+      url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+      #sha256 = "1v2nnm8jp0lq484fl3d9hic3m78yc2h4h8nrfhidgq2mj38pn5fj";
     }) {
       inherit pkgs;
     };

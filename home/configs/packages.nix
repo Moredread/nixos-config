@@ -2,9 +2,13 @@
 {
   home.packages = with pkgs; [
     nur.repos.mic92.inxi
+    nur.repos.moredread.croc
+    nur.repos.moredread.latte
+    nur.repos.moredread.slic3r-prusa3d-latest
     #linux-steam-integration
     #pass-otp
     #rxvt_unicode
+    #retroarch
     alacritty
     apg
     arandr
@@ -88,7 +92,6 @@
     scrot
     shellcheck
     skype
-    slic3r-prusa3d
     sloccount
     speedtest-cli
     spotify
