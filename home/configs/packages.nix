@@ -1,14 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    nur.repos.mic92.inxi
-    nur.repos.moredread.croc
-    nur.repos.moredread.latte
-    nur.repos.moredread.slic3r-prusa3d-latest
     #linux-steam-integration
     #pass-otp
-    #rxvt_unicode
     #retroarch
+    #rxvt_unicode
     alacritty
     apg
     arandr
@@ -74,6 +70,10 @@
     nixos-icons
     nmap
     nox
+    nur.repos.mic92.inxi
+    nur.repos.moredread.croc
+    nur.repos.moredread.latte
+    nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
     pamixer
     paperkey
