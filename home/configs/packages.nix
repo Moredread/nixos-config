@@ -60,6 +60,7 @@
     jq
     keepassx2
     kicad
+    kodi
     krusader
     mc
     mercurialFull
