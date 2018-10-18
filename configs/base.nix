@@ -80,7 +80,7 @@ in {
       Defaults:root,%wheel env_keep+=TERMINFO_DIRS
       Defaults env_keep+=SSH_AUTH_SOCK
       Defaults lecture = never
-      Defaults !tty_tickets
+      Defaults timestamp_type = global
       root   ALL=(ALL) SETENV: ALL
       %wheel ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
     '';
