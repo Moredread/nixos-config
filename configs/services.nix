@@ -107,5 +107,9 @@
     };
 
     dbus.packages = [ pkgs.blueman ];
+
+    physlock.enable = true;
+    physlock.disableSysRq = true;
+    physlock.allowAnyUser = true;
   };
 }
