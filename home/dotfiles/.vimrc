@@ -156,7 +156,7 @@ set spell spelllang=en_us
 
 set undodir=~/.vim/undodir
 set undofile
-nnoremap <F2> :GundoToggle<CR>
+nnoremap <F3> :GundoToggle<CR>
 nnoremap <F4> :browse confirm wa<CR>
 
 set number
