@@ -10,13 +10,13 @@
       challengeResponseAuthentication = false;
     };
 
-    #flatpak.enable = true;
+    flatpak.enable = true;
 
     fwupd.enable = true;
     acpid.enable = true;
     dbus.enable = true;
     locate.enable = true;
-    # mkDefault, so that it works with VMs (who set it to false)
+    # mkDefault, so that it works with VMs (which sets it to false)
     timesyncd.enable = lib.mkDefault true;
     thermald.enable = true;
     pcscd.enable = true;
@@ -62,11 +62,11 @@
     '';
 
     # cups, for printing documents
-    printing.enable = true;
+    printing.enable = false;
     printing.drivers = with pkgs; [ gutenprint hplip ];
 
     avahi = {
-      enable = true;
+      enable = false;
       nssmdns = true;
       ipv6 = true;
       publish.enable = true;
@@ -75,7 +75,7 @@
     };
 
     syncthing = {
-      enable = true;
+      enable = false;
       openDefaultPorts = true;
       user = "addy";
       dataDir = "/home/addy/.config/syncthing";

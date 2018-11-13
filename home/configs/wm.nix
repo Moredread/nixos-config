@@ -26,7 +26,7 @@ in {
     gpg-agent.enable = true;
     gpg-agent.defaultCacheTtl = 3600;
     gpg-agent.defaultCacheTtlSsh = 3600;
-    #gpg-agent.enableSshSupport = true;
+    gpg-agent.enableSshSupport = true;
     pasystray.enable = true;
     syncthing.tray = true;
   };

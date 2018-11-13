@@ -10,10 +10,7 @@
     ../configs/services.nix
     ../home/configs/overrides.nix
     #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
-    nur-no-pkgs.modules.lenovo-throttling-fix
   ];
-
-  #services.lenovo-throttling-fix.enable = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
