@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 
-let
-  nur-no-pkgs = import /home/addy/nur/default.nix {};
-in {
+{
   imports =
   [
     ../configs/autocutsel.nix
@@ -15,7 +13,7 @@ in {
     nur-no-pkgs.modules.lenovo-throttling-fix
   ];
 
-  services.lenovo-throttling-fix.enable = true;
+  #services.lenovo-throttling-fix.enable = true;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
