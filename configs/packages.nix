@@ -1,11 +1,14 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    #urxvt_font_size
+    #urxvt_perls
     autocutsel
     bashInteractive
     bridge-utils
     cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
+    ddrescue
     dmenu
     exfat
     exfat-utils
@@ -41,8 +44,6 @@
     rsync
     screen
     smartmontools
-    #urxvt_font_size
-    #urxvt_perls
     usbutils
     vimHugeX
     vlc
