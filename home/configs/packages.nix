@@ -1,11 +1,13 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #chromium
     #linux-steam-integration
     #pass-otp
     #retroarch
     #rxvt_unicode
     alacritty
+    alot
     apg
     arandr
     aria2
@@ -21,7 +23,6 @@
     breeze-qt5
     cachix
     calibre
-    chromium
     daemontools
     dfeet
     direnv
@@ -38,6 +39,7 @@
     findutils
     firefox-bin
     flvstreamer
+    freecad
     fuse_exfat
     gawk
     gdb
@@ -58,14 +60,18 @@
     kicad
     kodi
     krusader
+    libreoffice
+    libsmbios
     mc
     mercurialFull
     minecraft
     mpv
+    msr-tools
     mumble
     mupdf
     neovim
     networkmanagerapplet
+    nix-du
     nix-prefetch-scripts
     nixos-icons
     nmap
@@ -91,6 +97,7 @@
     ranger
     ripgrep
     rsync
+    s-tui
     screen
     scrot
     shellcheck
@@ -100,6 +107,8 @@
     spotify
     sshfs
     steam
+    stress
+    stress-ng
     subversion
     syncthing
     taskwarrior
@@ -108,6 +117,7 @@
     unrar
     unzip
     vlc
+    w3m
     xbrightness
     xpdf
     xsel

@@ -44,6 +44,7 @@
     rsync
     screen
     smartmontools
+    syncthing
     usbutils
     vimHugeX
     vlc

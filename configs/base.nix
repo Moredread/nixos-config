@@ -9,14 +9,17 @@
     ../configs/packages.nix
     ../configs/services.nix
     ../home/configs/overrides.nix
+    ../configs/build.nix
     #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
   ];
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    #bootchart.enable = true;
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [ "mem_sleep_default=deep" ];
+    kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
     initrd.availableKernelModules = [
       "aes_x86_64"
@@ -43,6 +46,10 @@
     enable = true;
     wifi.macAddress = "stable";
     wifi.powersave = true;
+    extraConfig = ''
+      [connection]
+      tc.qdiscs=fq_codel
+      '';
   };
 
   time.timeZone = "Europe/Berlin";
@@ -125,7 +132,7 @@
 
     # Customize your oh-my-zsh options here
     ZSH_THEME="agnoster"
-    plugins=( git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github )
+    plugins=( git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github command-not-found )
 
     source $ZSH/oh-my-zsh.sh
 
@@ -234,8 +241,11 @@
     ];
   };
 
-  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380] ++ lib.range 27000 27036; # bittorrent + dht
-  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 ] ++ lib.range 27000 27036;
+  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380];
+  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 22000 ];
+
+  networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
+  networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];
 
   # For wg-quick VPN
   networking.firewall.checkReversePath = "loose";

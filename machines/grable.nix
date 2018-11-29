@@ -6,6 +6,7 @@ in {
   imports =
     [
       ../configs/base.nix
+      #../configs/wireguard.nix
       #../configs/emby.nix
       #../configs/unifi.nix
       #../configs/sabnzbd.nix
@@ -14,7 +15,6 @@ in {
       nur-no-pkgs.modules.lenovo-throttling-fix
     ];
 
-  services.lenovo-throttling-fix.enable = true;
 
   # Use the GRUB 2 boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -33,7 +33,15 @@ in {
     maxJobs = 8;
   };
 
+
+  systemd.timers.cpu-throttling.enable = lib.mkForce false;
+
   services = {
+    lenovo-throttling-fix.enable = true;
+    syncthing.enable = lib.mkForce false;
+    thermald.enable = lib.mkForce false;
+    tlp.enable = lib.mkForce false;
+
     xserver = {
       videoDrivers = [ "intel" ];
       deviceSection = ''
@@ -44,7 +52,5 @@ in {
       useGlamor = true;
       layout = "en_US";
     };
-
-    #tlp.enable = true;
   };
 }

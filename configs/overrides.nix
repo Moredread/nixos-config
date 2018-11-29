@@ -8,6 +8,7 @@ let
     unifi = unstable.unifi;
     emby = unstable.emby;
     microcodeIntel = unstable.microcodeIntel;
+    syncthing = unstable.syncthing;
   };
 in rec {
   nixpkgs.overlays = [ overlay ];

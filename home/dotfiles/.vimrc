@@ -24,9 +24,10 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'LnL7/vim-nix'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdcommenter'
-Plug 'freitass/todo.txt-vim'
+Plug 'dbeniamine/todo.txt-vim'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'daveyarwood/vim-alda'
 
 call plug#end()
 
