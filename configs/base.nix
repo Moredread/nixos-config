@@ -104,7 +104,7 @@
 
   environment.enableDebugInfo = true;
   environment.variables = {
-      EDITOR = pkgs.lib.mkOverride 0 "nvim";
+      EDITOR = pkgs.lib.mkOverride 0 "${pkgs.neovim}/bin/nvim";
   };
 
   security.dhparams.enable = true;

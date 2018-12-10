@@ -11,6 +11,7 @@ let
     nixopsUnstable = unstable.nixopsUnstable;
     cachix = unstable.cachix;
     noti = unstable.noti;
+    neovim = unstable.neovim;
     nix-du = unstable.nix-du;
     neovim = unstable.neovim;
     i3 = super.i3.overrideAttrs (attrs: rec {
