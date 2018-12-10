@@ -65,6 +65,7 @@
     mc
     mercurialFull
     minecraft
+    mkpasswd
     mpv
     msr-tools
     mumble
