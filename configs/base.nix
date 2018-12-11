@@ -138,7 +138,7 @@
 
     setopt extendedglob
 
-    alias vim='nvim'
+    alias vim='${pkgs.neovim}/bin/nvim'
     alias edit-nixos='nvim /etc/nixos/**/*.nix~*/home/* -p'
     alias edit-home='nvim /etc/nixos/home/**/*.nix -p'
     alias home-edit='edit-home'
@@ -150,7 +150,7 @@
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
 
-    alias ip="ip --color"
+    alias ip="${pkgs.iproute2}/bin/ip --color"
     alias 4="ip -4"
     alias 6="ip -6"
 
@@ -158,12 +158,12 @@
     alias git="${pkgs.gitAndTools.hub}/bin/hub"
 
     alias n='pushd /etc/nixos'
+    alias cdn=n
     alias v='nvim'
     alias update='sudo sh -c "nix-channel --update"; rm -rf ~/.nix-defexpr; mkdir -p ~/.nix-defexpr; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'
     alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
     alias build='nixos-rebuild build; home-manager build'
-
-    alias cdn="pushd /etc/nixos"
+    alias rsync-copy='rsync -av --progress --partial -h'
 
     function savepath {
       pwd > ~/.last_dir
