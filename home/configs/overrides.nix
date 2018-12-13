@@ -13,7 +13,6 @@ let
     noti = unstable.noti;
     neovim = unstable.neovim;
     nix-du = unstable.nix-du;
-    neovim = unstable.neovim;
     i3 = super.i3.overrideAttrs (attrs: rec {
       name = "i3-${version}";
       version = "4.16";
