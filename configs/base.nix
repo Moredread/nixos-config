@@ -150,7 +150,7 @@
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
 
-    alias ip="${pkgs.iproute2}/bin/ip --color"
+    alias ip="${pkgs.iproute}/bin/ip --color"
     alias 4="ip -4"
     alias 6="ip -6"
 
