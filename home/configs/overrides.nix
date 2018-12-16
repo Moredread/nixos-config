@@ -13,14 +13,7 @@ let
     noti = unstable.noti;
     neovim = unstable.neovim;
     nix-du = unstable.nix-du;
-    i3 = super.i3.overrideAttrs (attrs: rec {
-      name = "i3-${version}";
-      version = "4.16";
-      src = self.fetchurl {
-        url = "https://i3wm.org/downloads/${name}.tar.bz2";
-        sha256 = "1d2mnryn7m9c6d69awd7lwzadliapd0ahi5n8d0ppqy533ssaq6c";
-      };
-    });
+    i3 = unstable.i3;
     #renoise = super.renoise.override { releasePath = /nix/store/gy1r3hkvm48qz1pvhcmvfcnscn3n49av-rns_3_1_1_linux_x86_64.tar.gz; };
   };
 in
