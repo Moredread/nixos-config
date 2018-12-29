@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     #chromium
     #linux-steam-integration
+    #nur.repos.mic92.nix-lsp
     #pass-otp
     #retroarch
     #rxvt_unicode
@@ -78,7 +79,6 @@
     nmap
     nox
     nur.repos.mic92.inxi
-    nur.repos.mic92.nix-lsp
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
