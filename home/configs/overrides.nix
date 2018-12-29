@@ -9,7 +9,7 @@ let
     #freecad = unstable.freecad;
     syncthing = unstable.syncthing;
     nixopsUnstable = unstable.nixopsUnstable;
-    cachix = unstable.cachix;
+    #cachix = unstable.cachix;
     noti = unstable.noti;
     neovim = unstable.neovim;
     nix-du = unstable.nix-du;
