@@ -122,6 +122,7 @@
     xbrightness
     xpdf
     xsel
+    you-get
     youtube-dl
     yubioath-desktop
     zip

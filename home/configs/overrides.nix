@@ -14,6 +14,7 @@ let
     neovim = unstable.neovim;
     nix-du = unstable.nix-du;
     i3 = unstable.i3;
+    you-get = unstable.you-get;
     #renoise = super.renoise.override { releasePath = /nix/store/gy1r3hkvm48qz1pvhcmvfcnscn3n49av-rns_3_1_1_linux_x86_64.tar.gz; };
   };
 in
