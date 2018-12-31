@@ -14,7 +14,7 @@ let
   valueForGrableOrMinuteman = t: f: if config.networking.hostName == "grable" then t else f;
 in {
   nixpkgs.overlays = [ (self: super: {
-    i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
+    #i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
   })];
 
   xsession.enable = true;

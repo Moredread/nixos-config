@@ -59,7 +59,6 @@
     jq
     keepassx2
     kicad
-    kodi
     krusader
     libreoffice
     libsmbios
