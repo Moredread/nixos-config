@@ -104,17 +104,6 @@ in {
    };
 
     extraConfig = with pkgs; ''
-      workspace 1 output DVI-I-1
-      workspace 2 output DVI-I-1
-      workspace 3 output DVI-I-1
-      workspace 4 output DVI-I-1
-      workspace 5 output DVI-I-1
-      workspace 6 output DP-1
-      workspace 7 output DP-1
-      workspace 8 output DP-1
-      workspace 9 output DP-1
-      workspace 10 output DP-1
-
       bindsym XF86AudioLowerVolume exec ${pamixer}/bin/pamixer -d ${myStuff.volumeStep}
       bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/pamixer -i ${myStuff.volumeStep}
       bindsym XF86AudioMute exec ${pamixer}/bin/pamixer -t
