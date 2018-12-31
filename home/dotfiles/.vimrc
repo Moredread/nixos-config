@@ -17,7 +17,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sjl/gundo.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
 Plug 'plasticboy/vim-markdown'
 Plug 'JamshedVesuna/vim-markdown-preview'
@@ -28,6 +27,10 @@ Plug 'dbeniamine/todo.txt-vim'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'daveyarwood/vim-alda'
+" Using plug
+Plug 'dylanaraps/wal.vim'
+
+colorscheme wal
 
 call plug#end()
 
@@ -81,9 +84,6 @@ hi CursorLine guibg=Grey9
 
 " Color of the tabline
 hi TabLine term=underline cterm=bold ctermfg=green ctermbg=black
-
-set background=dark
-colorscheme solarized
 
 " Set encoding to utf-8
 if has("multi_byte")
