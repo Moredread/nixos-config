@@ -106,7 +106,7 @@
       ];
     };
 
-    dbus.packages = [ pkgs.blueman ];
+    dbus.packages = with pkgs; [ blueman gnome3.dconf ];
 
     physlock.enable = true;
     physlock.disableSysRq = true;

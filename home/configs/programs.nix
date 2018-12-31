@@ -6,10 +6,11 @@
 
     browserpass.enable = true;
     htop.enable = true;
+    jq.enable = true;
     lesspipe.enable = true;
     man.enable = true;
     neovim.enable = true;
-    zathura.enable = true;
     noti.enable = true;
+    zathura.enable = true;
   };
 }
