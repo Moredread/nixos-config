@@ -1,12 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #chromium
-    #linux-steam-integration
-    #nur.repos.mic92.nix-lsp
-    #pass-otp
-    #retroarch
-    #rxvt_unicode
     alacritty
     alot
     apg
@@ -22,15 +16,16 @@
     borgbackup
     breeze-icons
     breeze-qt5
+    btrfs-dedupe
     cachix
     calibre
     daemontools
     dfeet
     direnv
-    dmidecode
     docker
     docker_compose
     dos2unix
+    dpkg
     dunst
     evince
     exfat-utils
@@ -53,12 +48,10 @@
     gnumake
     gnupg
     gnupg1
-    gource
     i3lock
     inetutils
     jq
     keepassx2
-    kicad
     krusader
     libreoffice
     libsmbios
@@ -92,6 +85,7 @@
     powertop
     python36Packages.python-language-server
     python3Packages.mps-youtube
+    pywal
     qrencode
     qsyncthingtray
     ranger
@@ -115,6 +109,7 @@
     thunderbird
     todo-txt-cli
     unrar
+    unstable.slic3r-prusa3d
     unzip
     vlc
     w3m
@@ -125,6 +120,5 @@
     youtube-dl
     yubioath-desktop
     zip
-    zotero
   ];
 }
