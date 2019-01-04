@@ -11,6 +11,7 @@
     atool
     autocutsel
     bind.dnsutils
+    fd
     binutils
     blueman
     borgbackup
@@ -85,6 +86,8 @@
     powertop
     python36Packages.python-language-server
     python3Packages.mps-youtube
+    fzf
+    vimPlugins.fzf-vim
     pywal
     qrencode
     qsyncthingtray

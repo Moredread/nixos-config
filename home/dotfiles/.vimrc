@@ -29,6 +29,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'daveyarwood/vim-alda'
 " Using plug
 Plug 'dylanaraps/wal.vim'
+Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
 
 colorscheme wal
 

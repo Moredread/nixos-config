@@ -12,7 +12,9 @@
     dmenu
     exfat
     exfat-utils
+    fd
     fwupd
+    fzf
     gitAndTools.gitSVN
     gitAndTools.hub
     gparted
