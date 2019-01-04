@@ -169,8 +169,8 @@
     alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
     alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
     alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
-    alias clean-result='find / -iname result -type l -printf "%p\n"  -exec rm -rf {} +'
-    alias clean-direnv='find / -iname .direnv -type d -printf "%p\n"  -execdir rm -rf {} +'
+    alias clean-direnv="${pkgs.fd}/bin/fd -I -H -s -p -t d '\.direnv' /*~/nix~/media -x rm -rfv {};"
+    alias clean-result="${pkgs.fd}/bin/fd -I -H -s -p -t l result /*~/nix~/media -x rm -fv {};"
 
     alias ip="${pkgs.iproute}/bin/ip --color"
     alias 4="ip -4"
