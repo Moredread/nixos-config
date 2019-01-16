@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 let
   myStuff = {
     i3.modKey = "Mod4";
@@ -7,15 +7,12 @@ let
   };
   unstable = import <nixos-unstable> {};
 
-  config = (import <nixpkgs/nixos> {}).config;
+  nixosConfig = (import <nixpkgs/nixos> {}).config;
 
   i3status-rust-config = valueForGrableOrMinuteman ./i3status-rust-config.toml ./i3status-rust-config-minuteman.toml;
 
-  valueForGrableOrMinuteman = t: f: if config.networking.hostName == "grable" then t else f;
+  valueForGrableOrMinuteman = t: f: if nixosConfig.networking.hostName == "grable" then t else f;
 in {
-  nixpkgs.overlays = [ (self: super: {
-    #i3status-rust = super.callPackage ../pkgs/status-rust.nix {};
-  })];
 
   xsession.enable = true;
 
@@ -28,7 +25,6 @@ in {
     gpg-agent.defaultCacheTtlSsh = 3600;
     gpg-agent.enableSshSupport = true;
     pasystray.enable = true;
-    syncthing.tray = true;
   };
 
   xsession.windowManager.i3 = {
@@ -40,6 +36,8 @@ in {
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
+      "${modKey}+p" = "exec ${pkgs.pass}/bin/passmenu";
+      "${modKey}+Shift+p" = "exec ${pkgs.pass}/bin/passmenu --type";
 
       "${modKey}+Left" = "focus left";
       "${modKey}+Down" = "focus down";
@@ -121,6 +119,10 @@ in {
     config.bars = [ {
       statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
     }
+  ];
+
+  config.startup = [
+      { command = "sleep 5; ${pkgs.qsyncthingtray}/bin/QSyncthingTray"; always = false; notification = false; }
     ];
   };
 

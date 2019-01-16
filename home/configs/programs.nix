@@ -5,6 +5,7 @@
     home-manager.path = https://github.com/rycee/home-manager/archive/master.tar.gz;
 
     browserpass.enable = true;
+    browserpass.browsers = [ "chrome" "chromium" "firefox" ];
     htop.enable = true;
     jq.enable = true;
     lesspipe.enable = true;

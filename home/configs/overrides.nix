@@ -14,12 +14,14 @@ let
     slic3r-prusa3d = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
 
     alacritty = unstable.alacritty;
+    direnv = unstable.direnv;
     i3 = unstable.i3;
     neovim = unstable.neovim;
     nix-du = unstable.nix-du;
     nixopsUnstable = unstable.nixopsUnstable;
     noti = unstable.noti;
     syncthing = unstable.syncthing;
+    qsyncthingtray = unstable.qsyncthingtray;
     you-get = unstable.you-get;
   };
 in

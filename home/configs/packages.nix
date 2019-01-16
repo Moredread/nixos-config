@@ -75,10 +75,11 @@
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
+    nur.repos.kalbasit.nixify
     p7zip
     pamixer
     paperkey
-    pass
+    pass-otp
     pasystray
     pavucontrol
     polkit_gnome
