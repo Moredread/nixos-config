@@ -10,6 +10,7 @@
     ../configs/services.nix
     ../home/configs/overrides.nix
     ../configs/build.nix
+    ../configs/dlna.nix
     #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
   ];
 
