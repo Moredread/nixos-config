@@ -27,13 +27,15 @@ Plug 'dbeniamine/todo.txt-vim'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'daveyarwood/vim-alda'
-" Using plug
 Plug 'dylanaraps/wal.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
 
-colorscheme wal
-
 call plug#end()
+
+" colorscheme wal
+set background=dark
+colorscheme solarized
 
 let g:LanguageClient_serverCommands = {
       \ 'nix': ['nix-lsp'],
