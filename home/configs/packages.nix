@@ -74,6 +74,7 @@
     nox
     nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
+    nur.repos.moredread.crawl-tiles
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
