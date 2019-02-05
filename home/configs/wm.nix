@@ -79,6 +79,8 @@ in {
       "${modKey}+8" = "workspace 8";
       "${modKey}+9" = "workspace 9";
       "${modKey}+0" = "workspace 10";
+      "${modKey}+minus" = "workspace 11";
+      "${modKey}+equal" = "workspace 12";
 
       "${modKey}+Shift+1" = "move container to workspace 1";
       "${modKey}+Shift+2" = "move container to workspace 2";
