@@ -11,7 +11,6 @@
     atool
     autocutsel
     bind.dnsutils
-    fd
     binutils
     blueman
     borgbackup
@@ -30,6 +29,7 @@
     dunst
     evince
     exfat-utils
+    fd
     feh
     ffmpeg
     file
@@ -38,6 +38,7 @@
     flvstreamer
     freecad
     fuse_exfat
+    fzf
     gawk
     gdb
     gitAndTools.gitFull
@@ -71,11 +72,11 @@
     nixos-icons
     nmap
     nox
+    nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
-    nur.repos.kalbasit.nixify
     p7zip
     pamixer
     paperkey
@@ -87,8 +88,6 @@
     powertop
     python36Packages.python-language-server
     python3Packages.mps-youtube
-    fzf
-    vimPlugins.fzf-vim
     pywal
     qrencode
     qsyncthingtray
@@ -115,9 +114,11 @@
     unrar
     unstable.slic3r-prusa3d
     unzip
+    vimPlugins.fzf-vim
     vlc
     w3m
     xbrightness
+    xorg.xev
     xpdf
     xsel
     you-get
