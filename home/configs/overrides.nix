@@ -8,10 +8,12 @@ let
     nur = nur;
     unstable = unstable;
 
+    appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
+    renoise = unstable.renoise.override { releasePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz; };
+
     i3status-rust = nur.repos.moredread.i3status-rust;
 
     gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
-    slic3r-prusa3d = pkgs.callPackage ../pkgs/slic3r-prusa3d.nix { };
 
     alacritty = unstable.alacritty;
     direnv = unstable.direnv;

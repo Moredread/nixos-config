@@ -10,7 +10,7 @@
     jq.enable = true;
     lesspipe.enable = true;
     man.enable = true;
-    neovim.enable = true;
+    #neovim.enable = true;
     noti.enable = true;
     zathura.enable = true;
   };

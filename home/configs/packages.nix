@@ -4,6 +4,7 @@
     alacritty
     alot
     apg
+    appimage-run
     arandr
     aria2
     aspellDicts.de
@@ -19,6 +20,8 @@
     btrfs-dedupe
     cachix
     calibre
+    crawl
+    crawlTiles
     daemontools
     dfeet
     direnv
@@ -50,6 +53,7 @@
     gnumake
     gnupg
     gnupg1
+    graphviz
     i3lock
     inetutils
     jq
@@ -74,7 +78,6 @@
     nox
     nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
-    nur.repos.moredread.crawl-tiles
     nur.repos.moredread.croc
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
@@ -93,6 +96,7 @@
     qrencode
     qsyncthingtray
     ranger
+    renoise
     ripgrep
     rsync
     s-tui
