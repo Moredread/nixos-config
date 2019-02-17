@@ -12,7 +12,7 @@ in {
       #../configs/sabnzbd.nix
       ../configs/users-and-groups.nix
       ./hardware-grable.nix
-      nur-no-pkgs.modules.lenovo-throttling-fix
+      nur-no-pkgs.modules.throttled
     ];
 
 
@@ -37,7 +37,8 @@ in {
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
   services = {
-    lenovo-throttling-fix.enable = true;
+    throttled.enable = true;
+    # Start syncthing via QSyncthingTray
     syncthing.enable = lib.mkForce false;
     thermald.enable = lib.mkForce false;
     tlp.enable = lib.mkForce false;

@@ -53,6 +53,7 @@
     gnumake
     gnupg
     gnupg1
+    gocryptfs
     graphviz
     i3lock
     inetutils
@@ -117,7 +118,6 @@
     thunderbird
     todo-txt-cli
     unrar
-    unstable.slic3r-prusa3d
     unzip
     vimPlugins.fzf-vim
     vlc
