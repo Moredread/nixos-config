@@ -11,6 +11,7 @@ in {
       #../configs/unifi.nix
       #../configs/sabnzbd.nix
       ../configs/users-and-groups.nix
+      ../configs/intel-vaapi.nix
       ./hardware-grable.nix
       nur-no-pkgs.modules.throttled
     ];
