@@ -1,6 +1,12 @@
 
 { config, lib, pkgs, ... }:
 {
+  documentation.enable = true;
+  documentation.dev.enable = true;
+  documentation.doc.enable = true;
+  documentation.info.enable = true;
+  documentation.nixos.enable = true;
+
   services = {
     openssh = {
       enable = true;
@@ -22,7 +28,6 @@
     pcscd.enable = true;
     trezord.enable = true;
 
-    nixosManual.enable = true;
     nixosManual.showManual = true;
 
     udev.extraRules = with pkgs; ''
