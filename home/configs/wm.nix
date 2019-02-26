@@ -34,6 +34,9 @@ in {
       "${modKey}+Return" =
         let factor = valueForGrableOrMinuteman "1.5" "2.0"; in
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty'";
+      "${modKey}+Shift+Return" =
+        let factor = valueForGrableOrMinuteman "1.5" "2.0"; in
+          "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty --working-directory $(${pkgs.xcwd}/bin/xcwd)'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
       "${modKey}+p" = "exec ${pkgs.pass}/bin/passmenu";
@@ -103,7 +106,7 @@ in {
       "${modKey}+r" = "mode resize";
    };
 
-    extraConfig = with pkgs; ''
+    extraConfig = with myStuff.i3; with pkgs; ''
       bindsym XF86AudioLowerVolume exec ${pamixer}/bin/pamixer -d ${myStuff.volumeStep}
       bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/pamixer -i ${myStuff.volumeStep}
       bindsym XF86AudioMute exec ${pamixer}/bin/pamixer -t
@@ -114,6 +117,8 @@ in {
       bindsym XF86Sleep exec ${i3lock}/bin/i3lock
 
       bindsym Print exec ${scrot}/bin/scrot -e 'mkdir -p ~/.sync/sync/screenshots; mv $f ~/.sync/sync/screenshots'
+
+      floating_modifier ${modKey}
     '';
 
     config.fonts = [ "DejaVu Sans Mono 12" ];

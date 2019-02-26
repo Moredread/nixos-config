@@ -18,13 +18,12 @@
     breeze-icons
     breeze-qt5
     btrfs-dedupe
-    cachix
+    #cachix
     calibre
     crawl
     crawlTiles
     daemontools
     dfeet
-    direnv
     docker
     docker_compose
     dos2unix
@@ -80,6 +79,7 @@
     nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
     nur.repos.moredread.croc
+    nur.repos.moredread.implicitcad
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
@@ -109,7 +109,7 @@
     speedtest-cli
     spotify
     sshfs
-    steam
+    #steam
     stress
     stress-ng
     subversion

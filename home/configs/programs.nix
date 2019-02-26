@@ -4,7 +4,7 @@
     home-manager.enable = true;
     home-manager.path = https://github.com/rycee/home-manager/archive/master.tar.gz;
 
-    #neovim.enable = true;
+    neovim.enable = true;
     browserpass.browsers = [ "chrome" "chromium" "firefox" ];
     browserpass.enable = true;
     command-not-found.enable = true;

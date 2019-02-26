@@ -67,8 +67,8 @@
   systemd.extraConfig = "DefaultLimitNOFILE=1048576";
 
   #virtualisation.virtualbox.host.enable = true;
-  #virtualisation.libvirtd.enable = true;
-  #virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
   virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
