@@ -17,7 +17,6 @@
     borgbackup
     breeze-icons
     breeze-qt5
-    btrfs-dedupe
     #cachix
     calibre
     crawl
@@ -38,7 +37,6 @@
     findutils
     firefox-bin
     flvstreamer
-    freecad
     fuse_exfat
     fzf
     gawk
@@ -69,7 +67,7 @@
     msr-tools
     mumble
     mupdf
-    neovim
+    #neovim
     networkmanagerapplet
     nix-du
     nix-prefetch-scripts
@@ -109,9 +107,8 @@
     speedtest-cli
     spotify
     sshfs
-    #steam
-    stress
-    stress-ng
+    steam
+    passExtensions.pass-import
     subversion
     syncthing
     taskwarrior
