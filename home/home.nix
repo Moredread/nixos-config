@@ -17,6 +17,7 @@
   };
 
   systemd.user.startServices = true;
+  services.syncthing.tray = true;
 
   home.extraOutputsToInstall = [ "debug" "doc" "info" "devdoc" ];
   manual.html.enable = true;

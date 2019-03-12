@@ -128,9 +128,9 @@ in {
     }
   ];
 
-  config.startup = [
-      { command = "sleep 5; ${pkgs.qsyncthingtray}/bin/QSyncthingTray"; always = false; notification = false; }
-    ];
+  #config.startup = [
+  #    { command = "sleep 5; ${pkgs.qsyncthingtray}/bin/QSyncthingTray"; always = false; notification = false; }
+  #  ];
   };
 
   home.packages = with pkgs; [

@@ -83,8 +83,8 @@
     p7zip
     pamixer
     paperkey
-    pass-otp
     pasystray
+    pass-custom
     pavucontrol
     polkit_gnome
     posix_man_pages
@@ -108,10 +108,10 @@
     spotify
     sshfs
     steam
-    passExtensions.pass-import
     subversion
     syncthing
     taskwarrior
+    tdesktop
     thunderbird
     todo-txt-cli
     unrar
