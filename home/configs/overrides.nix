@@ -15,17 +15,11 @@ let
 
     gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
 
-    alacritty = unstable.alacritty;
-    direnv = unstable.direnv;
     pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
-    i3 = unstable.i3;
-    neovim = unstable.neovim;
-    nix-du = unstable.nix-du;
+    lsd = unstable.lsd;
     nixopsUnstable = unstable.nixopsUnstable;
-    noti = unstable.noti;
     #syncthing = unstable.syncthing;
     #qsyncthingtray = unstable.qsyncthingtray;
-    you-get = unstable.you-get;
   };
 in
 {

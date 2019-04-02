@@ -16,6 +16,7 @@
       overpass
       oxygenfonts
       powerline-fonts
+      nerdfonts
       source-code-pro
       source-sans-pro
       source-serif-pro

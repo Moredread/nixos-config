@@ -110,7 +110,6 @@
     steam
     subversion
     syncthing
-    taskwarrior
     tdesktop
     thunderbird
     todo-txt-cli

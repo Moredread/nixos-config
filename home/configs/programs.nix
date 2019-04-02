@@ -13,6 +13,8 @@
     htop.enable = true;
     jq.enable = true;
     lesspipe.enable = true;
+    lsd.enable = true;
+    lsd.enableAliases = true;
     man.enable = true;
     noti.enable = true;
     zathura.enable = true;
