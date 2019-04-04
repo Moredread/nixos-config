@@ -55,9 +55,9 @@ fi
 NIXAGE=$(date -r $AGEFILE +%s)
 
 if [[ ( $(( ($NIXAGE - $OPTSAGE) / 60)) -gt 5) ]];
-then /etc/nixos/bin/writeOpts $PKGSFILE & fi
+then writeOpts $OPTSFILE & fi
 
 if [[ ( $(( ($NIXAGE - $PKGSAGE) / 60)) -gt 5 ) ]];
-then /etc/nixos/bin/writePacks $OPTSFILE & fi
+then writePacks $PKGSFILE & fi
 
 #vim: sh

@@ -194,3 +194,5 @@ iab <expr> dts strftime("%F")
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
+
+vnoremap <leader>p "_dP
