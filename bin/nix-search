@@ -1,19 +1,23 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
+
+CACHEDIR=/home/addy/.cache/nixos-options
 
 AGEFILE=/etc/nixos/configs/base.nix
-OPTSFILE=/etc/nixos/bin/options.txt
-PKGSFILE=/etc/nixos/bin/packages.txt
+OPTSFILE=$CACHEDIR/options.txt
+PKGSFILE=$CACHEDIR/packages.txt
+
+mkdir -p $CACHEDIR
 
 # See if options and packages are outdated
 if [[ $1 == "-o" ]]; then
-    TARGET="/etc/nixos/bin/options.txt"
+    TARGET=$OPTSFILE
     PR="NixOS Options> "
     PREVIEW="nixos-option"
     function seeDef () {
       nixos-option "${1}" | tail -n 2 | head -n 1 | cut -d "\"" -f 2
     }
 else
-    TARGET="/etc/nixos/bin/packages.txt"
+    TARGET=$PKGSFILE
     PR="Nixpkgs> "
     PREVIEW="nix-env -qa --description -A"
     function seeDef () {
@@ -51,9 +55,9 @@ fi
 NIXAGE=$(date -r $AGEFILE +%s)
 
 if [[ ( $(( ($NIXAGE - $OPTSAGE) / 60)) -gt 5) ]];
-then /etc/nixos/bin/writeOpts & fi
+then /etc/nixos/bin/writeOpts $PKGSFILE & fi
 
 if [[ ( $(( ($NIXAGE - $PKGSAGE) / 60)) -gt 5 ) ]];
-then /etc/nixos/bin/writePacks & fi
+then /etc/nixos/bin/writePacks $OPTSFILE & fi
 
 #vim: sh

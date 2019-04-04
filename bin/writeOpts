@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+OUTFILE=${1:-/dev/stdout}
+
 echo $(nix-instantiate - --eval --show-trace <<EOF
 
 with import <nixpkgs/nixos> { };
@@ -91,6 +93,6 @@ let
 in optionsJSON
 EOF
 ) | sed 's/\\\\/\\/g' | sed 's/\\"/"/g' | head -c -2 | tail -c +2 | \
-    jq 'keys | .[]' | sed 's/^"\(.*\)"$/\1/g' > /etc/nixos/bin/options.txt
+    jq 'keys | .[]' | sed 's/^"\(.*\)"$/\1/g' > $OUTFILE
 
 # vim: ft=sh

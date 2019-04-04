@@ -190,3 +190,7 @@ let g:vim_markdown_folding_disabled = 1
 
 set guifont=Monospace\ 12
 iab <expr> dts strftime("%F")
+
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
