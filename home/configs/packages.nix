@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #cachix
+    #neovim
     alacritty
     alot
     apg
@@ -17,7 +19,6 @@
     borgbackup
     breeze-icons
     breeze-qt5
-    #cachix
     calibre
     crawl
     crawlTiles
@@ -52,11 +53,15 @@
     gnupg1
     gocryptfs
     graphviz
+    hledger
+    hledger-ui
+    hledger-web
     i3lock
     inetutils
     jq
     keepassx2
     krusader
+    ledger
     libreoffice
     libsmbios
     mc
@@ -67,7 +72,6 @@
     msr-tools
     mumble
     mupdf
-    #neovim
     networkmanagerapplet
     nix-du
     nix-prefetch-scripts
@@ -83,8 +87,8 @@
     p7zip
     pamixer
     paperkey
-    pasystray
     pass-custom
+    pasystray
     pavucontrol
     polkit_gnome
     posix_man_pages
