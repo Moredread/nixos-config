@@ -29,6 +29,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'daveyarwood/vim-alda'
 Plug 'dylanaraps/wal.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'ledger/vim-ledger'
 Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
 
 call plug#end()
