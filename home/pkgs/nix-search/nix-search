@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CACHEDIR=/home/addy/.cache/nixos-options
+CACHEDIR=$HOME/.cache/nixos-options
 
 AGEFILE=/etc/nixos/configs/base.nix
 OPTSFILE=$CACHEDIR/options.txt

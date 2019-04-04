@@ -75,6 +75,7 @@
     networkmanagerapplet
     nix-du
     nix-prefetch-scripts
+    nix-search
     nixos-icons
     nmap
     nox
