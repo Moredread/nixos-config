@@ -72,6 +72,7 @@ in {
 
       "${modKey}+Shift+f" = "floating toggle";
 
+      "${modKey}+grave" = "workspace 0";
       "${modKey}+1" = "workspace 1";
       "${modKey}+2" = "workspace 2";
       "${modKey}+3" = "workspace 3";
@@ -85,6 +86,7 @@ in {
       "${modKey}+minus" = "workspace 11";
       "${modKey}+equal" = "workspace 12";
 
+      "${modKey}+Shift+grave" = "move container to workspace 0";
       "${modKey}+Shift+1" = "move container to workspace 1";
       "${modKey}+Shift+2" = "move container to workspace 2";
       "${modKey}+Shift+3" = "move container to workspace 3";
@@ -95,6 +97,8 @@ in {
       "${modKey}+Shift+8" = "move container to workspace 8";
       "${modKey}+Shift+9" = "move container to workspace 9";
       "${modKey}+Shift+0" = "move container to workspace 10";
+      "${modKey}+Shift+minus" = "move container to workspace 11";
+      "${modKey}+Shift+equal" = "move container to workspace 12";
 
       "${modKey}+Shift+c" = "reload";
       "${modKey}+Shift+r" = "restart";
