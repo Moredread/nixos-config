@@ -14,7 +14,6 @@ let
     i3status-rust = nur.repos.moredread.i3status-rust;
 
     gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
-    nix-search = pkgs.callPackage ../pkgs/nix-search { };
 
     pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
     lsd = unstable.lsd;

@@ -75,7 +75,6 @@
     networkmanagerapplet
     nix-du
     nix-prefetch-scripts
-    nix-search
     nixos-icons
     nmap
     nox
@@ -83,6 +82,7 @@
     nur.repos.mic92.inxi
     nur.repos.moredread.croc
     nur.repos.moredread.implicitcad
+    nur.repos.moredread.nix-search
     nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
