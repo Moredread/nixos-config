@@ -56,10 +56,11 @@
     enable = true;
     wifi.macAddress = "stable";
     wifi.powersave = true;
+    # not sure if this is necessary
     extraConfig = ''
       [connection]
       tc.qdiscs=fq_codel
-      '';
+    '';
   };
 
   time.timeZone = "Europe/Berlin";
@@ -114,7 +115,7 @@
 
   environment.enableDebugInfo = true;
   environment.variables = {
-      EDITOR = pkgs.lib.mkOverride 0 "${pkgs.neovim}/bin/nvim";
+    EDITOR = pkgs.lib.mkOverride 0 "${pkgs.neovim}/bin/nvim";
   };
 
   security.dhparams.enable = true;
@@ -158,7 +159,7 @@
     extraOptions = ''
       gc-keep-outputs = true
       connect-timeout = 15
-	  builders-use-substitutes = true
+	    builders-use-substitutes = true
     '';
 
     trustedUsers = [ "addy" ];
