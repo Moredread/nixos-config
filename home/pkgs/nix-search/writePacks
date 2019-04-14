@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-
-OUTFILE=${1:-/dev/stdout}
-
-nix-env -qa -P | awk '{print $1}' > packages.txt
-nix-env -f '<nixpkgs>' -qaP -A haskellPackages | \
-    awk '{print "nixos."$1}' >> $OUTFILE
-#vim: ft=sh
