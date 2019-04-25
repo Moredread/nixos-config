@@ -53,9 +53,6 @@
     gnupg1
     gocryptfs
     graphviz
-    hledger
-    hledger-ui
-    hledger-web
     i3lock
     inetutils
     jq
@@ -118,6 +115,7 @@
     tdesktop
     thunderbird
     todo-txt-cli
+    travis
     unrar
     unzip
     vimPlugins.fzf-vim
