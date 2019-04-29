@@ -34,6 +34,7 @@
     initrd.availableKernelModules = [
       "aes_x86_64"
       "aesni_intel"
+      "bfq"
       "cryptd"
       "crypto_simd"
       "ghash_clmulni_intel"
