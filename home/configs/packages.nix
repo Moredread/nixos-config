@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #cachix
-    #neovim
     alacritty
     alot
     apg
@@ -19,6 +17,7 @@
     borgbackup
     breeze-icons
     breeze-qt5
+    cachix
     calibre
     crawl
     crawlTiles
@@ -77,9 +76,7 @@
     nox
     nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
-    nur.repos.moredread.croc
     nur.repos.moredread.implicitcad
-    nur.repos.moredread.latte
     nur.repos.moredread.nix-search
     nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
@@ -121,7 +118,9 @@
     vimPlugins.fzf-vim
     vlc
     w3m
+    wirelesstools
     xbrightness
+    xcwd
     xorg.xev
     xpdf
     xsel
