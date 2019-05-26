@@ -57,6 +57,9 @@
     gocryptfs
     graphviz
     gsettings-qt
+    hledger
+    hledger-ui
+    hledger-web
     i3lock
     inetutils
     jq
