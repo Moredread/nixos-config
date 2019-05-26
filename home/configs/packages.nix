@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    #cachix
-    #neovim
     alacritty
     alot
     apg
@@ -15,13 +13,16 @@
     autocutsel
     bind.dnsutils
     binutils
+    blender
     blueman
     borgbackup
     breeze-icons
     breeze-qt5
+    cachix
     calibre
     crawl
     crawlTiles
+    csvkit
     daemontools
     dfeet
     docker
@@ -29,6 +30,7 @@
     dos2unix
     dpkg
     dunst
+    entr
     evince
     exfat-utils
     fd
@@ -45,6 +47,7 @@
     gitAndTools.gitFull
     gitAndTools.hub
     gitwatch
+    glib
     gnome3.dconf
     gnome3.dconf-editor
     gnugrep
@@ -53,9 +56,7 @@
     gnupg1
     gocryptfs
     graphviz
-    hledger
-    hledger-ui
-    hledger-web
+    gsettings-qt
     i3lock
     inetutils
     jq
@@ -66,6 +67,7 @@
     libsmbios
     mc
     mercurialFull
+    meshlab
     minecraft
     mkpasswd
     mpv
@@ -78,12 +80,9 @@
     nixos-icons
     nmap
     nox
-    nur.repos.kalbasit.nixify
     nur.repos.mic92.inxi
-    nur.repos.moredread.croc
     nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
-    nur.repos.moredread.latte
     nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
     pamixer
@@ -94,8 +93,8 @@
     polkit_gnome
     posix_man_pages
     powertop
-    python36Packages.python-language-server
     python3Packages.mps-youtube
+    python3Packages.python-language-server
     pywal
     qrencode
     qsyncthingtray
@@ -118,12 +117,15 @@
     tdesktop
     thunderbird
     todo-txt-cli
+    travis
     unrar
     unzip
     vimPlugins.fzf-vim
     vlc
     w3m
+    wirelesstools
     xbrightness
+    xcwd
     xorg.xev
     xpdf
     xsel

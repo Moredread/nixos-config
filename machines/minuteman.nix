@@ -53,12 +53,24 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  programs.adb.enable = true;
+  #programs.adb.enable = true;
 
   i18n.consoleKeyMap = "us";
   services.xserver.layout = "us";
 
   nix.buildCores = lib.mkForce 8;
+
+  nix.buildMachines = [
+    {
+      hostName = "grable";
+      maxJobs = 8;
+      sshKey = "/root/.ssh/id_ed25519";
+      sshUser = "addy";
+      system = "x86_64-linux";
+      supportedFeatures = [ "big-parallel" "kvm" "nixos-test" ];
+    }
+  ];
+
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/fee6564b-baea-4bcb-b531-78679b083d3c";

@@ -92,7 +92,7 @@
       alias n='pushd /etc/nixos'
       alias cdn=n
       alias v='nvim'
-      alias update='sudo sh -c "nix-channel --update"; rm -rf ~/.nix-defexpr; mkdir -p ~/.nix-defexpr; ln -s /nix/var/nix/profiles/per-user/root/channels ~/.nix-defexpr/channels'
+      alias update='sudo sh -c "nix-channel --update"; nix-channel --update'
       alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
       alias build='nixos-rebuild build; home-manager build'
       alias rsync-copy='rsync -av --progress --partial -h'

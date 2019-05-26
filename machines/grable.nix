@@ -32,6 +32,17 @@ in {
   nix = {
     buildCores = 8;
     maxJobs = 8;
+
+    buildMachines = [
+      {
+        hostName = "minuteman";
+        maxJobs = 8;
+        sshKey = "/root/.ssh/id_ed25519";
+        sshUser = "addy";
+        system = "x86_64-linux";
+        supportedFeatures = [ "big-parallel" "kvm" "nixos-test" ];
+      }
+    ];
   };
 
 

@@ -105,7 +105,7 @@ set hlsearch
 " When .vimrc is edited, automatically reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
-set tabstop=4
+set tabstop=2
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -114,6 +114,9 @@ set softtabstop=2
 autocmd BufEnter ?akefile* set noet ts=8 sw=8 nocindent list lcs=tab:>-,trail:x
 
 filetype plugin indent on
+
+au BufRead,BufNewFile SConstruct set filetype=python
+au FileType python setlocal textwidth=0 tabstop=4 shiftwidth=4 softtabstop=4
 
 map <C-q> gwap
 
@@ -166,6 +169,7 @@ endif
 if !isdirectory($HOME."/.vim/undodir")
     call mkdir($HOME."/.vim/undodir", "", 0700)
 endif
+
 set undodir=~/.vim/undodir
 set undofile
 au BufWritePre /tmp/* setlocal noundofile

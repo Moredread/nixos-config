@@ -21,19 +21,20 @@
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [ "mem_sleep_default=deep"
-        #"i915.modeset=1"       # entirely absent in nixos-hardware
-        #"i915.enable_guc=2" # entirely absent in nixos-hardware
-        #"i915.enable_gvt=1" # entirely absent in nixos-hardware
-        #"i915.enable_psr=1" # entirely absent in nixos-hardware
-        #"i915.fastboot=1"     # entirely absent in nixos-hardware
+        "i915.modeset=1"       # entirely absent in nixos-hardware
+        "i915.enable_guc=2" # entirely absent in nixos-hardware
+        "i915.enable_gvt=1" # entirely absent in nixos-hardware
+        "i915.enable_psr=1" # entirely absent in nixos-hardware
+        "i915.fastboot=1"     # entirely absent in nixos-hardware
 
-        #"i915.enable_fbc=1" # set to 2 in nixos-hardware 
+        "i915.enable_fbc=1" # set to 2 in nixos-hardware 
   ];
     kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
     initrd.availableKernelModules = [
       "aes_x86_64"
       "aesni_intel"
+      "bfq"
       "cryptd"
       "crypto_simd"
       "ghash_clmulni_intel"
@@ -56,10 +57,11 @@
     enable = true;
     wifi.macAddress = "stable";
     wifi.powersave = true;
+    # not sure if this is necessary
     extraConfig = ''
       [connection]
       tc.qdiscs=fq_codel
-      '';
+    '';
   };
 
   time.timeZone = "Europe/Berlin";
@@ -114,7 +116,7 @@
 
   environment.enableDebugInfo = true;
   environment.variables = {
-      EDITOR = pkgs.lib.mkOverride 0 "${pkgs.neovim}/bin/nvim";
+    EDITOR = pkgs.lib.mkOverride 0 "${pkgs.neovim}/bin/nvim";
   };
 
   security.dhparams.enable = true;
@@ -158,7 +160,7 @@
     extraOptions = ''
       gc-keep-outputs = true
       connect-timeout = 15
-	  builders-use-substitutes = true
+	    builders-use-substitutes = true
     '';
 
     trustedUsers = [ "addy" ];
@@ -167,24 +169,6 @@
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
 
     distributedBuilds = true;
-    buildMachines = [
-      {
-        hostName = "aarch64.nixos.community";
-        maxJobs = 64;
-        sshKey = "/root/.ssh/id_ed25519";
-        sshUser = "moredread";
-        system = "aarch64-linux";
-        supportedFeatures = [ "big-parallel" ];
-      }
-      {
-        hostName = "minuteman";
-        maxJobs = 8;
-        sshKey = "/root/.ssh/id_ed25519";
-        sshUser = "addy";
-        system = "x86_64-linux";
-        supportedFeatures = [ "big-parallel" "kvm" "nixos-test" ];
-      }
-    ];
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380];
