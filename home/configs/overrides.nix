@@ -14,12 +14,8 @@ let
     i3status-rust = nur.repos.moredread.i3status-rust;
     browserpass = unstable.browserpass;
 
-    gitwatch = pkgs.callPackage ../pkgs/gitwatch.nix { };
-
     pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
     lsd = unstable.lsd;
-    #syncthing = unstable.syncthing;
-    #qsyncthingtray = unstable.qsyncthingtray;
   };
 in
 {

@@ -46,7 +46,6 @@
     gdb
     gitAndTools.gitFull
     gitAndTools.hub
-    gitwatch
     glib
     gnome3.dconf
     gnome3.dconf-editor

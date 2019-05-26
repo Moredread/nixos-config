@@ -96,6 +96,7 @@
       alias upgrade='sudo sh -c "nixos-rebuild switch"; home-manager switch'
       alias build='nixos-rebuild build; home-manager build'
       alias rsync-copy='rsync -av --progress --partial -h'
+      alias hm='home-manager switch'
 
       compdef t='todo.sh'
       compdef 4='ip'
