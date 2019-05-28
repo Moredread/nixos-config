@@ -18,11 +18,8 @@ let
     lsd = unstable.lsd;
 
     nix-lsp = pkgs.callPackage ../pkgs/nix-lsp { rustPlatform = nur.repos.mic92.rustNightlyPlatform; };
-  } // lib.filterAttrs (n: v: v != null) {
-    # TODO: can this be expressed better?
-    renoise = if builtins.pathExists renoisePath
-    then unstable.renoise.override { releasePath = renoisePath; }
-    else null;
+  } // lib.optionalAttrs ( builtins.pathExists renoisePath ) {
+    renoise = unstable.renoise.override { releasePath = renoisePath; };
   };
 in
 {
