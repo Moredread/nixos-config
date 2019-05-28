@@ -83,6 +83,7 @@
     nmap
     nox
     nur.repos.mic92.inxi
+    nix-lsp
     nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
     nur.repos.moredread.slic3r-prusa3d-latest
