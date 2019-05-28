@@ -120,8 +120,10 @@
       }
 
       function nix-run {
-        nix-shell -p $1 --run "$*"
+        nix run nixpkgs.$1 -c "$*"
       }
+
+      alias e=nix-run
 
       # restore last saved path
       if [ -f ~/.last_dir ]
