@@ -67,7 +67,11 @@
   time.timeZone = "Europe/Berlin";
 
   # For Steam
-  systemd.extraConfig = "DefaultLimitNOFILE=1048576";
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE=1048576
+    DefaultTimeoutStopSec=10s
+    DefaultTimeoutStartSec=30s
+  '';
 
   #virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
