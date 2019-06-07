@@ -46,6 +46,7 @@
     gdb
     gitAndTools.gitFull
     gitAndTools.hub
+    gitAndTools.tig
     glib
     gnome3.dconf
     gnome3.dconf-editor
@@ -73,17 +74,18 @@
     minecraft
     mkpasswd
     mpv
+    msmtp
     msr-tools
     mumble
     mupdf
     networkmanagerapplet
     nix-du
+    nix-lsp
     nix-prefetch-scripts
     nixos-icons
     nmap
     nox
     nur.repos.mic92.inxi
-    nix-lsp
     nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
     nur.repos.moredread.slic3r-prusa3d-latest
@@ -102,6 +104,7 @@
     qrencode
     qsyncthingtray
     ranger
+    rclone
     renoise
     ripgrep
     rsync
