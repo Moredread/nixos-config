@@ -11,6 +11,7 @@
     ../home/configs/overrides.nix
     ../configs/build.nix
     ../configs/dlna.nix
+    <home-manager/nixos>
     #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
   ];
 
@@ -173,6 +174,14 @@
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
 
     distributedBuilds = true;
+  };
+
+  home-manager.users.addy = { pkgs, ... }: {
+    imports = [
+      ../home/home.nix
+    ];
+
+    nixpkgs.config.allowUnfree = true;
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380];
