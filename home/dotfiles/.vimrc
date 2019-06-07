@@ -200,3 +200,5 @@ set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
 
 vnoremap <leader>p "_dP
+
+nmap <C-T> gt
