@@ -4,6 +4,7 @@
   imports =
     [
       ../configs/base.nix
+      #../configs/wireguard.nix
       ../configs/users-and-groups.nix
     ];
 
@@ -58,7 +59,7 @@
   i18n.consoleKeyMap = "us";
   services.xserver.layout = "us";
 
-  nix.buildCores = lib.mkForce 8;
+  nix.buildCores = lib.mkForce 16;
 
   nix.buildMachines = [
     {
