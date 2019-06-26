@@ -18,4 +18,6 @@
     enableControllers = true;
     enableAdvancedLauncher = true;
   };
+
+  oraclejdk.accept_license = true;
 }
