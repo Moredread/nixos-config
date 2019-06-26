@@ -66,19 +66,23 @@
 
       setopt extendedglob
 
-      alias vim='${pkgs.neovim}/bin/nvim'
+      alias vim='nvim'
       alias edit-nixos='nvim /etc/nixos/**/*.nix~*/home/* -p'
       alias edit-home='nvim /etc/nixos/home/**/*.nix -p'
+      alias edit-dotfiles='nvim $(${pkgs.fd}/bin/fd -I -H . -t f /etc/nixos/home/dotfiles | xargs) -p'
       alias home-edit='edit-home'
       alias nixos-edit='edit-nixos'
+      alias dotfiles-edit='edit-dotfiles'
       alias he='edit-home'
       alias ne='edit-nixos'
+      alias de='edit-dotfiles'
       alias vim-update='vim -c :PlugUpdate'
       alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
       alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
       alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
       alias clean-direnv="${pkgs.fd}/bin/fd -I -H -s -p -t d '\.direnv' /*~/nix~/media -x rm -rfv {};"
       alias clean-result="${pkgs.fd}/bin/fd -I -H -s -p -t l result /*~/nix~/media -x rm -fv {};"
+      alias repair-store='sudo sh -c "mv /etc/nix/nix.conf /etc/nix/nix.conf.old; cp /etc/nix/nix.conf.old /etc/nix/nix.conf; sed -i /auto-op/d /etc/nix/nix.conf"; sudo nix-store --verify --repair --check-contents -vvv 2>&1 | tee ~/repair-`date +%Y%m%d-%H%M%S`.log'
 
       alias fehz='feh -Z'
 
@@ -105,10 +109,13 @@
       compdef v='nvim'
       compdef edit-home='nvim'
       compdef edit-nixos='nvim'
+      compdef edit-dotfiles='nvim'
       compdef home-edit='nvim'
       compdef nixos-edit='nvim'
+      compdef dotfiles-edit='nvim'
       compdef ne='nvim'
       compdef he='nvim'
+      compdef de='nvim'
       compdef rsync-copy='rsync'
 
       function savepath {
