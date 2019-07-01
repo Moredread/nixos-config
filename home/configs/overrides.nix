@@ -18,6 +18,14 @@ let
     lsd = unstable.lsd;
 
     nix-lsp = pkgs.callPackage ../pkgs/nix-lsp { rustPlatform = nur.repos.mic92.rustNightlyPlatform; };
+
+    nix-universal-prefetch = pkgs.callPackage (pkgs.fetchFromGitHub {
+      owner = "samueldr";
+      repo = "nix-universal-prefetch";
+      rev = "829e7d56510af144ed4c000d378355a0ebae6072";
+      sha256 = "09465fpc74g3waxx88yqjk5sj5vs523c0kvil6fkivbwyyjpzmvf";
+    }) {};
+
   } // lib.optionalAttrs ( builtins.pathExists renoisePath ) {
     renoise = unstable.renoise.override { releasePath = renoisePath; };
   };

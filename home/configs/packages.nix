@@ -139,5 +139,6 @@
     youtube-dl
     yubioath-desktop
     zip
+    nix-universal-prefetch
   ];
 }
