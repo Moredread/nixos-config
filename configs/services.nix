@@ -23,14 +23,13 @@
       challengeResponseAuthentication = false;
     };
 
-    flatpak.enable = true;
-
-    fwupd.enable = true;
     acpid.enable = true;
     dbus.enable = true;
+    flatpak.enable = true;
+    fwupd.enable = true;
     locate.enable = true;
-    thermald.enable = true;
     pcscd.enable = true;
+    thermald.enable = true;
     trezord.enable = true;
 
     # mkDefault, so that it works with VMs (which sets it to false)

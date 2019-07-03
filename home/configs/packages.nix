@@ -82,13 +82,13 @@
     nix-du
     nix-lsp
     nix-prefetch-scripts
+    nix-universal-prefetch
     nixos-icons
     nmap
     nox
     nur.repos.mic92.inxi
     nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
-    nur.repos.moredread.slic3r-prusa3d-latest
     p7zip
     pamixer
     paperkey
@@ -125,6 +125,7 @@
     todo-txt-cli
     travis
     unrar
+    unstable.prusa-slicer
     unzip
     vimPlugins.fzf-vim
     vlc
@@ -139,6 +140,5 @@
     youtube-dl
     yubioath-desktop
     zip
-    nix-universal-prefetch
   ];
 }
