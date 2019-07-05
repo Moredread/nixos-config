@@ -26,6 +26,7 @@
     iptables
     iputils
     lftp
+    libguestfs
     light
     lm_sensors
     lsof

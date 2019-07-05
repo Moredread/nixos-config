@@ -16,7 +16,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
     #crashDump.enable = true;
     #bootchart.enable = true;
 
@@ -171,7 +171,7 @@
 
     extraOptions = ''
       gc-keep-outputs = true
-      connect-timeout = 15
+      connect-timeout = 5
 	    builders-use-substitutes = true
     '';
 
@@ -205,7 +205,7 @@
   #networking.firewall.checkReversePath = "loose";
 
   #networking.firewall.enable = false;
-  #networking.firewall.logRefusedPackets = true;
+  networking.firewall.logRefusedPackets = true;
 
   zramSwap.enable = true;
 

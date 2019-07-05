@@ -32,10 +32,10 @@ in {
 
     config.keybindings = with myStuff.i3; {
       "${modKey}+Return" =
-        let factor = valueForGrableOrMinuteman "1.5" "2.0"; in
+        let factor = valueForGrableOrMinuteman "1.5" "1.0"; in
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty'";
       "${modKey}+Shift+Return" =
-        let factor = valueForGrableOrMinuteman "1.5" "2.0"; in
+        let factor = valueForGrableOrMinuteman "1.5" "1.0"; in
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty --working-directory $(${pkgs.xcwd}/bin/xcwd)'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
