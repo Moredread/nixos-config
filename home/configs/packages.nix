@@ -24,6 +24,7 @@
     crawlTiles
     csvkit
     daemontools
+    darktable
     dfeet
     docker
     docker_compose
@@ -55,6 +56,7 @@
     gnupg
     gnupg1
     gocryptfs
+    gphoto2
     graphviz
     gsettings-qt
     hledger
@@ -125,6 +127,7 @@
     todo-txt-cli
     travis
     unrar
+    unstable.prusa-slicer
     unstable.prusa-slicer
     unzip
     vimPlugins.fzf-vim

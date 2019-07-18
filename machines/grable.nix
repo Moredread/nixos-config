@@ -36,7 +36,7 @@ in {
     buildMachines = [
       {
         hostName = "minuteman";
-        maxJobs = 8;
+        maxJobs = 2;
         sshKey = "/root/.ssh/id_ed25519";
         sshUser = "addy";
         system = "x86_64-linux";

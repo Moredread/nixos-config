@@ -182,6 +182,8 @@ set number
 set hidden
 "let g:racer_cmd = "racer"
 
+"set virtualedit=all
+
 let g:formatdef_rustfmt = '"rustfmt"'
 let g:formatters_rust = ['rustfmt']
 
