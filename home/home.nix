@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    configs/lorri.nix
     configs/packages.nix
     configs/programs.nix
     configs/wm.nix
