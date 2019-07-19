@@ -9,7 +9,6 @@
     serviceConfig.Type = "forking";
     serviceConfig.Restart = "always";
     serviceConfig.RestartSec = 10;
-    serviceConfig.StartLimitIntervalSec = 60;
     serviceConfig.StartLimitBurst = 3;
     serviceConfig.ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection CLIPBOARD -fork";
   };
@@ -21,7 +20,6 @@
     serviceConfig.Type = "forking";
     serviceConfig.Restart = "always";
     serviceConfig.RestartSec = 10;
-    serviceConfig.StartLimitIntervalSec = 60;
     serviceConfig.StartLimitBurst = 3;
     serviceConfig.ExecStart = "${pkgs.autocutsel}/bin/autocutsel -selection PRIMARY -fork";
   };
