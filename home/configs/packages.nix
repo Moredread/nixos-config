@@ -11,6 +11,7 @@
     aspellDicts.en
     atool
     autocutsel
+    bc
     bind.dnsutils
     binutils
     blender
@@ -59,6 +60,7 @@
     gphoto2
     graphviz
     gsettings-qt
+    handbrake
     hledger
     hledger-ui
     hledger-web
