@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #csvkit
+    #nur.repos.mic92.nixpkgs-fmt
     alacritty
     alot
     apg
@@ -23,7 +25,6 @@
     calibre
     crawl
     crawlTiles
-    csvkit
     daemontools
     darktable
     dfeet
@@ -70,6 +71,7 @@
     keepassx2
     krusader
     ledger
+    libav
     libreoffice
     libsmbios
     mc
@@ -87,9 +89,11 @@
     nix-lsp
     nix-prefetch-scripts
     nix-universal-prefetch
+    nixos-generators
     nixos-icons
     nmap
     nox
+    nur.repos.mic92.cntr
     nur.repos.mic92.inxi
     nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
