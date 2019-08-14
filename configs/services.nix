@@ -155,7 +155,7 @@
     printing.drivers = with pkgs; [ gutenprint hplip ];
 
     avahi = {
-      enable = false;
+      enable = lib.mkDefault false;
       nssmdns = true;
       ipv6 = true;
       publish.enable = true;

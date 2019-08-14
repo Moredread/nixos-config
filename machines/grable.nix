@@ -49,7 +49,7 @@ in {
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
   services = {
-    throttled.enable = true;
+    throttled-custom.enable = true;
     # Start syncthing via QSyncthingTray
     syncthing.enable = lib.mkForce false;
     thermald.enable = lib.mkForce false;

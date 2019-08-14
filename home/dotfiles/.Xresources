@@ -4,7 +4,7 @@ urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=16,antialias=true
 !URxvt.font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1,xft:code2000:autohint=false
 
 !Xft.dpi: 192
-Xft.dpi: 96
+!Xft.dpi: 96
 
 URxvt.boldfont: -misc-fixed-medium-r-normal-*-10-100-*-*-*-*-iso10646-1,xft:code2000:autohint=false
 

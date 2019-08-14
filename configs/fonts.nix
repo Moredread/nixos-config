@@ -5,7 +5,7 @@
     enableDefaultFonts = true;
     fonts = with pkgs; [
       corefonts  # Microsoft free fonts
-      font-awesome_4
+      #font-awesome_4
       dejavu_fonts
       fira
       fira-mono
