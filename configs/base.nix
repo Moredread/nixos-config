@@ -81,15 +81,20 @@
   virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
+    # Which works?
+    acpilight.enable = true;
     bluetooth.enable = true;
+    brightnessctl.enable = true;
     cpu.amd.updateMicrocode = true;
     cpu.intel.updateMicrocode = true;
     enableAllFirmware = true;
+    ledger.enable = true;
     opengl.driSupport32Bit = true;
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.zeroconf.discovery.enable = true;
+    u2f.enable = true;
     #sane.enable = true; # scanner support
     #sane.snapshot = true;
     #sane.netConf = "192.168.42.123";
@@ -187,7 +192,9 @@
   };
 
   networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380];
-  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 22000 ];
+  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 22000
+    4070 #spotify
+  ];
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];
