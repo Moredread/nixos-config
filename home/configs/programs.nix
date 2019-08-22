@@ -79,7 +79,7 @@
       alias vim-update='vim -c :PlugUpdate'
       alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
       alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
-      alias qrsel='${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
+      alias qrsel='${pkgs.xsel}/bin/xsel; ${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
       alias clean-direnv="${pkgs.fd}/bin/fd -I -H -s -p -t d '\.direnv' /*~/nix~/media -x rm -rfv {};"
       alias clean-result="${pkgs.fd}/bin/fd -I -H -s -p -t l result /*~/nix~/media -x rm -fv {};"
       alias repair-store='sudo sh -c "mv /etc/nix/nix.conf /etc/nix/nix.conf.old; cp /etc/nix/nix.conf.old /etc/nix/nix.conf; sed -i /auto-op/d /etc/nix/nix.conf"; sudo nix-store --verify --repair --check-contents -vvv 2>&1 | tee ~/repair-`date +%Y%m%d-%H%M%S`.log'
