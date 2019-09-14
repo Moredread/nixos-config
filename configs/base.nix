@@ -167,7 +167,7 @@
     useSandbox = true;
     buildCores = lib.mkDefault 0;
     maxJobs = lib.mkDefault 8;
-    autoOptimiseStore = true;
+    #autoOptimiseStore = true;
 
     extraOptions = ''
       gc-keep-outputs = true
