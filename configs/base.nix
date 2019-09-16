@@ -200,7 +200,7 @@
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];
 
   # For wg-quick VPN
-  networking.firewall.checkReversePath = "loose";
+  #networking.firewall.checkReversePath = "loose";
 
   #networking.firewall.enable = false;
   #networking.firewall.logRefusedPackets = true;

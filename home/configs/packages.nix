@@ -23,6 +23,7 @@
     breeze-qt5
     cachix
     calibre
+    chromium
     crawl
     crawlTiles
     daemontools
@@ -58,6 +59,7 @@
     gnupg
     gnupg1
     gocryptfs
+    google-chrome-beta
     gphoto2
     graphviz
     gsettings-qt
@@ -132,7 +134,9 @@
     thunderbird
     todo-txt-cli
     travis
+    unetbootin
     unrar
+    unstable.cataclysm-dda-git
     unstable.prusa-slicer
     unstable.prusa-slicer
     unzip
