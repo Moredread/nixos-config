@@ -97,7 +97,7 @@
     nox
     nur.repos.mic92.cntr
     nur.repos.mic92.inxi
-    nur.repos.moredread.implicitcad
+    #nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
     p7zip
     pamixer
