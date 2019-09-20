@@ -16,7 +16,7 @@
   ];
 
   boot = {
-    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     #crashDump.enable = true;
     #bootchart.enable = true;
 
@@ -75,7 +75,7 @@
     DefaultTimeoutStartSec=30s
   '';
 
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
