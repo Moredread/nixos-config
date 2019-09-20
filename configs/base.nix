@@ -167,7 +167,7 @@
     useSandbox = true;
     buildCores = lib.mkDefault 0;
     maxJobs = lib.mkDefault 8;
-    #autoOptimiseStore = true;
+    autoOptimiseStore = true;
 
     extraOptions = ''
       gc-keep-outputs = true
@@ -175,7 +175,7 @@
 	    builders-use-substitutes = true
     '';
 
-    trustedUsers = [ "addy" ];
+    trustedUsers = [ "addy" "root" ];
 
     binaryCaches = [ "https://cache.nixos.org" "https://moredread.cachix.org" "https://moredread-nur.cachix.org" ];
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
