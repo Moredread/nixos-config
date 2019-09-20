@@ -1,5 +1,6 @@
 {
   allowUnfree = true;
+  allowBroken = true;
 
       packageOverrides = pkgs: {
        ccacheWrapper = pkgs.ccacheWrapper.override {

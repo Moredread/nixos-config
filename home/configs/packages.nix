@@ -87,8 +87,8 @@
     mumble
     mupdf
     networkmanagerapplet
-    nix-du
-    nix-lsp
+    #nix-du
+    #nix-lsp
     nix-prefetch-scripts
     nix-universal-prefetch
     nixos-generators

@@ -11,7 +11,7 @@ let
     unstable = unstable;
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
-    i3status-rust = nur.repos.moredread.i3status-rust;
+    #i3status-rust = nur.repos.moredread.i3status-rust;
 
     pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
 

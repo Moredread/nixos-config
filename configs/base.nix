@@ -16,7 +16,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
     #crashDump.enable = true;
     #bootchart.enable = true;
 
@@ -198,6 +198,8 @@
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];
+
+  xdg.portal.enable = true;
 
   # For wg-quick VPN
   #networking.firewall.checkReversePath = "loose";
