@@ -77,7 +77,7 @@
     '';
 
     # cups, for printing documents
-    printing.enable = false;
+    printing.enable = true;
     printing.drivers = with pkgs; [ gutenprint hplip ];
 
     avahi = {
