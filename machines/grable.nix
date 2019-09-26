@@ -18,8 +18,16 @@ in {
 
 
   # Use the GRUB 2 boot loader.
-  boot.loader.systemd-boot.enable = true;
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader.grub.enable = true;
+  boot.loader.grub.copyKernels = true;
+  boot.loader.grub.efiInstallAsRemovable = false;
+  boot.loader.grub.efiSupport = true;
+
+  boot.loader.grub.devices = [ "nodev" ];
+  boot.loader.grub.extraEntries = builtins.readFile ../configs/extra.grub;
 
   boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
   environment.systemPackages = [ pkgs.wireguard ];
