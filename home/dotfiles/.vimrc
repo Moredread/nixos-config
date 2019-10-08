@@ -11,7 +11,15 @@ Plug 'autozimu/LanguageClient-neovim', {
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
@@ -39,7 +47,7 @@ set background=dark
 colorscheme solarized
 
 let g:LanguageClient_serverCommands = {
-      \ 'nix': ['nix-lsp'],
+      \ 'nix': ['rnix-lsp'],
       \ 'python': ['pyls'],
       \ }
 let g:LanguageClient_loadSettings = 1

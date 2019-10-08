@@ -2,7 +2,9 @@
 {
   home.packages = with pkgs; [
     #csvkit
+    #nix-du
     #nur.repos.mic92.nixpkgs-fmt
+    #nur.repos.moredread.implicitcad
     alacritty
     alot
     apg
@@ -12,7 +14,7 @@
     aspellDicts.de
     aspellDicts.en
     atool
-    autocutsel
+    #autocutsel
     bc
     bind.dnsutils
     binutils
@@ -25,10 +27,9 @@
     calibre
     chromium
     crawl
-    crawlTiles
     daemontools
-    darktable
-    dfeet
+    #darktable
+    #dfeet
     docker
     docker_compose
     dos2unix
@@ -87,8 +88,6 @@
     mumble
     mupdf
     networkmanagerapplet
-    #nix-du
-    #nix-lsp
     nix-prefetch-scripts
     nix-universal-prefetch
     nixos-generators
@@ -97,7 +96,6 @@
     nox
     nur.repos.mic92.cntr
     nur.repos.mic92.inxi
-    #nur.repos.moredread.implicitcad
     nur.repos.moredread.nix-search
     p7zip
     pamixer
@@ -117,6 +115,7 @@
     rclone
     renoise
     ripgrep
+    rnix-lsp
     rsync
     s-tui
     screen
@@ -131,6 +130,7 @@
     subversion
     syncthing
     tdesktop
+    tetex
     thunderbird
     todo-txt-cli
     travis
