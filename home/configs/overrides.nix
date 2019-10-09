@@ -1,21 +1,32 @@
 { pkgs, lib, ... }:
 let
-  unstable = import <nixos-unstable> {};
-  nur = import (builtins.fetchTarball {
+  unstable_ = import <nixos-unstable> {};
+  nur_ = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
   }) { inherit pkgs; };
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
-  packageOverridesOverlay = self: super: {
-    nur = nur;
-    unstable = unstable;
+  mozilla_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
+  packageOverridesOverlay = self: super: rec {
+    nur = nur_;
+    unstable = unstable_;
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
     #i3status-rust = nur.repos.moredread.i3status-rust;
 
     pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
 
-    nix-lsp = pkgs.callPackage ../pkgs/nix-lsp { rustPlatform = nur.repos.mic92.rustNightlyPlatform; };
+    rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp { };
+
+    nightly = super.rustChannelOf {
+      date = "2019-10-03";
+      channel = "nightly";
+    };
+
+    rustNightlyPlatform = super.makeRustPlatform {
+      cargo = nightly.rust;
+      rustc = nightly.rust;
+    };
 
     nix-universal-prefetch = pkgs.callPackage (pkgs.fetchFromGitHub {
       owner = "samueldr";
@@ -35,6 +46,7 @@ let
     #Infinite recursion problems
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
+    # use unstable version of following packages
     "alacritty"
     "blender"
     "browserpass"
@@ -43,8 +55,9 @@ let
     "lsd"
     "syncthing"
     "travis"
-  ] unstable;
+  ] unstable_;
 in
+
 {
-  nixpkgs.overlays = [ packageOverridesOverlay ];
+  nixpkgs.overlays = [ mozilla_overlay packageOverridesOverlay ];
 }
