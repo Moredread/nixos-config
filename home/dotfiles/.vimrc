@@ -47,7 +47,7 @@ set background=dark
 colorscheme solarized
 
 let g:LanguageClient_serverCommands = {
-      \ 'nix': ['rnix-lsp'],
+      \ 'nix': ['nix-lsp'],
       \ 'python': ['pyls'],
       \ }
 let g:LanguageClient_loadSettings = 1

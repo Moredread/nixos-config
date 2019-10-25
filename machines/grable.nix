@@ -68,7 +68,7 @@ in {
       deviceSection = ''
         Option "DRI" "3"
         Option "AccelMethod" "sna"
-        Option "TearFree" "true"
+        #Option "TearFree" "true"
       '';
       useGlamor = true;
       layout = "en_US";

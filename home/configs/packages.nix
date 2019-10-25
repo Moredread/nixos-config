@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #autocutsel
     #csvkit
+    #darktable
+    #dfeet
     #nix-du
     #nur.repos.mic92.nixpkgs-fmt
     #nur.repos.moredread.implicitcad
@@ -14,7 +17,6 @@
     aspellDicts.de
     aspellDicts.en
     atool
-    #autocutsel
     bc
     bind.dnsutils
     binutils
@@ -28,8 +30,6 @@
     chromium
     crawl
     daemontools
-    #darktable
-    #dfeet
     docker
     docker_compose
     dos2unix
@@ -70,6 +70,7 @@
     hledger-web
     i3lock
     inetutils
+    josm
     jq
     keepassx2
     krusader
@@ -153,5 +154,6 @@
     youtube-dl
     yubioath-desktop
     zip
+    zotero
   ];
 }
