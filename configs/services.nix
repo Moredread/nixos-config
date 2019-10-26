@@ -11,6 +11,7 @@
   };
 
   programs.qt5ct.enable = true;
+  programs.zsh.enable = true;
 
   hardware.u2f.enable = true;
 
@@ -28,6 +29,7 @@
     colord.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
+    blueman.enable = true;
     fwupd.enable = true;
     locate.enable = true;
     pcscd.enable = true;

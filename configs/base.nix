@@ -93,7 +93,8 @@
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
-    pulseaudio.zeroconf.discovery.enable = true;
+    #pulseaudio.zeroconf.discovery.enable = true;
+    pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
     u2f.enable = true;
     #sane.enable = true; # scanner support
     #sane.snapshot = true;
