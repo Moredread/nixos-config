@@ -84,6 +84,7 @@
     # Which works?
     acpilight.enable = true;
     bluetooth.enable = true;
+    bluetooth.package = pkgs.bluezFull;
     brightnessctl.enable = true;
     cpu.amd.updateMicrocode = true;
     cpu.intel.updateMicrocode = true;
