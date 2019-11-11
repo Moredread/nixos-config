@@ -41,13 +41,13 @@
   fileSystems."/media/nas" =
     { device = "192.168.43.1:/mnt/pool0/public";
       fsType = "nfs";
-      options = [ "soft" ];
+      options = [ "soft" "bg" ];
     };
 
   fileSystems."/media/nasw" =
     { device = "192.168.1.1:/mnt/pool0/data/public";
       fsType = "nfs";
-      options = [ "soft" ];
+      options = [ "soft" "bg" ];
     };
 
   powerManagement.cpuFreqGovernor = "ondemand";

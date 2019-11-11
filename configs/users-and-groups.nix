@@ -50,5 +50,6 @@
   users.extraGroups = {
     addy = { name = "addy"; };
     config = { gid = 500; };
+    plugdev = {};
   };
 }

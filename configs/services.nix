@@ -76,6 +76,9 @@
       # NS PRO Controller USB
       KERNEL=="hidraw*", ATTRS{idVendor}=="20d6", ATTRS{idProduct}=="a711", MODE="0660", TAG+="uaccess", GROUP="input"
       SUBSYSTEMS=="usb", ATTR{idVendor}=="057e", MODE="0666"
+
+      ATTRS{idVendor}==“0403”, ATTRS{idProduct}==“6010”, MODE=“0660”, GROUP=“plugdev”, TAG+=“uaccess”
+      ATTRS{idVendor}==“0403”, ATTRS{idProduct}==“6014”, MODE=“0660”, GROUP=“plugdev”, TAG+=“uaccess”
     '';
 
     # cups, for printing documents

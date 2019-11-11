@@ -15,7 +15,10 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "subvol=subvol/root" ];
+      options = [
+        "subvol=subvol/root"
+        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+      ];
     };
 
   boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/ca5de9e4-7c1e-4805-aa80-96d59f54be5e";
@@ -23,13 +26,19 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "subvol=subvol/home" ];
+      options = [
+        "subvol=subvol/home"
+        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+      ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
-      options = [ "subvol=subvol/nix" ];
+      options = [
+        "subvol=subvol/nix"
+        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+      ];
     };
 
   fileSystems."/boot" =

@@ -13,7 +13,6 @@ in {
       ../configs/users-and-groups.nix
       ../configs/intel-vaapi.nix
       ./hardware-grable.nix
-      nur-no-pkgs.modules.throttled
     ];
 
 
@@ -52,7 +51,6 @@ in {
       }
     ];
   };
-
 
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
