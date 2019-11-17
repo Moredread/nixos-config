@@ -76,7 +76,7 @@
     krusader
     ledger
     libav
-    #libreoffice
+    libreoffice
     libsmbios
     mc
     mercurialFull

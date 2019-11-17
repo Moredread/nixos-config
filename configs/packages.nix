@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    #urxvt_font_size
-    #urxvt_perls
     autocutsel
     bashInteractive
     bridge-utils

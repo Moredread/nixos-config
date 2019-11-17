@@ -66,9 +66,9 @@ in {
       deviceSection = ''
         Option "DRI" "3"
         Option "AccelMethod" "sna"
-        #Option "TearFree" "true"
+        Option "TearFree" "true"
       '';
-      useGlamor = true;
+      useGlamor = false;
       layout = "en_US";
     };
   };

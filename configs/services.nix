@@ -108,7 +108,7 @@
       desktopManager.xterm.enable = false;
       xkbOptions = "ctrl:nocaps";
 
-      useGlamor = true;
+      useGlamor = lib.mkDefault false;
       displayManager.sessionCommands = '''';
       displayManager.slim = {
         enable = true;

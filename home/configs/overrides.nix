@@ -52,6 +52,7 @@ let
     "browserpass"
     "darktable"
     "freecad"
+    "libreoffice"
     "lsd"
     "syncthing"
     "travis"
