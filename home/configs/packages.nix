@@ -114,7 +114,6 @@
     qsyncthingtray
     ranger
     rclone
-    renoise
     ripgrep
     rnix-lsp
     rsync

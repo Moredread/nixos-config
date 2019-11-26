@@ -35,7 +35,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
-      options = [ "relatime,ssd,autodefrag,compress=zlib,space_cache" ];
+      options = [ "relatime,ssd,autodefrag,compress=zstd,space_cache" ];
     };
 
   fileSystems."/media/nas" =

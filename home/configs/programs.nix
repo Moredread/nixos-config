@@ -23,7 +23,7 @@
       enable = true;
       enableBashIntegration = true;
       enableZshIntegration = true;
-      keys = [ "id_ed25519" "id_rsa" "sfb_key" ];
+      keys = [ "id_ed25519" "id_rsa" ];
     };
 
     zsh = {
@@ -36,7 +36,7 @@
 
       COMPLETION_WAITING_DOTS="true"
 
-      zstyle :omz:plugins:ssh-agent identities id_ed25519 id_rsa sfb_key
+      zstyle :omz:plugins:ssh-agent identities id_ed25519 id_rsa
 
       # Customize your oh-my-zsh options here
       ZSH_THEME="agnoster"
