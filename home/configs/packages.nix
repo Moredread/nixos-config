@@ -69,6 +69,7 @@
     hledger-ui
     hledger-web
     i3lock
+    imagemagick7
     inetutils
     josm
     jq
@@ -101,6 +102,7 @@
     p7zip
     pamixer
     paperkey
+    parallel
     pass-custom
     pasystray
     pavucontrol
