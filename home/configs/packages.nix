@@ -94,6 +94,7 @@
     nix-universal-prefetch
     nixos-generators
     nixos-icons
+    nixpkgs-fmt
     nmap
     nox
     nur.repos.mic92.cntr

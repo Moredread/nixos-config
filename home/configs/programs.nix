@@ -102,6 +102,7 @@
       alias rsync-copy='rsync -av --progress --partial -h'
       alias hm='home-manager switch'
       alias sl='ls'
+      alias sudoi='sudo -i'
 
       compdef t='todo.sh'
       compdef 4='ip'
@@ -119,6 +120,7 @@
       compdef de='nvim'
       compdef rsync-copy='rsync'
       compdef sl='ls'
+      compdef sudoi='sudo'
 
       function savepath {
         pwd > ~/.last_dir
