@@ -101,6 +101,7 @@
       alias build='nixos-rebuild build; home-manager build'
       alias rsync-copy='rsync -av --progress --partial -h'
       alias hm='home-manager switch'
+      alias sl='ls'
 
       compdef t='todo.sh'
       compdef 4='ip'
@@ -117,6 +118,7 @@
       compdef he='nvim'
       compdef de='nvim'
       compdef rsync-copy='rsync'
+      compdef sl='ls'
 
       function savepath {
         pwd > ~/.last_dir
