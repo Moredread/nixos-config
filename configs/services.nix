@@ -77,8 +77,15 @@
       KERNEL=="hidraw*", ATTRS{idVendor}=="20d6", ATTRS{idProduct}=="a711", MODE="0660", TAG+="uaccess", GROUP="input"
       SUBSYSTEMS=="usb", ATTR{idVendor}=="057e", MODE="0666"
 
-      ATTRS{idVendor}==“0403”, ATTRS{idProduct}==“6010”, MODE=“0660”, GROUP=“plugdev”, TAG+=“uaccess”
-      ATTRS{idVendor}==“0403”, ATTRS{idProduct}==“6014”, MODE=“0660”, GROUP=“plugdev”, TAG+=“uaccess”
+      # Ultimate Hacking Keyboard rules
+      # These are the udev rules for accessing the USB interfaces of the UHK as non-root users.
+      # Copy this file to /etc/udev/rules.d and physically reconnect the UHK afterwards.
+      SUBSYSTEM=="input", GROUP="input", MODE="0666"
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", TAG+="uaccess"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", TAG+="uaccess"
+
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0660", GROUP="plugdev", TAG+="uaccess"
     '';
 
     # cups, for printing documents
@@ -86,7 +93,7 @@
     printing.drivers = with pkgs; [ gutenprint hplip ];
 
     avahi = {
-      enable = lib.mkDefault false;
+      enable = lib.mkDefault true;
       nssmdns = true;
       ipv6 = true;
       publish.enable = true;

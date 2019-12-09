@@ -15,13 +15,13 @@
         "cdrom"
         "config"
         "dialout"
-        "disk"
         "docker"
         "git"
+        "input"
         "libvirtd"
         "networkmanager"
-        "sabnzbd"
         "plugdev"
+        "sabnzbd"
         "scanner"
         "systemd-journal"
         "tracing"
@@ -33,7 +33,7 @@
         "wireshark"
       ];
       isNormalUser = true;
-      initialPassword = "initialpw";
+      initialPassword = "addy";
       # Subordinate user ids that user is allowed to use. They are set into
       # /etc/subuid and are used by newuidmap for user namespaces. (Needed for
       # LXC.)
