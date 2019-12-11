@@ -89,6 +89,8 @@ in {
       "${modKey}+minus" = "workspace 11";
       "${modKey}+equal" = "workspace 12";
 
+      "${modKey}+a" = "focus parent";
+
       "${modKey}+Shift+grave" = "move container to workspace 0";
       "${modKey}+Shift+1" = "move container to workspace 1";
       "${modKey}+Shift+2" = "move container to workspace 2";
