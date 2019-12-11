@@ -118,6 +118,7 @@
     ranger
     rclone
     ripgrep
+    rls
     rnix-lsp
     rsync
     s-tui

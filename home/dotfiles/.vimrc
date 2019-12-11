@@ -49,6 +49,7 @@ colorscheme solarized
 let g:LanguageClient_serverCommands = {
       \ 'nix': ['nix-lsp'],
       \ 'python': ['pyls'],
+      \ 'rust': ['rls'],
       \ }
 let g:LanguageClient_loadSettings = 1
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
