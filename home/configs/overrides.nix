@@ -55,6 +55,7 @@ let
     "lsd"
     "syncthing"
     "travis"
+    "openxcom"
   ] unstable_;
 in
 
