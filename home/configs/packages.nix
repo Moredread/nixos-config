@@ -120,6 +120,7 @@
     ranger
     rclone
     ripgrep
+    rls
     rnix-lsp
     rsync
     s-tui
@@ -152,7 +153,6 @@
     xbrightness
     xcwd
     xorg.xev
-    xpdf
     xsel
     you-get
     youtube-dl

@@ -103,6 +103,7 @@
       alias hm='home-manager switch'
       alias sl='ls'
       alias sudoi='sudo -i'
+      alias reflink="cp --reflink=always"
 
       compdef t='todo.sh'
       compdef 4='ip'
@@ -121,6 +122,7 @@
       compdef rsync-copy='rsync'
       compdef sl='ls'
       compdef sudoi='sudo'
+      compdef reflink='cp'
 
       function savepath {
         pwd > ~/.last_dir
