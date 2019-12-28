@@ -7,7 +7,7 @@ let
 #  }) { inherit pkgs; };
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
-  mozilla_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
+  mozilla_overlay = import <mozilla-overlay>;
   packageOverridesOverlay = self: super: rec {
     nur = nur_;
     unstable = unstable_;
