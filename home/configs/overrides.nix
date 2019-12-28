@@ -1,9 +1,10 @@
 { pkgs, lib, ... }:
 let
   unstable_ = import <nixos-unstable> {};
-  nur_ = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-  }) { inherit pkgs; };
+  nur_ = import <nur> { inherit pkgs; };
+#  nur_ = import (builtins.fetchTarball {
+#    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+#  }) { inherit pkgs; };
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
   mozilla_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
@@ -12,7 +13,6 @@ let
     unstable = unstable_;
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
-
 
     rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp { };
 
