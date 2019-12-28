@@ -151,5 +151,9 @@ in {
     lxappearance
     xorg.xcursorthemes
     zuki-themes
+    nixos-icons
+    material-icons
+    moka-icon-theme
+    plata-theme
   ];
 }

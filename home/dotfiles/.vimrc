@@ -222,3 +222,4 @@ nnoremap <F10> :b <C-Z>
 vnoremap <leader>p "_dP
 
 nmap <C-T> gt
+nmap <F3> vi[:sort<CR>

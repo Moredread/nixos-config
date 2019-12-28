@@ -55,6 +55,7 @@
     glib
     gnome3.dconf
     gnome3.dconf-editor
+    gnome3.zenity
     gnugrep
     gnumake
     gnupg
@@ -100,11 +101,11 @@
     nur.repos.mic92.cntr
     nur.repos.mic92.inxi
     nur.repos.moredread.nix-search
+    openxcom
     p7zip
     pamixer
     paperkey
     parallel
-    pass-custom
     pasystray
     pavucontrol
     polkit_gnome
@@ -151,7 +152,6 @@
     xbrightness
     xcwd
     xorg.xev
-    xpdf
     xsel
     you-get
     youtube-dl

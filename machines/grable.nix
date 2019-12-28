@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 
-let
-  nur-no-pkgs = import /home/addy/nur/default.nix {};
-in {
+{
   imports =
     [
       ../configs/base.nix

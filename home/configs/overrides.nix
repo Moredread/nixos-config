@@ -1,19 +1,18 @@
 { pkgs, lib, ... }:
 let
   unstable_ = import <nixos-unstable> {};
-  nur_ = import (builtins.fetchTarball {
-    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-  }) { inherit pkgs; };
+  nur_ = import <nur> { inherit pkgs; };
+#  nur_ = import (builtins.fetchTarball {
+#    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+#  }) { inherit pkgs; };
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
-  mozilla_overlay = import (builtins.fetchTarball https://github.com/mozilla/nixpkgs-mozilla/archive/master.tar.gz);
+  mozilla_overlay = import <mozilla-overlay>;
   packageOverridesOverlay = self: super: rec {
     nur = nur_;
     unstable = unstable_;
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
-
-    pass-custom = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
 
     rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp { };
 
@@ -55,6 +54,7 @@ let
     "lsd"
     "syncthing"
     "travis"
+    "openxcom"
   ] unstable_;
 in
 

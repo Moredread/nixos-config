@@ -19,6 +19,13 @@
     noti.enable = true;
     zathura.enable = true;
 
+    password-store = {
+      enable = true;
+      package = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
+      settings = { PASSWORD_STORE_GPG_OPTS = "-a"; };
+    };
+
+
     keychain = {
       enable = true;
       enableBashIntegration = true;
@@ -103,6 +110,7 @@
       alias hm='home-manager switch'
       alias sl='ls'
       alias sudoi='sudo -i'
+      alias reflink="cp --reflink=always"
 
       compdef t='todo.sh'
       compdef 4='ip'
@@ -121,6 +129,7 @@
       compdef rsync-copy='rsync'
       compdef sl='ls'
       compdef sudoi='sudo'
+      compdef reflink='cp'
 
       function savepath {
         pwd > ~/.last_dir
