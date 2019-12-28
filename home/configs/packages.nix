@@ -106,7 +106,6 @@
     pamixer
     paperkey
     parallel
-    pass-custom
     pasystray
     pavucontrol
     polkit_gnome
