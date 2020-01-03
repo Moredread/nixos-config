@@ -19,11 +19,14 @@
     noti.enable = true;
     zathura.enable = true;
 
-    password-store = {
-      enable = true;
-      package = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
-      settings = { PASSWORD_STORE_GPG_OPTS = "-a"; };
-    };
+#    password-store = {
+#      enable = true;
+#      package = pkgs.pass.withExtensions (ext: [ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import]);
+#      settings = {
+#        PASSWORD_STORE_DIR = "$HOME/.password-store";
+#        PASSWORD_STORE_GPG_OPTS = "-a";
+#      };
+#    };
 
 
     keychain = {
