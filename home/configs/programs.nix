@@ -87,7 +87,7 @@
       alias ne='edit-nixos'
       alias de='edit-dotfiles'
       alias vim-update='vim -c :PlugUpdate'
-      alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 5; modprobe ath10k_pci -v"'
+      alias rwifi='sudo sh -c "modprobe ath10k_pci -v -r; sleep 1; modprobe ath10k_pci -v"'
       alias t='${pkgs.todo-txt-cli}/bin/todo.sh -t'
       alias qrsel='${pkgs.xsel}/bin/xsel; ${pkgs.qrencode}/bin/qrencode -l H -t ANSIUTF8 `${pkgs.xsel}/bin/xsel`'
       alias clean-direnv="${pkgs.fd}/bin/fd -I -H -s -p -t d '\.direnv' /*~/nix~/media -x rm -rfv {};"

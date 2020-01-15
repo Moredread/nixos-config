@@ -4,9 +4,6 @@
   imports =
     [
       ../configs/base.nix
-      #../configs/wireguard.nix
-      #../configs/emby.nix
-      #../configs/unifi.nix
       #../configs/sabnzbd.nix
       ../configs/users-and-groups.nix
       ../configs/intel-vaapi.nix
