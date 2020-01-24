@@ -17,7 +17,7 @@ in {
     };
 
     Install = {
-      WantedBy = [ "sockets.target" ];
+#      WantedBy = [ "sockets.target" ];
     };
   };
 

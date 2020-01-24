@@ -98,7 +98,7 @@
     nixpkgs-fmt
     nmap
     nox
-    nur.repos.mic92.cntr
+    #nur.repos.mic92.cntr
     nur.repos.moredread.nix-search
     openxcom
     p7zip
