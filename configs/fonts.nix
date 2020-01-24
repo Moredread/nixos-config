@@ -13,6 +13,7 @@
       inconsolata  # monospaced
       libertine
       mononoki
+      open-dyslexic
       overpass
       oxygenfonts
       powerline-fonts

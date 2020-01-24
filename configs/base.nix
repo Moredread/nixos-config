@@ -10,7 +10,6 @@
     ../configs/services.nix
     ../home/configs/overrides.nix
     ../configs/build.nix
-    ../configs/dlna.nix
     <home-manager/nixos>
     #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
   ];
@@ -148,19 +147,19 @@
     #wireshark.enable = true;
 
     chromium = {
-        enable = true;
+      enable = true;
         # Imperatively installed extensions will seamlessly merge with these.
         # Removing extensions here will remove them from chromium, no matter how
         # they were installed.
-        extensions = [
+      extensions = [
           "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
           "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
           "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor wallet
           "ldjkgaaoikpmhmkelcgkgacicjfbofhh" # Instapaper
         ];
-        homepageLocation = "https://google.com";
-        defaultSearchProviderSearchURL = "https://encrypted.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
-        defaultSearchProviderSuggestURL = "https://encrypted.google.com/complete/search?output=chrome&q={searchTerms}";
+      homepageLocation = "https://google.com";
+      defaultSearchProviderSearchURL = "https://encrypted.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
+      defaultSearchProviderSuggestURL = "https://encrypted.google.com/complete/search?output=chrome&q={searchTerms}";
     };
   };
 
