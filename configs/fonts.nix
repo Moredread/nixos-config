@@ -4,13 +4,13 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
-      corefonts  # Microsoft free fonts
+      corefonts # Microsoft free fonts
       #font-awesome_4
       dejavu_fonts
       fira
       fira-mono
       google-fonts
-      inconsolata  # monospaced
+      inconsolata # monospaced
       libertine
       mononoki
       open-dyslexic
@@ -22,7 +22,7 @@
       source-sans-pro
       source-serif-pro
       ttf_bitstream_vera
-      ubuntu_font_family  # Ubuntu fonts
+      ubuntu_font_family # Ubuntu fonts
       unifont # some international languages
     ];
     fontconfig = {
@@ -30,7 +30,7 @@
       defaultFonts = {
         monospace = [ "Source Code Pro" ];
         sansSerif = [ "Source Sans Pro" ];
-        serif     = [ "Source Serif Pro" ];
+        serif = [ "Source Serif Pro" ];
       };
       #ultimate.enable = true;
       penultimate.enable = true;

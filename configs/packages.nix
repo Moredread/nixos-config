@@ -4,7 +4,7 @@
     autocutsel
     bashInteractive
     bridge-utils
-    cifs_utils  # for mount.cifs, needed for cifs filesystems in systemd.mounts.
+    cifs_utils # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils
     ddrescue
     dmenu

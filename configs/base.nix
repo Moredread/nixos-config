@@ -2,17 +2,17 @@
 
 {
   imports =
-  [
-    ../configs/autocutsel.nix
-    ../configs/fonts.nix
-    ../configs/overrides.nix
-    ../configs/packages.nix
-    ../configs/services.nix
-    ../home/configs/overrides.nix
-    ../configs/build.nix
-    <home-manager/nixos>
-    #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
-  ];
+    [
+      ../configs/autocutsel.nix
+      ../configs/fonts.nix
+      ../configs/overrides.nix
+      ../configs/packages.nix
+      ../configs/services.nix
+      ../home/configs/overrides.nix
+      ../configs/build.nix
+      <home-manager/nixos>
+      #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
+    ];
 
   boot = {
     #kernelPackages = pkgs.linuxPackages_latest;
@@ -21,14 +21,14 @@
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-        "mem_sleep_default=deep"
-        "i915.modeset=1"       # entirely absent in nixos-hardware
-        "i915.enable_guc=2" # entirely absent in nixos-hardware
-        "i915.enable_gvt=1" # entirely absent in nixos-hardware
-        "i915.enable_psr=1" # entirely absent in nixos-hardware
-        "i915.fastboot=1"     # entirely absent in nixos-hardware
+      "mem_sleep_default=deep"
+      "i915.modeset=1" # entirely absent in nixos-hardware
+      "i915.enable_guc=2" # entirely absent in nixos-hardware
+      "i915.enable_gvt=1" # entirely absent in nixos-hardware
+      "i915.enable_psr=1" # entirely absent in nixos-hardware
+      "i915.fastboot=1" # entirely absent in nixos-hardware
 
-        "i915.enable_fbc=1" # set to 2 in nixos-hardware
+      "i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];
     kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
@@ -148,15 +148,15 @@
 
     chromium = {
       enable = true;
-        # Imperatively installed extensions will seamlessly merge with these.
-        # Removing extensions here will remove them from chromium, no matter how
-        # they were installed.
+      # Imperatively installed extensions will seamlessly merge with these.
+      # Removing extensions here will remove them from chromium, no matter how
+      # they were installed.
       extensions = [
-          "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
-          "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
-          "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor wallet
-          "ldjkgaaoikpmhmkelcgkgacicjfbofhh" # Instapaper
-        ];
+        "cmedhionkhpnakcndndgjdbohmhepckk" # Adblock for Youtube™
+        "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
+        "jcjjhjgimijdkoamemaghajlhegmoclj" # Trezor wallet
+        "ldjkgaaoikpmhmkelcgkgacicjfbofhh" # Instapaper
+      ];
       homepageLocation = "https://google.com";
       defaultSearchProviderSearchURL = "https://encrypted.google.com/search?q={searchTerms}&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}ie={inputEncoding}";
       defaultSearchProviderSuggestURL = "https://encrypted.google.com/complete/search?output=chrome&q={searchTerms}";
@@ -174,7 +174,7 @@
     extraOptions = ''
       gc-keep-outputs = true
       connect-timeout = 15
-	    builders-use-substitutes = true
+      builders-use-substitutes = true
     '';
 
     trustedUsers = [ "addy" "root" ];
@@ -197,8 +197,16 @@
     nixpkgs.config.allowUnfree = true;
   };
 
-  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380];
-  networking.firewall.allowedTCPPorts = [ 6923 6965 50001 50002 8332 1234 1900 22000
+  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380 ];
+  networking.firewall.allowedTCPPorts = [
+    6923
+    6965
+    50001
+    50002
+    8332
+    1234
+    1900
+    22000
     4070 #spotify
   ];
 

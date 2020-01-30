@@ -1,4 +1,3 @@
-
 { config, lib, pkgs, ... }:
 {
   documentation = {
@@ -119,7 +118,7 @@
       displayManager.sessionCommands = '''';
       displayManager.slim = {
         enable = true;
-        autoLogin  = true;
+        autoLogin = true;
         defaultUser = "addy";
       };
 

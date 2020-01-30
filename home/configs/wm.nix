@@ -12,7 +12,8 @@ let
   i3status-rust-config = valueForGrableOrMinuteman ./i3status-rust-config.toml ./i3status-rust-config-minuteman.toml;
 
   valueForGrableOrMinuteman = t: f: if nixosConfig.networking.hostName == "grable" then t else f;
-in {
+in
+{
 
   xsession.enable = true;
   #xsession.preferStatusNotifierItems = true;
@@ -35,10 +36,14 @@ in {
 
     config.keybindings = with myStuff.i3; {
       "${modKey}+Return" =
-        let factor = valueForGrableOrMinuteman "1.5" "1.3"; in
+        let
+          factor = valueForGrableOrMinuteman "1.5" "1.3";
+        in
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty'";
       "${modKey}+Shift+Return" =
-        let factor = valueForGrableOrMinuteman "1.5" "1.3"; in
+        let
+          factor = valueForGrableOrMinuteman "1.5" "1.3";
+        in
           "exec sh -c 'WINIT_HIDPI_FACTOR=${factor} ${pkgs.alacritty}/bin/alacritty --working-directory $(${pkgs.xcwd}/bin/xcwd)'";
       "${modKey}+Shift+q" = "kill";
       "${modKey}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
@@ -113,7 +118,7 @@ in {
       "${modKey}+space" = "scratchpad show";
 
       "${modKey}+r" = "mode resize";
-   };
+    };
 
     extraConfig = with myStuff.i3; with pkgs; ''
       bindsym XF86AudioLowerVolume exec ${pamixer}/bin/pamixer -d ${myStuff.volumeStep}
@@ -132,14 +137,17 @@ in {
 
     config.fonts = [ "DejaVu Sans Mono 12" ];
 
-    config.bars = [ {
-      statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
-    }
-  ];
-
-  config.startup = [
+    config.bars = [
       {
-        command = "sleep 5; ${pkgs.qsyncthingtray}/bin/QSyncthingTray"; always = true; notification = false;
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
+      }
+    ];
+
+    config.startup = [
+      {
+        command = "sleep 5; ${pkgs.qsyncthingtray}/bin/QSyncthingTray";
+        always = true;
+        notification = false;
       }
     ];
   };
