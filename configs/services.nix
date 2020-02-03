@@ -129,6 +129,12 @@
           MatchProduct "BM30X mouse"
           Option "AccelSpeed" "-0.5"
         ''
+        ''
+          Identifier "Anker mouse"
+          MatchDriver "libinput"
+          MatchProduct "MOSART Semi. 2.4G Wireless Mouse Mouse"
+          Option "AccelSpeed" "-0.1"
+        ''
       ];
     };
 
