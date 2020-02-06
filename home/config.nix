@@ -10,9 +10,9 @@
         export CCACHE_UMASK=007
       '';
     };
-    #nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-    #  inherit pkgs;
-    #};
+    nur = import <nur> {
+      inherit pkgs;
+    };
   };
 
   kodi = {

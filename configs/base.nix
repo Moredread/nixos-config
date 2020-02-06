@@ -9,26 +9,27 @@
       ../configs/packages.nix
       ../configs/services.nix
       ../home/configs/overrides.nix
-      ../configs/build.nix
+      #../configs/build.nix
       <home-manager/nixos>
       #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
     ];
 
   boot = {
-    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     #crashDump.enable = true;
     #bootchart.enable = true;
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-      "mem_sleep_default=deep"
-      "i915.modeset=1" # entirely absent in nixos-hardware
-      "i915.enable_guc=2" # entirely absent in nixos-hardware
-      "i915.enable_gvt=1" # entirely absent in nixos-hardware
-      "i915.enable_psr=1" # entirely absent in nixos-hardware
-      "i915.fastboot=1" # entirely absent in nixos-hardware
+      #"mem_sleep_default=deep"
+      #"i915.modeset=1" # entirely absent in nixos-hardware
+      #"i915.enable_guc=2" # entirely absent in nixos-hardware
+      #"i915.enable_gvt=1" # entirely absent in nixos-hardware
+      #"i915.enable_psr=1" # entirely absent in nixos-hardware
+      #"i915.fastboot=1" # entirely absent in nixos-hardware
+      #"i915.enable_rc6=0"
 
-      "i915.enable_fbc=1" # set to 2 in nixos-hardware
+      #"i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];
     kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
@@ -145,6 +146,14 @@
     mosh.enable = true;
     #mtr.enable = true;
     #wireshark.enable = true;
+
+    nano.nanorc = ''
+      set nowrap
+      set tabstospaces
+      set tabsize 2
+    '';
+
+    nano.syntaxHighlight = true;
 
     chromium = {
       enable = true;

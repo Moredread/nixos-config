@@ -1,12 +1,12 @@
 { pkgs, lib, ... }:
 let
+  # removes attrs in `nameList` from `set`
+  filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
+
   unstable_ = import <nixos-unstable> {};
   nur_ = import <nur> { inherit pkgs; };
-  #  nur_ = import (builtins.fetchTarball {
-  #    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-  #  }) { inherit pkgs; };
+
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
-  filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
   mozilla_overlay = import <mozilla-overlay>;
   packageOverridesOverlay = self: super: rec {
     nur = nur_;
@@ -50,7 +50,6 @@ let
     #Infinite recursion problems
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
-    # use unstable version of following packages
     "alacritty"
     "blender"
     "browserpass"
@@ -58,9 +57,11 @@ let
     "freecad"
     "libreoffice"
     "lsd"
+    "nixpkgs-fmt"
+    "openxcom"
     "syncthing"
     "travis"
-    "openxcom"
+    # use unstable version of following packages
   ] unstable_;
 in
 

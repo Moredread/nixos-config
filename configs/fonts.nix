@@ -32,7 +32,6 @@
         sansSerif = [ "Source Sans Pro" ];
         serif = [ "Source Serif Pro" ];
       };
-      #ultimate.enable = true;
       penultimate.enable = true;
     };
   };
