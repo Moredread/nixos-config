@@ -5,15 +5,17 @@
 
 {
   imports =
-    [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
+    [
+      <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
+    {
+      device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
       options = [
         "subvol=subvol/root"
@@ -24,7 +26,8 @@
   boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/ca5de9e4-7c1e-4805-aa80-96d59f54be5e";
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
+    {
+      device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
       options = [
         "subvol=subvol/home"
@@ -33,7 +36,8 @@
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
+    {
+      device = "/dev/disk/by-uuid/688eab6d-0e73-46ce-9d25-ce58395d6dc5";
       fsType = "btrfs";
       options = [
         "subvol=subvol/nix"
@@ -42,11 +46,12 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/nvme0n1p1";
+    {
+      device = "/dev/nvme0n1p1";
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices = [];
 
   nix.maxJobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = "performance";

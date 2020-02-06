@@ -8,6 +8,7 @@
       ../configs/users-and-groups.nix
       ../configs/intel-vaapi.nix
       ./hardware-grable.nix
+      ../configs/wireguard.nix
     ];
 
 
@@ -62,7 +63,7 @@
         Option "DRI" "3"
         Option "AccelMethod" "sna"
       '';
-        #Option "TearFree" "true"
+      #Option "TearFree" "true"
       useGlamor = false;
       layout = "en_US";
     };

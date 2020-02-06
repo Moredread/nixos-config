@@ -2,12 +2,8 @@
 {
   home.packages = with pkgs; [
     #autocutsel
-    #csvkit
-    #darktable
     #dfeet
-    #nix-du
-    #nur.repos.mic92.nixpkgs-fmt
-    #nur.repos.moredread.implicitcad
+    #mercurialFull
     alacritty
     alot
     apg
@@ -28,8 +24,9 @@
     cachix
     calibre
     chromium
-    crawl
+    csvkit
     daemontools
+    darktable
     docker
     docker_compose
     dos2unix
@@ -81,8 +78,6 @@
     libreoffice
     libsmbios
     mc
-    mercurialFull
-    meshlab
     minecraft
     mkpasswd
     mpv
@@ -91,6 +86,7 @@
     mumble
     mupdf
     networkmanagerapplet
+    nix-du
     nix-prefetch-scripts
     nix-universal-prefetch
     nixos-generators
@@ -98,7 +94,6 @@
     nixpkgs-fmt
     nmap
     nox
-    nur.repos.mic92.cntr
     nur.repos.moredread.nix-search
     openxcom
     p7zip
@@ -118,6 +113,7 @@
     qsyncthingtray
     ranger
     rclone
+    reptyr
     ripgrep
     rls
     rnix-lsp
@@ -139,11 +135,7 @@
     thunderbird
     todo-txt-cli
     travis
-    unetbootin
     unrar
-    unstable.cataclysm-dda-git
-    unstable.prusa-slicer
-    unstable.prusa-slicer
     unzip
     vimPlugins.fzf-vim
     vlc

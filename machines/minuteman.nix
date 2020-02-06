@@ -23,7 +23,7 @@
     #initrd.luks.devices."root-crypt".allowDiscards = true;
 
     kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
+    extraModulePackages = [];
   };
 
 
@@ -33,19 +33,22 @@
   time.hardwareClockInLocalTime = true;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
+    {
+      device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
       options = [ "relatime,ssd,autodefrag,compress=zstd,space_cache" ];
     };
 
   fileSystems."/media/nas" =
-    { device = "192.168.43.1:/mnt/pool0/public";
+    {
+      device = "192.168.43.1:/mnt/pool0/public";
       fsType = "nfs";
       options = [ "soft" "bg" ];
     };
 
   fileSystems."/media/nasw" =
-    { device = "192.168.1.1:/mnt/pool0/data/public";
+    {
+      device = "192.168.1.1:/mnt/pool0/data/public";
       fsType = "nfs";
       options = [ "soft" "bg" ];
     };
@@ -74,8 +77,9 @@
 
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/fee6564b-baea-4bcb-b531-78679b083d3c";
+    {
+      device = "/dev/disk/by-uuid/fee6564b-baea-4bcb-b531-78679b083d3c";
       fsType = "ext4";
-        options = [ "relatime" ];
+      options = [ "relatime" ];
     };
 }

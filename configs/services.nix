@@ -1,4 +1,3 @@
-
 { config, lib, pkgs, ... }:
 {
   documentation = {
@@ -118,7 +117,7 @@
       displayManager.sessionCommands = '''';
       displayManager.slim = {
         enable = true;
-        autoLogin  = true;
+        autoLogin = true;
         defaultUser = "addy";
       };
 
@@ -128,6 +127,12 @@
           MatchDriver "libinput"
           MatchProduct "BM30X mouse"
           Option "AccelSpeed" "-0.5"
+        ''
+        ''
+          Identifier "Anker mouse"
+          MatchDriver "libinput"
+          MatchProduct "MOSART Semi. 2.4G Wireless Mouse Mouse"
+          Option "AccelSpeed" "-0.1"
         ''
       ];
     };
