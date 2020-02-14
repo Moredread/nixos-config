@@ -21,7 +21,7 @@
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-      #"mem_sleep_default=deep"
+      "mem_sleep_default=deep"
       #"i915.modeset=1" # entirely absent in nixos-hardware
       #"i915.enable_guc=2" # entirely absent in nixos-hardware
       #"i915.enable_gvt=1" # entirely absent in nixos-hardware
@@ -75,11 +75,11 @@
     DefaultTimeoutStartSec=30s
   '';
 
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableNvidia = true;
-  virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
+  #virtualisation.docker.enable = true;
+  #virtualisation.docker.enableNvidia = true;
+  #virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
     # Which works?
@@ -173,7 +173,7 @@
   };
 
   nix = {
-    #package = pkgs.nixUnstable;
+    package = pkgs.nixUnstable;
 
     useSandbox = true;
     buildCores = lib.mkDefault 0;
