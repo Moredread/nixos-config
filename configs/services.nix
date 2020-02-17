@@ -89,7 +89,7 @@
 
     # cups, for printing documents
     printing.enable = true;
-    printing.drivers = with pkgs; [ gutenprint hplip ];
+    printing.drivers = with pkgs; [ gutenprint hplip cnijfilter2 ];
 
     avahi = {
       enable = lib.mkDefault true;
@@ -98,6 +98,7 @@
       publish.enable = true;
       publish.addresses = true;
       publish.workstation = true;
+      openFirewall = true;
     };
 
     syncthing = {

@@ -15,7 +15,8 @@
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = if config.virtualisation.virtualbox.host.enable then
+      pkgs.linuxPackages else pkgs.linuxPackages_latest;
     #crashDump.enable = true;
     #bootchart.enable = true;
 
@@ -75,11 +76,11 @@
     DefaultTimeoutStartSec=30s
   '';
 
-  #virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
-  #virtualisation.docker.enable = true;
-  #virtualisation.docker.enableNvidia = true;
-  #virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
+  virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
     # Which works?
@@ -101,12 +102,6 @@
     #sane.enable = true; # scanner support
     #sane.snapshot = true;
     #sane.netConf = "192.168.42.123";
-  };
-
-  nixpkgs.config = {
-    packageOverrides = pkgs: rec {
-      gajim = pkgs.gajim.override { enableNotifications = true; };
-    };
   };
 
   security.sudo.configFile =
@@ -218,6 +213,9 @@
     22000
     4070 #spotify
   ];
+  networking.firewall.extraCommands = ''
+    iptables -A INPUT -m pkttype --pkt-type multicast -j nixos-fw
+  '';
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];
