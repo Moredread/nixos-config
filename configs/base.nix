@@ -242,9 +242,6 @@
     30005
     30975
   ];
-  networking.firewall.extraCommands = ''
-    iptables -A INPUT -m pkttype --pkt-type multicast -j nixos-fw
-  '';
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];

@@ -50,6 +50,7 @@ let
     #Infinite recursion problems
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
+    # use unstable version of following packages
     "alacritty"
     "blender"
     "browserpass"

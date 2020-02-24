@@ -119,10 +119,10 @@
 
       useGlamor = lib.mkDefault false;
       displayManager.sessionCommands = '''';
-      displayManager.slim = {
+      displayManager.lightdm = {
         enable = true;
-        autoLogin = true;
-        defaultUser = "addy";
+        #autoLogin.enable = true;
+        autoLogin.user = "addy";
       };
 
       inputClassSections = [
