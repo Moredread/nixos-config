@@ -24,7 +24,6 @@
     };
 
     acpid.enable = true;
-    cachefilesd.enable = true;
     colord.enable = true;
     dbus.enable = true;
     flatpak.enable = true;
