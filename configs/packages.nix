@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     autocutsel
     bashInteractive
+    borgbackup
     bridge-utils
     cifs_utils # for mount.cifs, needed for cifs filesystems in systemd.mounts.
     coreutils

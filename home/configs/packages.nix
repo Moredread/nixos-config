@@ -115,8 +115,8 @@
     rclone
     reptyr
     ripgrep
-    rls
-    rnix-lsp
+    #rls
+    #rnix-lsp
     rsync
     s-tui
     screen

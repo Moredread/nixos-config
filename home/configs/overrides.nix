@@ -55,13 +55,13 @@ let
     "browserpass"
     "darktable"
     "freecad"
+    "i3status-rust"
     "libreoffice"
     "lsd"
     "nixpkgs-fmt"
     "openxcom"
     "syncthing"
     "travis"
-    # use unstable version of following packages
   ] unstable_;
 in
 

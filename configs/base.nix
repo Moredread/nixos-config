@@ -168,7 +168,7 @@
   };
 
   nix = {
-    package = pkgs.nixUnstable;
+    #package = pkgs.nixUnstable;
 
     useSandbox = true;
     buildCores = lib.mkDefault 0;
@@ -185,7 +185,7 @@
 
     binaryCaches = [
       #"https://cache.nixos.org"
-      "https://moredread.cachix.org"
+      #"https://moredread.cachix.org"
       "https://moredread-nur.cachix.org"
     ];
     binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
