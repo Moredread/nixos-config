@@ -34,6 +34,7 @@
     ];
     kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
+    # not sure if everything is needed
     initrd.availableKernelModules = [
       "aes_x86_64"
       "aesni_intel"
@@ -69,7 +70,7 @@
 
   time.timeZone = "Europe/Berlin";
 
-  # For Steam
+  # For Steam and for stopping hanging a X11 server quicker when shutting down
   systemd.extraConfig = ''
     DefaultLimitNOFILE=1048576
     DefaultTimeoutStopSec=10s
@@ -83,11 +84,9 @@
   virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
-    # Which works?
     acpilight.enable = true;
     bluetooth.enable = true;
     bluetooth.package = pkgs.bluezFull;
-    brightnessctl.enable = true;
     cpu.amd.updateMicrocode = true;
     cpu.intel.updateMicrocode = true;
     enableAllFirmware = true;
@@ -96,12 +95,8 @@
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
-    #pulseaudio.zeroconf.discovery.enable = true;
     pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
     u2f.enable = true;
-    #sane.enable = true; # scanner support
-    #sane.snapshot = true;
-    #sane.netConf = "192.168.42.123";
   };
 
   security.sudo.configFile =
@@ -201,17 +196,24 @@
     nixpkgs.config.allowUnfree = true;
   };
 
-  networking.firewall.allowedUDPPorts = [ 6923 6965 1234 1900 4380 ];
-  networking.firewall.allowedTCPPorts = [
-    6923
-    6965
-    50001
-    50002
-    8332
+  networking.firewall.allowedUDPPorts = [
     1234
     1900
-    22000
+    4380
+    6923
+    6965
+  ];
+
+  networking.firewall.allowedTCPPorts = [
+    1234
+    1900
     4070 #spotify
+    6923
+    6965
+    8332
+    22000
+    50001
+    50002
   ];
   networking.firewall.extraCommands = ''
     iptables -A INPUT -m pkttype --pkt-type multicast -j nixos-fw
@@ -226,7 +228,7 @@
   networking.firewall.checkReversePath = "loose";
 
   #networking.firewall.enable = false;
-  #networking.firewall.logRefusedPackets = true;
+  networking.firewall.logRefusedPackets = true;
 
   zramSwap.enable = true;
 
