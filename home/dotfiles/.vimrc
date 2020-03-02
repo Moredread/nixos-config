@@ -60,6 +60,8 @@ nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 
+let g:fzf_buffers_jump = 1
+
 let g:rainbow_active = 1
 
 " Add spaces after comment delimiters by default
@@ -223,3 +225,8 @@ vnoremap <leader>p "_dP
 
 nmap <C-T> gt
 nmap <F3> vi[:sort<CR>
+
+command! -nargs=1 Search call setqflist([]) | silent bufdo grepadd! <args> %
+
+nnoremap <A-left>  :cprev<cr>zvzz
+nnoremap <A-right> :cnext<cr>zvzz

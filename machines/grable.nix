@@ -9,6 +9,7 @@
       ../configs/intel-vaapi.nix
       ./hardware-grable.nix
       ../configs/wireguard.nix
+      <nixos-hardware/dell/xps/13-9370>
     ];
 
 
@@ -40,10 +41,8 @@
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
   services = {
-    throttled.enable = true;
     # Start syncthing via QSyncthingTray
     syncthing.enable = lib.mkForce false;
-    thermald.enable = lib.mkForce false;
     tlp.enable = lib.mkForce false;
 
     xserver = {

@@ -96,6 +96,11 @@
 
         alias fehz='feh -Z'
 
+        alias ns="nix search"
+        alias nsu="nix search -u"
+        alias nru="nix run -f channel:nixos-unstable"
+        alias nr="nix run -f channel:nixos-20.03"
+
         alias ip="${pkgs.iproute}/bin/ip --color"
         alias 4="ip -4"
         alias 6="ip -6"

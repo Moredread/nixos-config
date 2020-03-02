@@ -16,15 +16,12 @@ in
 {
 
   xsession.enable = true;
-  #xsession.preferStatusNotifierItems = true;
 
   services = {
     blueman-applet.enable = true;
     dunst.enable = true;
-    #gpg-agent.enable = true;
-    gpg-agent.defaultCacheTtl = 3 * 3600;
-    gpg-agent.defaultCacheTtlSsh = 3 * 3600;
-    gpg-agent.enableSshSupport = true;
+    gpg-agent.enable = true;
+    gpg-agent.defaultCacheTtl = 24 * 3600;
     network-manager-applet.enable = true;
     pasystray.enable = true;
     udiskie.automount = false;

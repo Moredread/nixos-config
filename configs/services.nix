@@ -91,8 +91,8 @@
     printing.drivers = with pkgs; [ gutenprint hplip cnijfilter2 ];
 
     avahi = {
-      enable = lib.mkDefault true;
-      nssmdns = true;
+      #enable = lib.mkDefault true;
+      #nssmdns = true;
       ipv6 = true;
       publish.enable = true;
       publish.addresses = true;

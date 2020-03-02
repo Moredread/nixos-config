@@ -59,6 +59,7 @@ let
     "libreoffice"
     "lsd"
     "nixpkgs-fmt"
+    "oh-my-zsh"
     "openxcom"
     "syncthing"
     "travis"
