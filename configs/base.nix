@@ -22,12 +22,12 @@
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-      "mem_sleep_default=deep"
+      #"mem_sleep_default=deep"
       #"i915.modeset=1" # entirely absent in nixos-hardware
       #"i915.enable_guc=2" # entirely absent in nixos-hardware
-      "i915.enable_gvt=1" # entirely absent in nixos-hardware
-      "i915.enable_psr=1" # entirely absent in nixos-hardware
-      "i915.fastboot=1" # entirely absent in nixos-hardware
+      #"i915.enable_gvt=1" # entirely absent in nixos-hardware
+      #"i915.enable_psr=1" # entirely absent in nixos-hardware
+      #"i915.fastboot=1" # entirely absent in nixos-hardware
       #"i915.enable_rc6=0"
 
       #"i915.enable_fbc=1" # set to 2 in nixos-hardware
