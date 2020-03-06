@@ -4,6 +4,7 @@
     configs/lorri.nix
     configs/packages.nix
     configs/programs.nix
+    configs/zsh.nix
     configs/wm.nix
     configs/overrides.nix
   ];
