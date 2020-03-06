@@ -61,6 +61,7 @@ let
     "nixpkgs-fmt"
     "oh-my-zsh"
     "openxcom"
+    "rclone"
     "syncthing"
     "travis"
   ] unstable_;
