@@ -42,7 +42,7 @@
       "cryptd"
       "crypto_simd"
       "ghash_clmulni_intel"
-    ];
+    ] ++ config.boot.initrd.luks.cryptoModules;
 
     cleanTmpDir = true;
     tmpOnTmpfs = true;
