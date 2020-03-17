@@ -41,6 +41,12 @@
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
   services = {
+    throttled = {
+      enable = true;
+      extraConfig = builtins.readFile ../configs/lenovo_fix.conf;
+    };
+
+    thermald.enable = lib.mkForce false;
     # Start syncthing via QSyncthingTray
     syncthing.enable = lib.mkForce false;
     tlp.enable = lib.mkForce false;
