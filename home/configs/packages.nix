@@ -4,6 +4,8 @@
     #autocutsel
     #dfeet
     #mercurialFull
+    #rls
+    #rnix-lsp
     alacritty
     alot
     apg
@@ -94,6 +96,9 @@
     nixpkgs-fmt
     nmap
     nox
+    nur-unstable.repos.mic92.cntr
+    nur-unstable.repos.mic92.nix-update
+    nur-unstable.repos.mic92.peep
     nur.repos.moredread.nix-search
     openxcom
     p7zip
@@ -115,8 +120,6 @@
     rclone
     reptyr
     ripgrep
-    #rls
-    #rnix-lsp
     rsync
     s-tui
     screen

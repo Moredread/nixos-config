@@ -45,13 +45,13 @@
 
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-      "mem_sleep_default=deep"
+      #"mem_sleep_default=deep"
       "i915.modeset=1" # entirely absent in nixos-hardware
-      "i915.enable_guc=2" # entirely absent in nixos-hardware
+      #"i915.enable_guc=2" # entirely absent in nixos-hardware
       "i915.enable_gvt=1" # entirely absent in nixos-hardware
-      "i915.enable_psr=1" # entirely absent in nixos-hardware
+      #"i915.enable_psr=1" # entirely absent in nixos-hardware
       "i915.fastboot=1" # entirely absent in nixos-hardware
-      "i915.enable_rc6=0"
+      "i915.error_capture=1"
 
       "i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];
@@ -78,6 +78,7 @@
       '';
     };
     supportedFilesystems = [ "cifs" "nfs" ];
+    blacklistedKernelModules = lib.singleton "dvb_usb_rtl28xxu";
   };
 
   networking.networkmanager = {
@@ -238,6 +239,8 @@
     22000
     50001
     50002
+    30005
+    30975
   ];
   networking.firewall.extraCommands = ''
     iptables -A INPUT -m pkttype --pkt-type multicast -j nixos-fw

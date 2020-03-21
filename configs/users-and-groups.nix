@@ -58,7 +58,7 @@
       domain = "@wheel";
       item = "priority";
       type = "-";
-      value = "-10";
+      value = "0";
     }
     {
       domain = "@wheel";
