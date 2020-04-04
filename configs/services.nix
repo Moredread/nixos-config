@@ -118,12 +118,7 @@
       xkbOptions = "ctrl:nocaps";
 
       useGlamor = lib.mkDefault false;
-      displayManager.sessionCommands = '''';
-      displayManager.lightdm = {
-        enable = true;
-        #autoLogin.enable = true;
-        autoLogin.user = "addy";
-      };
+      displayManager.startx.enable = true;
 
       inputClassSections = [
         ''
