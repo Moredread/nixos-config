@@ -3,10 +3,10 @@
 # run once as root, once for each user
 
 ADD="nix-channel --add"
-NIXOS_VERSION="19.09"
+NIXOS_VERSION="unstable"
 
 # TODO: Less redundancy
-$ADD https://github.com/rycee/home-manager/archive/release-$NIXOS_VERSION.tar.gz home-manager
+$ADD https://github.com/rycee/home-manager/archive/master.tar.gz home-manager
 $ADD https://github.com/nix-community/NUR/archive/master.tar.gz nur
 $ADD https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 $ADD https://nixos.org/channels/nixos-$NIXOS_VERSION nixos
