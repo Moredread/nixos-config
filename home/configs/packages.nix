@@ -111,7 +111,6 @@
     polkit_gnome
     posix_man_pages
     powertop
-    python3Packages.mps-youtube
     python3Packages.python-language-server
     pywal
     qrencode
