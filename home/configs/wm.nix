@@ -26,6 +26,7 @@ in
     pasystray.enable = true;
     udiskie.automount = false;
     udiskie.enable = true;
+    gnome-keyring.enable = true;
   };
 
   xsession.windowManager.i3 = {
