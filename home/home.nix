@@ -22,7 +22,7 @@
   #services.syncthing.tray = true;
 
   home.extraOutputsToInstall = [ "debug" "doc" "info" "devdoc" ];
-  manual.html.enable = true;
+  #manual.html.enable = true;
 
   home.file.dotfiles = {
     source = ./dotfiles;

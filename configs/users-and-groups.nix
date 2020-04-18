@@ -66,5 +66,23 @@
       type = "-";
       value = "-20";
     }
+    {
+      domain = "@wheel";
+      item = "rtprio";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "@wheel";
+      item = "stack";
+      type = "-";
+      value = "32000";
+    }
+    {
+      domain = "@wheel";
+      item = "memlock";
+      type = "-";
+      value = "64000";
+    }
     ];
 }

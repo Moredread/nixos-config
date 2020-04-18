@@ -9,11 +9,15 @@
       ../configs/packages.nix
       ../configs/services.nix
       ../home/configs/overrides.nix
-      #../configs/build.nix
+      ../configs/build.nix
       <home-manager/nixos>
       #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
     ];
 
+   services.nscd.enable = false;
+      environment.etc."nsswitch.conf".text = lib.mkForce ''
+        hosts: resolv dns
+      '';
   boot = {
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
@@ -40,7 +44,7 @@
     ] ++ config.boot.initrd.luks.cryptoModules;
 
     cleanTmpDir = true;
-    tmpOnTmpfs = true;
+    tmpOnTmpfs = false;
 
     loader.grub = {
       ipxe.netboot-xyz = ''
@@ -108,10 +112,9 @@
       %wheel ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
     '';
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    defaultLocale = "en_US.UTF-8";
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  console.font = "Lat2-Terminus16";
 
   nixpkgs.config.allowUnfree = true;
 

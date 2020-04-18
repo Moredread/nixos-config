@@ -1,12 +1,13 @@
 { config, lib, pkgs, ... }:
 {
   documentation = {
-    enable = true;
+    #enable = true;
 
     dev.enable = true;
     doc.enable = true;
     info.enable = true;
     nixos.enable = true;
+    man.enable = true;
   };
 
   programs.qt5ct.enable = true;
@@ -95,7 +96,7 @@
 
     avahi = {
       enable = lib.mkDefault true;
-      nssmdns = true;
+      #nssmdns = true;
       ipv6 = true;
       publish.enable = true;
       publish.addresses = true;

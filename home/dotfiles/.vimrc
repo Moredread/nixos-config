@@ -39,12 +39,16 @@ Plug 'dylanaraps/wal.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ledger/vim-ledger'
 Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
+Plug 'supercollider/scvim'
 
 call plug#end()
 
 " colorscheme wal
 set background=dark
 colorscheme solarized
+
+au BufEnter,BufWinEnter,BufNewFile,BufRead *.sc,*.scd set filetype=supercollider
+au Filetype supercollider packadd scvim
 
 let g:LanguageClient_serverCommands = {
       \ 'nix': ['nix-lsp'],
@@ -59,6 +63,8 @@ nnoremap <silent> gr :call LanguageClient_textDocument_references()<CR>
 nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
+
+let g:scFlash = 1
 
 let g:fzf_buffers_jump = 1
 
