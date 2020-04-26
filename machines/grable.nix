@@ -35,7 +35,7 @@
 
   nix = {
     buildCores = 8;
-    maxJobs = 8;
+    maxJobs = 4;
   };
 
   systemd.timers.cpu-throttling.enable = lib.mkForce false;

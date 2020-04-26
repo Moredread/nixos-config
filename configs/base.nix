@@ -8,6 +8,7 @@
       ../configs/overrides.nix
       ../configs/packages.nix
       ../configs/services.nix
+      ../configs/wireguard.nix
       ../home/configs/overrides.nix
       ../configs/build.nix
       <home-manager/nixos>
@@ -44,7 +45,8 @@
     ] ++ config.boot.initrd.luks.cryptoModules;
 
     cleanTmpDir = true;
-    tmpOnTmpfs = false;
+    tmpOnTmpfs = true;
+    devShmSize = "75%";
 
     loader.grub = {
       ipxe.netboot-xyz = ''
@@ -92,10 +94,15 @@
     enableAllFirmware = true;
     ledger.enable = true;
     opengl.driSupport32Bit = true;
+    pulseaudio.zeroconf.discovery.enable = true;
+    #pulseaudio.zeroconf.publish.enable = true;
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+    pulseaudio.daemon.config = {
+      default-sample-channels = 6;
+    };
     u2f.enable = true;
   };
 
@@ -117,6 +124,7 @@
   console.font = "Lat2-Terminus16";
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.pulseaudio = true;
 
   environment.enableDebugInfo = true;
   environment.variables = {
@@ -181,9 +189,14 @@
     binaryCaches = [
       #"https://cache.nixos.org"
       #"https://moredread.cachix.org"
-      "https://moredread-nur.cachix.org"
+      #"https://moredread-nur.cachix.org"
     ];
-    binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
+    binaryCachePublicKeys = [
+      "nas:JxSMXHb/f+4u5WdBsdQNmynq3gxb4lh98yBHglaFhQc="
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE="
+      "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE="
+    ];
 
     distributedBuilds = true;
   };

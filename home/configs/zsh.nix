@@ -108,14 +108,25 @@
         }
 
         function f {
-          find $2 -iname "*$1*"
+          find $e2 -iname "*$1*"
         }
 
         function nix-run {
-          nix run nixpkgs.$1 -c "$*"
+          nix run nixpkgs."$1" -c "$@"
+        }
+
+
+        function nix-run2 {
+          p="$1"
+          shift
+          nix run nixpkgs."$p" -c "$@"
         }
 
         alias e=nix-run
+        alias ee=nix-run2
+
+        compdef e="nix"
+        compdef ee="nix"
 
         # restore last saved path
         if [ -f ~/.last_dir ]
