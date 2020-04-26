@@ -54,8 +54,7 @@
     xserver = {
       videoDrivers = [ "intel" ];
       deviceSection = ''
-        Option "DRI" "3"
-        Option "AccelMethod" "sna"
+        Option "AccelMethod" "UXA"
       '';
       #Option "TearFree" "true"
       useGlamor = false;
