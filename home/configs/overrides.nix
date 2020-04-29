@@ -19,7 +19,7 @@ let
     rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp {};
 
     nightly = super.rustChannelOf {
-      date = "2019-10-03";
+      date = "2020-04-26";
       channel = "nightly";
     };
 

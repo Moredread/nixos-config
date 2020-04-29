@@ -74,15 +74,9 @@
     }
     {
       domain = "@wheel";
-      item = "stack";
-      type = "-";
-      value = "32000";
-    }
-    {
-      domain = "@wheel";
       item = "memlock";
       type = "-";
-      value = "64000";
+      value = "128000";
     }
     ];
 }
