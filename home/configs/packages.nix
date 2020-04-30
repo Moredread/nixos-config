@@ -4,6 +4,8 @@
     #autocutsel
     #dfeet
     #mercurialFull
+    #rls
+    #rnix-lsp
     alacritty
     alot
     apg
@@ -69,12 +71,12 @@
     i3lock
     imagemagick7
     inetutils
+    joplin-desktop
     josm
     jq
     keepassx2
     krusader
     ledger
-    libav
     libreoffice
     libsmbios
     mc
@@ -94,6 +96,8 @@
     nixpkgs-fmt
     nmap
     nox
+    nur-unstable.repos.mic92.cntr
+    nur-unstable.repos.mic92.nix-update
     nur.repos.moredread.nix-search
     openxcom
     p7zip
@@ -106,7 +110,6 @@
     polkit_gnome
     posix_man_pages
     powertop
-    python3Packages.mps-youtube
     python3Packages.python-language-server
     pywal
     qrencode
@@ -115,8 +118,6 @@
     rclone
     reptyr
     ripgrep
-    #rls
-    #rnix-lsp
     rsync
     s-tui
     screen
@@ -136,7 +137,9 @@
     todo-txt-cli
     travis
     unrar
+    unstable.peep
     unzip
+    v4l-utils
     vimPlugins.fzf-vim
     vlc
     w3m

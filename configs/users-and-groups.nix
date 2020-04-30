@@ -52,4 +52,31 @@
     config = { gid = 500; };
     plugdev = {};
   };
+
+  security.pam.loginLimits = [
+    {
+      domain = "@wheel";
+      item = "priority";
+      type = "-";
+      value = "0";
+    }
+    {
+      domain = "@wheel";
+      item = "nice";
+      type = "-";
+      value = "-20";
+    }
+    {
+      domain = "@wheel";
+      item = "rtprio";
+      type = "-";
+      value = "unlimited";
+    }
+    {
+      domain = "@wheel";
+      item = "memlock";
+      type = "-";
+      value = "128000";
+    }
+    ];
 }

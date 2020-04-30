@@ -15,9 +15,6 @@
     loader.grub.memtest86.enable = true;
     loader.grub.device = "/dev/disk/by-id/ata-Samsung_SSD_850_EVO_1TB_S2RFNX0J114023V";
 
-    cleanTmpDir = true;
-    tmpOnTmpfs = true;
-
     initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
     initrd.luks.devices."root-crypt".device = "/dev/disk/by-uuid/4cdce7e2-5fee-472c-b58f-be8fdb8ccbac";
     #initrd.luks.devices."root-crypt".allowDiscards = true;

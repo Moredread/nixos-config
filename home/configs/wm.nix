@@ -26,6 +26,7 @@ in
     pasystray.enable = true;
     udiskie.automount = false;
     udiskie.enable = true;
+    gnome-keyring.enable = true;
   };
 
   xsession.windowManager.i3 = {
@@ -122,8 +123,10 @@ in
       bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/pamixer -i ${myStuff.volumeStep}
       bindsym XF86AudioMute exec ${pamixer}/bin/pamixer -t
       bindsym XF86AudioMicMute exec ${pamixer}/bin/pamixer --source "alsa_input.pci-0000_00_1f.3.analog-stereo" -t
-      bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/xbacklight -dec ${myStuff.brightnessStep}
-      bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/xbacklight -inc ${myStuff.brightnessStep}
+      bindsym XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/brightnessctl -e -q s -${myStuff.brightnessStep}%
+      bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/brightnessctl -e -q s +${myStuff.brightnessStep}%
+      bindsym ${modKey}+XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/brightnessctl -q s -${myStuff.brightnessStep}%
+      bindsym ${modKey}+XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/brightnessctl -q s +${myStuff.brightnessStep}%
       bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
       bindsym XF86Sleep exec ${i3lock}/bin/i3lock
 

@@ -8,51 +8,23 @@
       ../configs/overrides.nix
       ../configs/packages.nix
       ../configs/services.nix
+      ../configs/wireguard.nix
       ../home/configs/overrides.nix
-      #../configs/build.nix
+      ../configs/build.nix
       <home-manager/nixos>
       #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
     ];
 
-
   boot = {
-    kernelPackages = lib.mkDefault
-    (let
-      linux_pkg =
-        { stdenv, buildPackages, fetchurl, perl, buildLinux, modDirVersionArg ? null, ... } @ args:
-        with stdenv.lib;
-        buildLinux (args // rec {
-          version = "5.3.16";
-
-          modDirVersion = if (modDirVersionArg == null) then concatStringsSep "." (take 3 (splitVersion "${version}.0")) else modDirVersionArg;
-
-          kernelPatches = [
-            {
-              name = "fix-display";
-              patch = pkgs.fetchpatch {
-                url = "https://bugs.freedesktop.org/attachment.cgi?id=144765";
-                sha256 = "sha256-Fc6V5UwZsU6K3ZhToQdbQdyxCFWd6kOxU6ACZKyaVZo=";
-              };
-            }
-          ];
-
-          src = fetchurl {
-            url = "mirror://kernel/linux/kernel/v5.x/linux-${version}.tar.xz";
-            sha256 = "19asdv08rzp33f0zxa2swsfnbhy4zwg06agj7sdnfy4wfkrfwx49";
-          };
-        } // (args.argsOverride or {}));
-        linux = pkgs.callPackage linux_pkg {};
-    in pkgs.recurseIntoAttrs (pkgs.linuxPackagesFor linux));
-
     # Dell 9370 needs it to not drain during sleep
     kernelParams = [
-      "mem_sleep_default=deep"
-      #"i915.modeset=1" # entirely absent in nixos-hardware
-      #"i915.enable_guc=2" # entirely absent in nixos-hardware
-      "i915.enable_gvt=1" # entirely absent in nixos-hardware
-      "i915.enable_psr=1" # entirely absent in nixos-hardware
+      #"mem_sleep_default=deep"
+      "i915.modeset=1" # entirely absent in nixos-hardware
+      "i915.enable_guc=2" # entirely absent in nixos-hardware
+      #"i915.enable_gvt=1" # entirely absent in nixos-hardware
+      #"i915.enable_psr=1" # entirely absent in nixos-hardware
       "i915.fastboot=1" # entirely absent in nixos-hardware
-      #"i915.enable_rc6=0"
+      #"i915.error_capture=1"
 
       #"i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];
@@ -66,10 +38,11 @@
       "cryptd"
       "crypto_simd"
       "ghash_clmulni_intel"
-    ];
+    ] ++ config.boot.initrd.luks.cryptoModules;
 
     cleanTmpDir = true;
     tmpOnTmpfs = true;
+    devShmSize = "75%";
 
     loader.grub = {
       ipxe.netboot-xyz = ''
@@ -79,6 +52,7 @@
       '';
     };
     supportedFilesystems = [ "cifs" "nfs" ];
+    blacklistedKernelModules = lib.singleton "dvb_usb_rtl28xxu";
   };
 
   networking.networkmanager = {
@@ -116,10 +90,15 @@
     enableAllFirmware = true;
     ledger.enable = true;
     opengl.driSupport32Bit = true;
+    pulseaudio.zeroconf.discovery.enable = true;
+    #pulseaudio.zeroconf.publish.enable = true;
     pulseaudio.enable = true;
     pulseaudio.package = pkgs.pulseaudioFull;
     pulseaudio.support32Bit = true; # This might be needed for Steam games
     pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+    pulseaudio.daemon.config = {
+      default-sample-channels = 6;
+    };
     u2f.enable = true;
   };
 
@@ -136,12 +115,12 @@
       %wheel ALL=(ALL) NOPASSWD: ALL, SETENV: ALL
     '';
 
-  i18n = {
-    consoleFont = "Lat2-Terminus16";
-    defaultLocale = "en_US.UTF-8";
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  console.font = "Lat2-Terminus16";
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.pulseaudio = true;
 
   environment.enableDebugInfo = true;
   environment.variables = {
@@ -206,9 +185,14 @@
     binaryCaches = [
       #"https://cache.nixos.org"
       #"https://moredread.cachix.org"
-      "https://moredread-nur.cachix.org"
+      #"https://moredread-nur.cachix.org"
     ];
-    binaryCachePublicKeys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE=" "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE=" ];
+    binaryCachePublicKeys = [
+      "nas:JxSMXHb/f+4u5WdBsdQNmynq3gxb4lh98yBHglaFhQc="
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE="
+      "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE="
+    ];
 
     distributedBuilds = true;
   };
@@ -239,10 +223,9 @@
     22000
     50001
     50002
+    30005
+    30975
   ];
-  networking.firewall.extraCommands = ''
-    iptables -A INPUT -m pkttype --pkt-type multicast -j nixos-fw
-  '';
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];
   networking.firewall.allowedUDPPortRanges = [ { from = 27000; to = 27036; } ];

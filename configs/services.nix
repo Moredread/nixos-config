@@ -1,12 +1,13 @@
 { config, lib, pkgs, ... }:
 {
   documentation = {
-    enable = true;
+    #enable = true;
 
     dev.enable = true;
     doc.enable = true;
     info.enable = true;
     nixos.enable = true;
+    man.enable = true;
   };
 
   programs.qt5ct.enable = true;
@@ -84,6 +85,9 @@
 
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0660", GROUP="plugdev", TAG+="uaccess"
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="6089", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2838", MODE="0660", GROUP="plugdev", TAG+="uaccess"
     '';
 
     # cups, for printing documents
@@ -91,7 +95,7 @@
     printing.drivers = with pkgs; [ gutenprint hplip cnijfilter2 ];
 
     avahi = {
-      #enable = lib.mkDefault true;
+      enable = lib.mkDefault true;
       #nssmdns = true;
       ipv6 = true;
       publish.enable = true;
@@ -115,12 +119,7 @@
       xkbOptions = "ctrl:nocaps";
 
       useGlamor = lib.mkDefault false;
-      displayManager.sessionCommands = '''';
-      displayManager.slim = {
-        enable = true;
-        autoLogin = true;
-        defaultUser = "addy";
-      };
+      displayManager.startx.enable = true;
 
       inputClassSections = [
         ''

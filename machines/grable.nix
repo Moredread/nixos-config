@@ -35,12 +35,18 @@
 
   nix = {
     buildCores = 8;
-    maxJobs = 8;
+    maxJobs = 4;
   };
 
   systemd.timers.cpu-throttling.enable = lib.mkForce false;
 
   services = {
+    throttled = {
+      enable = true;
+      extraConfig = builtins.readFile ../configs/lenovo_fix.conf;
+    };
+
+    thermald.enable = lib.mkForce false;
     # Start syncthing via QSyncthingTray
     syncthing.enable = lib.mkForce false;
     tlp.enable = lib.mkForce false;
@@ -48,8 +54,7 @@
     xserver = {
       videoDrivers = [ "intel" ];
       deviceSection = ''
-        Option "DRI" "3"
-        Option "AccelMethod" "sna"
+        Option "AccelMethod" "UXA"
       '';
       #Option "TearFree" "true"
       useGlamor = false;

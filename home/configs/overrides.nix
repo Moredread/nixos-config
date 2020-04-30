@@ -4,12 +4,12 @@ let
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
 
   unstable_ = import <nixos-unstable> {};
-  nur_ = import <nur> { inherit pkgs; };
 
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   mozilla_overlay = import <mozilla-overlay>;
   packageOverridesOverlay = self: super: rec {
-    nur = nur_;
+    nur = import <nur> { inherit pkgs; };
+    nur-unstable = import <nur> { pkgs = unstable_; };
     unstable = unstable_;
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
@@ -19,7 +19,7 @@ let
     rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp {};
 
     nightly = super.rustChannelOf {
-      date = "2019-10-03";
+      date = "2020-04-26";
       channel = "nightly";
     };
 
@@ -50,6 +50,7 @@ let
     #Infinite recursion problems
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
+    # use unstable version of following packages
     "alacritty"
     "blender"
     "browserpass"
@@ -61,6 +62,7 @@ let
     "nixpkgs-fmt"
     "oh-my-zsh"
     "openxcom"
+    "rclone"
     "syncthing"
     "travis"
   ] unstable_;

@@ -22,6 +22,7 @@
     i7z
     iftop
     iotop
+    brightnessctl
     iptables
     iputils
     lftp

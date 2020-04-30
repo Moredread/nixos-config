@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    configs/lorri.nix
+    #configs/lorri.nix
     configs/packages.nix
     configs/programs.nix
+    configs/zsh.nix
     configs/wm.nix
     configs/overrides.nix
   ];
@@ -19,9 +20,10 @@
 
   systemd.user.startServices = true;
   #services.syncthing.tray = true;
+  services.lorri.enable = true;
 
   home.extraOutputsToInstall = [ "debug" "doc" "info" "devdoc" ];
-  manual.html.enable = true;
+  #manual.html.enable = true;
 
   home.file.dotfiles = {
     source = ./dotfiles;
