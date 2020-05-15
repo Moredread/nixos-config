@@ -8,7 +8,7 @@
       ../configs/overrides.nix
       ../configs/packages.nix
       ../configs/services.nix
-      ../configs/wireguard.nix
+      #../configs/wireguard.nix
       ../home/configs/overrides.nix
       ../configs/build.nix
       <home-manager/nixos>
@@ -216,15 +216,15 @@
   networking.firewall.allowedTCPPorts = [
     1234
     1900
+    22000
+    30005
+    30975
     4070 #spotify
+    50001
+    50002
     6923
     6965
     8332
-    22000
-    50001
-    50002
-    30005
-    30975
   ];
 
   networking.firewall.allowedTCPPortRanges = [ { from = 27000; to = 27036; } ];

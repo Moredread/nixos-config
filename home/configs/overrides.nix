@@ -51,20 +51,7 @@ let
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
     # use unstable version of following packages
-    "alacritty"
-    "blender"
-    "browserpass"
-    "darktable"
-    "freecad"
-    "i3status-rust"
-    "libreoffice"
-    "lsd"
-    "nixpkgs-fmt"
-    "oh-my-zsh"
-    "openxcom"
-    "rclone"
-    "syncthing"
-    "travis"
+    "joplin-desktop"
   ] unstable_;
 in
 

@@ -33,6 +33,7 @@
     docker_compose
     dos2unix
     dpkg
+    duc
     dunst
     entr
     evince

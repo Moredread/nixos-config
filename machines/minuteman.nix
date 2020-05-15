@@ -36,27 +36,13 @@
       options = [ "relatime,ssd,autodefrag,compress=zstd,space_cache" ];
     };
 
-  fileSystems."/media/nas" =
-    {
-      device = "192.168.43.1:/mnt/pool0/public";
-      fsType = "nfs";
-      options = [ "soft" "bg" ];
-    };
-
-  fileSystems."/media/nasw" =
-    {
-      device = "192.168.1.1:/mnt/pool0/data/public";
-      fsType = "nfs";
-      options = [ "soft" "bg" ];
-    };
-
   powerManagement.cpuFreqGovernor = "ondemand";
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
   #programs.adb.enable = true;
 
-  i18n.consoleKeyMap = "us";
+  console.keyMap = "us";
   services.xserver.layout = "us";
 
   nix.buildCores = lib.mkForce 16;
