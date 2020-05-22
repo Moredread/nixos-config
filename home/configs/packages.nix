@@ -90,6 +90,7 @@
     mupdf
     networkmanagerapplet
     nix-du
+    nix-index
     nix-prefetch-scripts
     nix-universal-prefetch
     nixos-generators

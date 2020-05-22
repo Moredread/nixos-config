@@ -7,7 +7,7 @@
     neovim.enable = true;
     browserpass.browsers = [ "chrome" "chromium" "firefox" ];
     browserpass.enable = true;
-    command-not-found.enable = true;
+    command-not-found.enable = false;
     direnv.enable = true;
     feh.enable = true;
     htop.enable = true;

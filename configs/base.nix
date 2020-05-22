@@ -134,7 +134,7 @@
   programs = {
     adb.enable = true;
     bash.enableCompletion = true;
-    command-not-found.enable = true;
+    command-not-found.enable = false;
     dconf.enable = true;
     #java.enable = true;
     mosh.enable = true;
