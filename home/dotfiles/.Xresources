@@ -1,38 +1,5 @@
-!urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=30,antialias=true
-urxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=16,antialias=true
-!urxvt*font: xft:Droid Sans Mono:size=11,antialias=true
-!URxvt.font: -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1,xft:code2000:autohint=false
-
-Xft.dpi: 192
-!Xft.dpi: 96
-
-URxvt.boldfont: -misc-fixed-medium-r-normal-*-10-100-*-*-*-*-iso10646-1,xft:code2000:autohint=false
-
-URxvt.scrollBar: false
-URxvt*scrollBar_right: true
-URxvt.background: black
-URxvt.foreground: lightgrey
-URxvt.internalBorder: 0
-URxvt.cursorBlink: 0
-URxvt.visualBell: on
-!URxvt.letterSpace: -3
-!URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
-URxvt.underlineURLs: true
-URxvt.perl-lib: /home/addy/.urxvt/
-!URxvt.perl-ext: selection,mark-yank-urls,font-size
-URxvt.perl-ext: font-size
-URxvt.urlLauncher: firefox
-URxvt.loginShell: true
-URxvt.termName: xterm-256color
-
-URxvt*saveLines: 50000
-
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
-
-URxvt.intensityStyles: false
+!Xft.dpi: 192
+Xft.dpi: 96
 
 Xft.hinting: 1
 Xft.hintstyle: hintfull

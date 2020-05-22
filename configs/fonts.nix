@@ -4,20 +4,21 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
-      corefonts # Microsoft free fonts
       #font-awesome_4
+      corefonts # Microsoft free fonts
       dejavu_fonts
       fira
       fira-mono
+      unstable.line-awesome
       google-fonts
       inconsolata # monospaced
       libertine
       mononoki
+      nerdfonts
       open-dyslexic
       overpass
       oxygenfonts
       powerline-fonts
-      nerdfonts
       source-code-pro
       source-sans-pro
       source-serif-pro

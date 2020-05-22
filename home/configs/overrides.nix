@@ -52,6 +52,7 @@ let
   } // filterAttrs [
     # use unstable version of following packages
     "joplin-desktop"
+    "syncthing"
   ] unstable_;
 in
 

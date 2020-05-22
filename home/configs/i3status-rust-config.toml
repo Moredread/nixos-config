@@ -9,6 +9,10 @@ player = "spotify"
 buttons = ["play", "next"]
 
 [[block]]
+block = "bluetooth"
+mac = "70:26:05:2A:2F:A8"
+
+[[block]]
 block = "net"
 device = "wlp2s0"
 ssid = true

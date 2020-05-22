@@ -10,7 +10,7 @@
         sshKey = "/root/.ssh/id_ed25519";
         sshUser = "addy";
         system = "x86_64-linux";
-        supportedFeatures = [ "big-parallel" ];
+        supportedFeatures = [ ];
       }
       {
         hostName = "192.168.0.149";
@@ -18,7 +18,7 @@
         sshKey = "/root/.ssh/id_ed25519";
         sshUser = "addy";
         system = "x86_64-linux";
-        supportedFeatures = [ "big-parallel" ];
+        supportedFeatures = [ ];
       }
     ];
     extraOptions = ''
