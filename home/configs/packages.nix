@@ -25,6 +25,7 @@
     breeze-qt5
     cachix
     calibre
+    checkbashism
     chromium
     csvkit
     daemontools
@@ -72,6 +73,7 @@
     i3lock
     imagemagick7
     inetutils
+    inkscape
     joplin-desktop
     josm
     jq
