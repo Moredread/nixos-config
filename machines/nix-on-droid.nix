@@ -3,27 +3,26 @@
 {
   # Simply install just the packages
   environment.packages = with pkgs; [
-    # User-facing stuff that you really really want to have
-    vim  # or some other editor, e.g. nano or neovim
-    neovim
-    # Some common stuff that people expect to have
+    bzip2
     diffutils
-    git
     findutils
-    utillinux
-    tzdata
-    hostname
-    man
+    git
     gnugrep
     gnupg
     gnused
     gnutar
-    bzip2
     gzip
-    xz
-    zip
-    youtube-dl
+    hostname
+    man
+    neovim
+    openssh
+    tzdata
     unzip
+    utillinux
+    vim
+    xz
+    youtube-dl
+    zip
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc
