@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  programs.bash.initExtra = ''
+        source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
   programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
@@ -14,9 +17,10 @@
 
         # Customize your oh-my-zsh options here
         ZSH_THEME="agnoster"
-        plugins=( git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github command-not-found )
+        plugins=( git history mosh pep8 python screen rsync sudo systemd ssh-agent docker docker-compose aws github )
 
         source $ZSH/oh-my-zsh.sh
+        source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
 
 
         # Use fd (https://github.com/sharkdp/fd) instead of the default find

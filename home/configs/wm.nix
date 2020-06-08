@@ -78,6 +78,7 @@ in
 
       "${modKey}+Shift+f" = "floating toggle";
 
+
       "${modKey}+grave" = "workspace 0";
       "${modKey}+1" = "workspace 1";
       "${modKey}+2" = "workspace 2";
@@ -129,6 +130,7 @@ in
       bindsym ${modKey}+XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/brightnessctl -q s +${myStuff.brightnessStep}%
       bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
       bindsym XF86Sleep exec ${i3lock}/bin/i3lock
+      bindsym XF86Mail exec ${thunderbird}/bin/thunderbird
 
       bindsym Print exec ${scrot}/bin/scrot -e 'mkdir -p ~/.sync/sync/screenshots; mv $f ~/.sync/sync/screenshots'
 
