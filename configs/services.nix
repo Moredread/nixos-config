@@ -41,6 +41,17 @@
     nixosManual.showManual = true;
 
     udev.extraRules = with pkgs; ''
+      # Ultimate Hacking Keyboard rules
+      # These are the udev rules for accessing the USB interfaces of the UHK as non-root users.
+      # Copy this file to /etc/udev/rules.d and physically reconnect the UHK afterwards.
+      SUBSYSTEM=="input", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", GROUP="input", MODE="0660"
+      SUBSYSTEMS=="usb",  ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", GROUP="input", MODE="0660", TAG+="uaccess"
+      KERNEL=="hidraw*",  ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", GROUP="input", MODE="0660", TAG+="uaccess"
+
+      SUBSYSTEM=="input", ATTRS{idVendor}=="7504", GROUP="input", MODE="0660"
+      SUBSYSTEMS=="usb",  ATTRS{idVendor}=="7504", GROUP="input", MODE="0660", TAG+="uaccess"
+      KERNEL=="hidraw*",  ATTRS{idVendor}=="7504", GROUP="input", MODE="0660", TAG+="uaccess"
+
       # Trezor
       SUBSYSTEM=="usb", ATTR{idVendor}=="534c", ATTR{idProduct}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="trezor%n"
       KERNEL=="hidraw*", ATTRS{idVendor}=="534c", ATTRS{idProduct}=="0001",  MODE="0666", GROUP="dialout"
@@ -75,13 +86,6 @@
       # NS PRO Controller USB
       KERNEL=="hidraw*", ATTRS{idVendor}=="20d6", ATTRS{idProduct}=="a711", MODE="0660", TAG+="uaccess", GROUP="input"
       SUBSYSTEMS=="usb", ATTR{idVendor}=="057e", MODE="0666"
-
-      # Ultimate Hacking Keyboard rules
-      # These are the udev rules for accessing the USB interfaces of the UHK as non-root users.
-      # Copy this file to /etc/udev/rules.d and physically reconnect the UHK afterwards.
-      SUBSYSTEM=="input", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", GROUP="input", MODE="0660"
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", TAG+="uaccess"
-      KERNEL=="hidraw*", ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="612[0-7]", TAG+="uaccess"
 
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0660", GROUP="plugdev", TAG+="uaccess"
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6014", MODE="0660", GROUP="plugdev", TAG+="uaccess"

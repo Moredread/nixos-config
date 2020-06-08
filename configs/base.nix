@@ -236,7 +236,7 @@
   networking.firewall.checkReversePath = "loose";
 
   #networking.firewall.enable = false;
-  networking.firewall.logRefusedPackets = true;
+  #networking.firewall.logRefusedPackets = true;
 
   zramSwap.enable = true;
 
