@@ -51,6 +51,7 @@ let
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
     # use unstable version of following packages
+    "broot"
     "joplin-desktop"
     "syncthing"
   ] unstable_;

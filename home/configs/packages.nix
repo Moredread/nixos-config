@@ -23,8 +23,8 @@
     borgbackup
     breeze-icons
     breeze-qt5
+    broot
     cachix
-    calibre
     checkbashism
     chromium
     csvkit
@@ -74,9 +74,9 @@
     imagemagick7
     inetutils
     inkscape
-    joplin-desktop
     josm
     jq
+    k2pdfopt
     keepassx2
     krusader
     ledger
@@ -102,6 +102,7 @@
     nox
     nur-unstable.repos.mic92.cntr
     nur-unstable.repos.mic92.nix-update
+    nur.repos.moredread.joplin-desktop
     nur.repos.moredread.nix-search
     openxcom
     p7zip
@@ -122,6 +123,7 @@
     rclone
     reptyr
     ripgrep
+    ripgrep-all
     rsync
     s-tui
     screen
