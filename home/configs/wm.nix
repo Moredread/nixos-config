@@ -135,6 +135,18 @@ in
       bindsym Print exec ${scrot}/bin/scrot -e 'mkdir -p ~/.sync/sync/screenshots; mv $f ~/.sync/sync/screenshots'
 
       floating_modifier ${modKey}
+
+      workspace 0 output primary DP-4
+      workspace 1 output primary DP-4
+      workspace 2 output primary DP-4
+      workspace 3 output primary DP-4
+      workspace 4 output primary DP-4
+      workspace 5 output primary DP-4
+      workspace 6 output HDMI-0
+      workspace 7 output HDMI1
+      workspace 8 output HDMI-0
+      workspace 9 output HDMI-0
+      workspace 0 output HDMI-0
     '';
 
     config.fonts = [ "DejaVu Sans Mono 12" ];
@@ -158,7 +170,7 @@ in
     adapta-gtk-theme
     gnome3.adwaita-icon-theme
     hicolor-icon-theme
-    lxappearance
+    lxappearance-gtk3
     xorg.xcursorthemes
     zuki-themes
     nixos-icons

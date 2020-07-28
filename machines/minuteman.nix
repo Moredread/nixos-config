@@ -39,6 +39,9 @@
   powerManagement.cpuFreqGovernor = "ondemand";
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.xrandrHeads = [
+    { output = "DP-4"; primary = true; }
+  ];
 
   #programs.adb.enable = true;
 
