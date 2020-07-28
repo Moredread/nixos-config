@@ -119,12 +119,17 @@
           nix run nixpkgs."$1" -c "$@"
         }
 
-
         function nix-run2 {
           p="$1"
           shift
           nix run nixpkgs."$p" -c "$@"
         }
+
+        function fullpath {
+          realpath $(which "$*")
+        }
+
+        compdef fullpath="which"
 
         alias e=nix-run
         alias ee=nix-run2

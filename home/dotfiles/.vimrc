@@ -39,6 +39,8 @@ Plug 'dylanaraps/wal.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ledger/vim-ledger'
 Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
+Plug '~/.nix-profile/share/vim-plugins/youcompleteme'
+
 Plug 'supercollider/scvim'
 
 call plug#end()
@@ -46,6 +48,9 @@ call plug#end()
 " colorscheme wal
 set background=dark
 colorscheme solarized
+
+let g:ycm_server_log_level = 'debug'
+let g:ycm_max_diagnostics_to_display = 0
 
 au BufEnter,BufWinEnter,BufNewFile,BufRead *.sc,*.scd set filetype=supercollider
 au Filetype supercollider packadd scvim

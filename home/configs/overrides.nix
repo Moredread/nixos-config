@@ -54,6 +54,7 @@ let
     "broot"
     "joplin-desktop"
     "syncthing"
+    "sops"
   ] unstable_;
 in
 

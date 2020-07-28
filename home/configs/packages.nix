@@ -6,6 +6,7 @@
     #mercurialFull
     #rls
     #rnix-lsp
+    (import ./emacs.nix { inherit pkgs; })
     alacritty
     alot
     apg
@@ -23,7 +24,6 @@
     borgbackup
     breeze-icons
     breeze-qt5
-    broot
     cachix
     checkbashism
     chromium
@@ -131,6 +131,7 @@
     shellcheck
     skype
     sloccount
+    sops
     speedtest-cli
     spotify
     sshfs
@@ -146,6 +147,7 @@
     unstable.peep
     unzip
     v4l-utils
+    vimPlugins.YouCompleteMe
     vimPlugins.fzf-vim
     vlc
     w3m
