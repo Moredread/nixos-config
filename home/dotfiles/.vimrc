@@ -16,14 +16,12 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
 
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'plasticboy/vim-markdown'
@@ -32,18 +30,105 @@ Plug 'LnL7/vim-nix'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdcommenter'
 Plug 'dbeniamine/todo.txt-vim'
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'xolox/vim-lua-ftplugin'
 Plug 'daveyarwood/vim-alda'
 Plug 'dylanaraps/wal.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ledger/vim-ledger'
-Plug '~/.nix-profile/share/vim-plugins/fzf-vim'
-Plug '~/.nix-profile/share/vim-plugins/youcompleteme'
+"Plug '~/.nix-profile/share/vim-plugins/youcompleteme'
+
+
+
+" External tool integration
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf'
+Plug 'tpope/vim-fugitive'
+
+" IDE-like features
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'dense-analysis/ale'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-commentary'
+Plug 'vim-test/vim-test'
+Plug 'tpope/vim-eunuch'
 
 Plug 'supercollider/scvim'
 
 call plug#end()
+
+let g:lua_check_syntax = 0
+let g:lua_complete_omni = 1
+let g:lua_complete_dynamic = 0
+let g:lua_define_completion_mappings = 0
+
+call deoplete#custom#var('omni', 'functions', {
+\ 'lua': 'xolox#lua#omnifunc',
+\ })
+
+augroup filetype_rust
+    autocmd!
+    autocmd BufReadPost *.rs setlocal filetype=rust
+augroup END
+
+set signcolumn=yes
+
+set hidden
+let $RUST_BACKTRACE = 1
+let g:LanguageClient_loggingLevel = 'INFO'
+let g:LanguageClient_virtualTextPrefix = ''
+let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
+let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
+
+" Smart home
+noremap <expr> <silent> <Home> col('.') == match(getline('.'),'\S')+1 ? '0' : '^'
+imap <silent> <Home> <C-O><Home>
+
+" Wild menu
+set wildmenu
+set wildmode=longest,list,full
+
+" Always show status bar
+set laststatus=2
+
+" Backspace
+set backspace=indent,eol,start
+
+" Markdown plugin
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+
+" Fuzzy finder binding
+nmap ,e :call fzf#run({'sink': 'edit'})<CR>
+nmap ,E :call fzf#run({'sink': 'edit', 'source': 'fd --hidden'})<CR>
+nmap ,t :call fzf#run({'sink': 'tabedit'})<CR>
+nmap ,T :call fzf#run({'sink': 'tabedit', 'source': 'fd --hidden'})<CR>
+
+let g:ale_hover_to_preview = 1
+"call deoplete#custom#option('sources', {
+"		\ '_': ['buffer', 'ale'],
+"		\})
+" ALE options for linting
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '~'
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_fixers = {
+      \'*': ['remove_trailing_lines', 'trim_whitespace'],
+      \'rust': ['rustfmt'],
+      \'php': ['php_cs_fixer'],
+      \}
+nmap ,f :ALEFix<CR>
+
+" UltiSnips options
+inoremap <c-x><c-k> <c-x><c-k>
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger='<c-k>'
+let g:UltiSnipsEditSplit='vertical'
+nmap ,s :UltiSnipsEdit<CR>
 
 " colorscheme wal
 set background=dark
@@ -59,6 +144,7 @@ let g:LanguageClient_serverCommands = {
       \ 'nix': ['nix-lsp'],
       \ 'python': ['pyls'],
       \ 'rust': ['rls'],
+      \ 'lua': ['lua-lsp'],
       \ }
 let g:LanguageClient_loadSettings = 1
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -69,6 +155,7 @@ nnoremap <silent> gs :call LanguageClient_textDocument_documentSymbol()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 
+let g:deoplete#enable_at_startup = 1
 let g:scFlash = 1
 
 let g:fzf_buffers_jump = 1
@@ -131,10 +218,6 @@ endif
 set ignorecase
 set incsearch
 set hlsearch
-
-" Commands reagarding vimrc
-" When .vimrc is edited, automatically reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
 
 set tabstop=2
 set expandtab
@@ -215,13 +298,8 @@ set hidden
 
 "set virtualedit=all
 
-let g:formatdef_rustfmt = '"rustfmt"'
-let g:formatters_rust = ['rustfmt']
-
 nnoremap <F3> :Autoformat<CR>
 "au BufWrite * :Autoformat
-
-let $RUST_SRC_PATH="/home/addy/rust/src/"
 
 let g:vim_markdown_folding_disabled = 1
 
