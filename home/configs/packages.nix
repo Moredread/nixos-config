@@ -7,6 +7,7 @@
     #rls
     #rnix-lsp
     (import ./emacs.nix { inherit pkgs; })
+    age
     alacritty
     alot
     apg
