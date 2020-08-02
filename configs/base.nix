@@ -1,5 +1,11 @@
 { config, lib, pkgs, ... }:
-
+let
+  dockerConfig = pkgs.writeText "daemon.json" (builtins.toJSON {
+    ipv6 = true;
+    fixed-cidr-v6 = "fd00::/80";
+    features = { buildkit = true; };
+  });
+in
 {
   imports =
     [
@@ -79,7 +85,10 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
-  virtualisation.docker.extraOptions = "--bip 172.26.0.1/16"; # The default subnet is used by a wifi spot near me :/
+  virtualisation.docker.extraOptions = ''
+      --bip 172.26.0.1/16 \
+      --config-file=${dockerConfig}
+    ''; # The default subnet is used by a wifi spot near me :/
 
   hardware = {
     acpilight.enable = true;
