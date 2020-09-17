@@ -34,7 +34,9 @@ in
 
       #"i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];
-    kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
+    #kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
+
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # not sure if everything is needed
     initrd.availableKernelModules = [
@@ -81,7 +83,7 @@ in
     DefaultTimeoutStartSec=30s
   '';
 
-  virtualisation.virtualbox.host.enable = true;
+  #virtualisation.virtualbox.host.enable = true;
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
@@ -108,7 +110,6 @@ in
     pulseaudio.daemon.config = {
       default-sample-channels = 6;
     };
-    u2f.enable = true;
   };
 
   security.sudo.configFile =

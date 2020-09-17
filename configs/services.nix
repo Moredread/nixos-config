@@ -13,8 +13,6 @@
   programs.qt5ct.enable = true;
   programs.zsh.enable = true;
 
-  hardware.u2f.enable = true;
-
   services = {
     openssh = {
       enable = true;
@@ -37,8 +35,6 @@
 
     # mkDefault, so that it works with VMs (which sets it to false)
     timesyncd.enable = lib.mkDefault true;
-
-    nixosManual.showManual = true;
 
     udev.extraRules = with pkgs; ''
       # Ultimate Hacking Keyboard rules

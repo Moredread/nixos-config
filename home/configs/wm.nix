@@ -128,7 +128,7 @@ in
       bindsym XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/brightnessctl -e -q s +${myStuff.brightnessStep}%
       bindsym ${modKey}+XF86MonBrightnessDown exec ${xorg.xbacklight}/bin/brightnessctl -q s -${myStuff.brightnessStep}%
       bindsym ${modKey}+XF86MonBrightnessUp exec ${xorg.xbacklight}/bin/brightnessctl -q s +${myStuff.brightnessStep}%
-      bindsym XF86WLAN exec $(${rfkill}/bin/rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && ${rfkill}/bin/rfkill block wlan) || ${rfkill}/bin/rfkill unblock wlan
+      bindsym XF86WLAN exec $(rfkill list wlan | ${gnugrep}/bin/grep -e 'Soft blocked: yes' > /dev/null && rfkill block wlan) || rfkill unblock wlan
       bindsym XF86Sleep exec ${i3lock}/bin/i3lock
       bindsym XF86Mail exec ${thunderbird}/bin/thunderbird
 
@@ -170,7 +170,7 @@ in
     adapta-gtk-theme
     gnome3.adwaita-icon-theme
     hicolor-icon-theme
-    lxappearance-gtk3
+    lxappearance
     xorg.xcursorthemes
     zuki-themes
     nixos-icons

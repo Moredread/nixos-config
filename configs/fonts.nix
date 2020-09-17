@@ -28,12 +28,12 @@
     ];
     fontconfig = {
       hinting.autohint = true;
+      antialias = true;
       defaultFonts = {
         monospace = [ "Source Code Pro" ];
         sansSerif = [ "Source Sans Pro" ];
         serif = [ "Source Serif Pro" ];
       };
-      penultimate.enable = true;
     };
   };
 }

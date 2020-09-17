@@ -87,6 +87,13 @@
         alias sl='ls'
         alias sudoi='sudo -i'
         alias reflink="cp --reflink=always"
+        alias latestnix="nix build -f '<nixpkgs/nixos>' system \
+          --include nixpkgs=channel:nixos-20.09 \
+          --include nixos=channel:nixos-20.09 \
+          --include nixos-unstable=channel:nixos-unstable \
+          --include nixos-config=/etc/nixos/machines/grable.nix \
+          --include home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz \
+          --option builders \'\' -L"
 
         compdef t='todo.sh'
         compdef 4='ip'
@@ -106,6 +113,7 @@
         compdef sl='ls'
         compdef sudoi='sudo'
         compdef reflink='cp'
+        compdef latestnix='nix'
 
         function savepath {
           pwd > ~/.last_dir

@@ -3,7 +3,7 @@
 # run once as root, once for each user
 
 ADD="nix-channel --add"
-NIXOS_VERSION="20.03"
+NIXOS_VERSION="20.09"
 
 # TODO: Less redundancy
 $ADD https://github.com/rycee/home-manager/archive/master.tar.gz home-manager

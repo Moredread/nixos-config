@@ -7,7 +7,7 @@
       ../configs/users-and-groups.nix
       ../configs/intel-vaapi.nix
       ./hardware-grable.nix
-      ../configs/wireguard.nix
+      #../configs/wireguard.nix
       <nixos-hardware/dell/xps/13-9370>
     ];
 
@@ -24,8 +24,8 @@
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.extraEntries = builtins.readFile ../configs/extra.grub;
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
-  environment.systemPackages = [ pkgs.wireguard ];
+  #boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
+  #environment.systemPackages = [ pkgs.wireguard ];
 
   networking.hostName = "grable";
   networking.hostId = "1a9f9478";

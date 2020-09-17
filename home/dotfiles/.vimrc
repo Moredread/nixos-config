@@ -19,9 +19,10 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'xolox/vim-misc'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-github-dashboard'
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'plasticboy/vim-markdown'

@@ -13,9 +13,6 @@ let
     unstable = _unstable;
     #master = _master;
     throttled = _unstable.throttled;
-    nerdfonts = super.nerdfonts.overrideAttrs (oldAttrs: {
-      requiredSystemFeatures = [ "big-parallel" ];
-    });
   };
 in
 {

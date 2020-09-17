@@ -6,7 +6,7 @@
     #mercurialFull
     #rls
     #rnix-lsp
-    (import ./emacs.nix { inherit pkgs; })
+    #(import ./emacs.nix { inherit pkgs; })
     age
     alacritty
     alot
@@ -26,6 +26,7 @@
     breeze-icons
     breeze-qt5
     cachix
+    calibre
     checkbashism
     chromium
     csvkit
@@ -51,6 +52,7 @@
     fzf
     gawk
     gdb
+    git-quick-stats
     gitAndTools.gitFull
     gitAndTools.hub
     gitAndTools.tig
@@ -79,7 +81,9 @@
     jq
     k2pdfopt
     keepassx2
-    krusader
+    gopass
+    lutris
+    vulkan-tools
     ledger
     libreoffice
     libsmbios
