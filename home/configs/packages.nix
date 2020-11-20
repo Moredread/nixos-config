@@ -145,7 +145,7 @@
     syncthing
     tdesktop
     tetex
-    thunderbird
+    thunderbird-bin
     todo-txt-cli
     travis
     unrar

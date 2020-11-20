@@ -19,7 +19,7 @@
       fsType = "btrfs";
       options = [
         "subvol=subvol/root"
-        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+        "noatime,ssd,autodefrag,compress=zstd,space_cache"
       ];
     };
 
@@ -31,7 +31,7 @@
       fsType = "btrfs";
       options = [
         "subvol=subvol/home"
-        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+        "noatime,ssd,autodefrag,compress=zstd,space_cache"
       ];
     };
 
@@ -41,7 +41,7 @@
       fsType = "btrfs";
       options = [
         "subvol=subvol/nix"
-        "relatime,ssd,autodefrag,compress=zstd,space_cache"
+        "noatime,ssd,autodefrag,compress=zstd,space_cache"
       ];
     };
 

@@ -52,7 +52,6 @@ let
   } // filterAttrs [
     # use unstable version of following packages
     "broot"
-    "joplin-desktop"
     "syncthing"
     "sops"
   ] unstable_;
