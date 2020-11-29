@@ -190,7 +190,6 @@ in
       gc-keep-outputs = true
       connect-timeout = 15
       builders-use-substitutes = true
-      #experimental-features = nix-command flakes
     '';
 
     trustedUsers = [ "addy" "root" ];

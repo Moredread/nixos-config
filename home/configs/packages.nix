@@ -94,7 +94,7 @@
     msmtp
     msr-tools
     mumble
-    mupdf
+    #mupdf
     networkmanagerapplet
     nix-du
     nix-index
