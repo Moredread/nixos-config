@@ -36,6 +36,9 @@
     # mkDefault, so that it works with VMs (which sets it to false)
     timesyncd.enable = lib.mkDefault true;
 
+    udev.packages = [
+      pkgs.logitech-udev-rules
+    ];
     udev.extraRules = with pkgs; ''
       # Ultimate Hacking Keyboard rules
       # These are the udev rules for accessing the USB interfaces of the UHK as non-root users.

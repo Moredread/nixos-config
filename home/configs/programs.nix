@@ -25,7 +25,7 @@
       package = pkgs.gitFull;
       lfs.enable = true;
       signing.key = "24B45728";
-      signing.signByDefault = true;
+#      signing.signByDefault = true;
       userEmail = "code@apb.name";
       userName = "André-Patrick Bubel";
       aliases = {
