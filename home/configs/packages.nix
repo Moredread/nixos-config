@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    #(import ./emacs.nix { inherit pkgs; })
     #autocutsel
     #dfeet
     #mercurialFull
     #rls
     #rnix-lsp
-    #(import ./emacs.nix { inherit pkgs; })
     age
     alacritty
     alot
@@ -66,6 +66,7 @@
     gnupg1
     gocryptfs
     google-chrome-beta
+    gopass
     gphoto2
     graphviz
     gsettings-qt
@@ -79,14 +80,12 @@
     inkscape
     josm
     jq
-    k2pdfopt
+    #k2pdfopt
     keepassx2
-    gopass
-    lutris
-    vulkan-tools
     ledger
     libreoffice
     libsmbios
+    lutris
     mc
     minecraft
     mkpasswd
@@ -155,6 +154,7 @@
     vimPlugins.YouCompleteMe
     vimPlugins.fzf-vim
     vlc
+    vulkan-tools
     w3m
     wirelesstools
     xbrightness

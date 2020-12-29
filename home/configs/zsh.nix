@@ -92,7 +92,7 @@
           --include nixos=channel:nixos-20.09 \
           --include nixos-unstable=channel:nixos-unstable \
           --include nixos-config=/etc/nixos/machines/grable.nix \
-          --include home-manager=https://github.com/rycee/home-manager/archive/master.tar.gz \
+          --include home-manager=https://github.com/rycee/home-manager/archive/release-20.09.tar.gz \
           --option builders \'\' -L"
 
         compdef t='todo.sh'
