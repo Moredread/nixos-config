@@ -54,5 +54,5 @@
   swapDevices = [];
 
   nix.maxJobs = lib.mkDefault 8;
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "teo";
 }

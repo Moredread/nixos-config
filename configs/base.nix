@@ -33,6 +33,7 @@ in
       #"i915.error_capture=1"
       "intel_idle.max_cstate=1"
       "i915.enable_dc=0"
+      "msr.allow_writes=on" # msr writes are disabled/warned about since 5.9 https://github.com/erpalma/throttled/issues/215
 
       #"i915.enable_fbc=1" # set to 2 in nixos-hardware
     ];

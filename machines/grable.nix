@@ -42,7 +42,7 @@
   services = {
     throttled = {
       enable = true;
-      extraConfig = builtins.readFile ../configs/lenovo_fix.conf;
+      #extraConfig = builtins.readFile ../configs/lenovo_fix.conf;
     };
 
     thermald.enable = lib.mkForce false;
