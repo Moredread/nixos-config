@@ -12,7 +12,7 @@ let
     syncthing = _unstable.syncthing;
     unstable = _unstable;
     #master = _master;
-    throttled = _unstable.throttled;
+    #throttled = _unstable.throttled;
   };
 in
 {

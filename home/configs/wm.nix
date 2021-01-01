@@ -137,17 +137,16 @@ in
 
       floating_modifier ${modKey}
 
-      workspace 0 output primary DP-4
-      workspace 1 output primary DP-4
-      workspace 2 output primary DP-4
-      workspace 3 output primary DP-4
-      workspace 4 output primary DP-4
-      workspace 5 output primary DP-4
-      workspace 6 output HDMI-0
-      workspace 7 output HDMI1
-      workspace 8 output HDMI-0
-      workspace 9 output HDMI-0
-      workspace 0 output HDMI-0
+      workspace 0 output primary eDP1
+      workspace 1 output primary eDP1
+      workspace 2 output primary eDP1
+      workspace 3 output primary eDP1
+      workspace 4 output primary eDP1
+      workspace 5 output DP1
+      workspace 6 output DP1
+      workspace 7 output DP1
+      workspace 8 output DP1
+      workspace 9 output DP1
     '';
 
     config.fonts = [ "DejaVu Sans Mono 12" ];

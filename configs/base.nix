@@ -180,7 +180,7 @@ in
   };
 
   nix = {
-    #package = pkgs.nixUnstable;
+    package = pkgs.nixUnstable;
 
     useSandbox = true;
     buildCores = lib.mkDefault 0;
@@ -191,23 +191,10 @@ in
       gc-keep-outputs = true
       connect-timeout = 15
       builders-use-substitutes = true
+      experimental-features = nix-command flakes
     '';
 
     trustedUsers = [ "addy" "root" ];
-
-    binaryCaches = [
-      #"https://cache.nixos.org"
-      #"https://moredread.cachix.org"
-      #"https://moredread-nur.cachix.org"
-    ];
-    binaryCachePublicKeys = [
-      "nas:JxSMXHb/f+4u5WdBsdQNmynq3gxb4lh98yBHglaFhQc="
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "moredread.cachix.org-1:b3WX9qj9AwcxVaJESfNSkw0Ia+oyxx6zDxfnoc0twDE="
-      "moredread-nur.cachix.org-1:+kDrC3wBtV/FgGi8/SFsQXNFJsdArgvOas/BvmXQVxE="
-    ];
-
-    distributedBuilds = true;
   };
 
   home-manager.users.addy = { pkgs, ... }: {

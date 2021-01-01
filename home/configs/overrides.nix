@@ -51,9 +51,9 @@ let
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
     # use unstable version of following packages
-    "broot"
+    #"broot"
     "syncthing"
-    "sops"
+    #"sops"
   ] unstable_;
 in
 
