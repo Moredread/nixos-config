@@ -5,6 +5,8 @@
     #autocutsel
     #dfeet
     #mercurialFull
+    #nur-unstable.repos.mic92.cntr
+    #nur-unstable.repos.mic92.nix-update
     #rls
     #rnix-lsp
     age
@@ -35,6 +37,7 @@
     docker
     docker_compose
     dos2unix
+    dosfstools # for gparted
     dpkg
     duc
     dunst
@@ -48,6 +51,7 @@
     findutils
     firefox-bin
     flvstreamer
+    freecad
     fuse_exfat
     fzf
     gawk
@@ -65,7 +69,6 @@
     gnupg
     gnupg1
     gocryptfs
-    google-chrome-beta
     gopass
     gphoto2
     graphviz
@@ -80,20 +83,20 @@
     inkscape
     josm
     jq
-    #k2pdfopt
+    k2pdfopt
     keepassx2
     ledger
     libreoffice
     libsmbios
     lutris
     mc
-    minecraft
     mkpasswd
     mpv
     msmtp
     msr-tools
+    mtools # for gparted
     mumble
-    #mupdf
+    mupdf
     networkmanagerapplet
     nix-du
     nix-index
@@ -104,11 +107,8 @@
     nixpkgs-fmt
     nmap
     nox
-    nur-unstable.repos.mic92.cntr
-    nur-unstable.repos.mic92.nix-update
     nur.repos.moredread.joplin-desktop
     nur.repos.moredread.nix-search
-    openxcom
     p7zip
     pamixer
     paperkey
@@ -120,7 +120,6 @@
     posix_man_pages
     powertop
     python3Packages.python-language-server
-    pywal
     qrencode
     qsyncthingtray
     ranger
@@ -140,9 +139,7 @@
     spotify
     sshfs
     steam
-    subversion
     syncthing
-    tdesktop
     tetex
     thunderbird-bin
     todo-txt-cli
@@ -151,11 +148,13 @@
     unstable.peep
     unzip
     v4l-utils
+    vgrep
     vimPlugins.YouCompleteMe
     vimPlugins.fzf-vim
     vlc
     vulkan-tools
     w3m
+    wireguard
     wirelesstools
     xbrightness
     xcwd
