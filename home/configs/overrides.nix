@@ -51,8 +51,10 @@ let
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
     # use unstable version of following packages
-    #"broot"
+    "k2pdfopt"
+    "mupdf"
     "syncthing"
+    #"broot"
     #"sops"
   ] unstable_;
 in
