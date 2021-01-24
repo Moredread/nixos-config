@@ -33,7 +33,7 @@
     {
       device = "/dev/disk/by-uuid/5c8e9a10-0cd9-4032-b6f8-3d824b08bab2";
       fsType = "btrfs";
-      options = [ "relatime,ssd,autodefrag,compress=zstd,space_cache" ];
+      options = [ "noatime,ssd,autodefrag,compress=zstd,space_cache" ];
     };
 
   powerManagement.cpuFreqGovernor = "ondemand";
@@ -49,18 +49,6 @@
   services.xserver.layout = "us";
 
   nix.buildCores = lib.mkForce 16;
-
-  nix.buildMachines = [
-#    {
-#      hostName = "grable";
-#      maxJobs = 8;
-#      sshKey = "/root/.ssh/id_ed25519";
-#      sshUser = "addy";
-#      system = "x86_64-linux";
-#      supportedFeatures = [ "big-parallel" "kvm" "nixos-test" ];
-#    }
-  ];
-
 
   fileSystems."/boot" =
     {

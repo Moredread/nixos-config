@@ -4,6 +4,7 @@
     #(import ./emacs.nix { inherit pkgs; })
     #autocutsel
     #dfeet
+    #k2pdfopt
     #mercurialFull
     #nur-unstable.repos.mic92.cntr
     #nur-unstable.repos.mic92.nix-update
@@ -63,6 +64,7 @@
     glib
     gnome3.dconf
     gnome3.dconf-editor
+    gnome3.gsettings-desktop-schemas
     gnome3.zenity
     gnugrep
     gnumake
@@ -72,6 +74,7 @@
     gopass
     gphoto2
     graphviz
+    gsettings-desktop-schemas
     gsettings-qt
     handbrake
     hledger
@@ -83,7 +86,6 @@
     inkscape
     josm
     jq
-    k2pdfopt
     keepassx2
     ledger
     libreoffice
@@ -148,7 +150,6 @@
     unstable.peep
     unzip
     v4l-utils
-    vgrep
     vimPlugins.YouCompleteMe
     vimPlugins.fzf-vim
     vlc
