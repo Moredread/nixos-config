@@ -117,6 +117,7 @@
     parallel
     pasystray
     pavucontrol
+    pdfarranger
     polkit_gnome
     posix_man_pages
     powertop

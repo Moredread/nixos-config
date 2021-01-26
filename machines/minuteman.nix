@@ -5,7 +5,6 @@
     [
       ../configs/base.nix
       #../configs/wireguard.nix
-      ../configs/users-and-groups.nix
     ];
 
   boot = {
