@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-# run once as root, once for each user
+set -o errexit
+set -o pipefail
+set -o nounset
+set -x
+
+# run once as root and once for each user
 
 ADD="nix-channel --add"
 NIXOS_VERSION="20.09"
