@@ -14,8 +14,6 @@ let
 
     appimage-run = super.appimage-run.override { extraPkgs = pkgs: [ pkgs.jack2 ]; };
 
-    pass-custom = pkgs.pass.withExtensions (ext: [ ext.pass-audit ext.pass-genphrase ext.pass-update ext.pass-otp ext.pass-import ]);
-
     rnix-lsp = pkgs.callPackage ../pkgs/rnix-lsp {};
 
     nightly = super.rustChannelOf {
