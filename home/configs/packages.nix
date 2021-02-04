@@ -134,7 +134,6 @@
     screen
     scrot
     shellcheck
-    skype
     sloccount
     sops
     speedtest-cli
@@ -142,7 +141,6 @@
     sshfs
     steam
     syncthing
-    tetex
     thunderbird-bin
     todo-txt-cli
     travis
