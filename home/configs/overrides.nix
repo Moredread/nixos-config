@@ -49,6 +49,7 @@ let
     #renoise = pkgs.renoise.override { releasePath = renoisePath; };
   } // filterAttrs [
     # use unstable version of following packages
+    "pdfarranger"
     "syncthing"
     #"broot"
     #"sops"

@@ -9,16 +9,17 @@ in
 {
   imports =
     [
+      #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
+      #../configs/wireguard.nix
       ../configs/autocutsel.nix
+      ../configs/build.nix
       ../configs/fonts.nix
       ../configs/overrides.nix
       ../configs/packages.nix
       ../configs/services.nix
-      #../configs/wireguard.nix
+      ../configs/users-and-groups.nix
       ../home/configs/overrides.nix
-      ../configs/build.nix
       <home-manager/nixos>
-      #(builtins.fetchGit https://github.com/edolstra/dwarffs + "/module.nix")
     ];
 
   boot = {
@@ -180,7 +181,7 @@ in
   };
 
   nix = {
-    package = pkgs.nixUnstable;
+    #package = pkgs.nixUnstable;
 
     useSandbox = true;
     buildCores = lib.mkDefault 0;
@@ -191,7 +192,7 @@ in
       gc-keep-outputs = true
       connect-timeout = 15
       builders-use-substitutes = true
-      experimental-features = nix-command flakes
+      #experimental-features = nix-command flakes
     '';
 
     trustedUsers = [ "addy" "root" ];

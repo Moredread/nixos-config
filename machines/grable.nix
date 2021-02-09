@@ -4,7 +4,6 @@
   imports =
     [
       ../configs/base.nix
-      ../configs/users-and-groups.nix
       ../configs/intel-vaapi.nix
       ./hardware-grable.nix
       #../configs/wireguard.nix

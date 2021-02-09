@@ -117,6 +117,7 @@
     parallel
     pasystray
     pavucontrol
+    pdfarranger
     polkit_gnome
     posix_man_pages
     powertop
@@ -133,7 +134,6 @@
     screen
     scrot
     shellcheck
-    skype
     sloccount
     sops
     speedtest-cli
@@ -141,7 +141,6 @@
     sshfs
     steam
     syncthing
-    tetex
     thunderbird-bin
     todo-txt-cli
     travis
