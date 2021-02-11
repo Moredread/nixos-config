@@ -122,6 +122,11 @@ in
     };
 
     extraConfig = with myStuff.i3; with pkgs; ''
+      bindsym XF86AudioPlay exec ${playerctl}/bin/playerctl play-pause
+      bindsym XF86AudioPrev exec ${playerctl}/bin/playerctl position "5-"
+      bindsym XF86AudioNext exec ${playerctl}/bin/playerctl position "5+"
+      bindsym Shift+XF86AudioPrev exec ${playerctl}/bin/playerctl previous
+      bindsym Shift+XF86AudioNext exec ${playerctl}/bin/playerctl next
       bindsym XF86AudioLowerVolume exec ${pamixer}/bin/pamixer -d ${myStuff.volumeStep}
       bindsym XF86AudioRaiseVolume exec ${pamixer}/bin/pamixer -i ${myStuff.volumeStep}
       bindsym XF86AudioMute exec ${pamixer}/bin/pamixer -t

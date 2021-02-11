@@ -51,6 +51,7 @@ let
     # use unstable version of following packages
     "pdfarranger"
     "syncthing"
+    "spotify"
     #"broot"
     #"sops"
   ] unstable_;
