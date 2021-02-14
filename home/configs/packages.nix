@@ -162,6 +162,7 @@
     you-get
     youtube-dl
     yubioath-desktop
+    zfs
     zip
     zotero
   ];
