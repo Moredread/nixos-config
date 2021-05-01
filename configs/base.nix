@@ -40,7 +40,7 @@ in
     ];
     #kernel.sysctl = { "net.core.default_qdisc" = "fq_codel"; };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
 
     # not sure if everything is needed
     initrd.availableKernelModules = [

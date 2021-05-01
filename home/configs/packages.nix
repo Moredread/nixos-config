@@ -98,7 +98,6 @@
     msr-tools
     mtools # for gparted
     mumble
-    mupdf
     networkmanagerapplet
     nix-du
     nix-index
@@ -117,7 +116,6 @@
     parallel
     pasystray
     pavucontrol
-    pdfarranger
     polkit_gnome
     posix_man_pages
     powertop
