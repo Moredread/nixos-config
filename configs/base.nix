@@ -63,7 +63,7 @@ in
         chain --autofree https://boot.netboot.xyz
       '';
     };
-    supportedFilesystems = [ "cifs" "nfs" ];
+    supportedFilesystems = [ "cifs" "nfs" "zfs" ];
     blacklistedKernelModules = lib.singleton "dvb_usb_rtl28xxu";
   };
 
