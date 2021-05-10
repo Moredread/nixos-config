@@ -40,6 +40,7 @@
         t = "tag";
         glog = "log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph";
       };
+      extraConfig.pull.ff = true;
     };
 
     password-store = {

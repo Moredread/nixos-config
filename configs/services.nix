@@ -32,7 +32,9 @@
     pcscd.enable = true;
     thermald.enable = true;
     trezord.enable = true;
+
     tailscale.enable = true;
+    tailscale.package = pkgs.unstable.tailscale;
 
     # mkDefault, so that it works with VMs (which sets it to false)
     timesyncd.enable = lib.mkDefault true;

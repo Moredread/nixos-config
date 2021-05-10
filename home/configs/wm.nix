@@ -24,8 +24,12 @@ in
     gpg-agent.defaultCacheTtl = 24 * 3600;
     network-manager-applet.enable = true;
     pasystray.enable = true;
-    udiskie.automount = false;
-    udiskie.enable = true;
+    udiskie = {
+      enable = true;
+      automount = false;
+      notify = true;
+      tray = "always";
+    };
     gnome-keyring.enable = true;
   };
 
