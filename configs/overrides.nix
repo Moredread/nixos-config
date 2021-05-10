@@ -6,10 +6,10 @@ let
   _master = import /home/addy/nixpkgs { config = baseconfig; };
   _nur = import <nur> { inherit pkgs; };
   overlay = self: super: {
-    unifi = _unstable.unifi;
     emby = _unstable.emby;
     microcodeIntel = _unstable.microcodeIntel;
     syncthing = _unstable.syncthing;
+    unifi = _unstable.unifi;
     unstable = _unstable;
     #master = _master;
     #throttled = _unstable.throttled;

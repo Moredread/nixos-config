@@ -92,6 +92,7 @@
     libsmbios
     lutris
     mc
+    mercurial
     mkpasswd
     mpv
     msmtp
