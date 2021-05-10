@@ -22,6 +22,7 @@
     i7z
     iftop
     iotop
+    unstable.restic
     brightnessctl
     iptables
     iputils

@@ -11,6 +11,7 @@ let
     microcodeIntel = _unstable.microcodeIntel;
     syncthing = _unstable.syncthing;
     unstable = _unstable;
+    tailscale = _unstable.tailscale;
     #master = _master;
     #throttled = _unstable.throttled;
   };

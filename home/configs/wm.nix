@@ -81,6 +81,7 @@ in
 
       "${modKey}+grave" = "workspace 0";
       "${modKey}+dead_circumflex" = "workspace 0";
+      "${modKey}+escape" = "workspace 0";
       "${modKey}+1" = "workspace 1";
       "${modKey}+2" = "workspace 2";
       "${modKey}+3" = "workspace 3";
@@ -98,6 +99,7 @@ in
 
       "${modKey}+Shift+grave" = "move container to workspace 0";
       "${modKey}+Shift+dead_circumflex" = "move container to workspace 0";
+      "${modKey}+Shift+escape" = "move container to workspace 0";
       "${modKey}+Shift+1" = "move container to workspace 1";
       "${modKey}+Shift+2" = "move container to workspace 2";
       "${modKey}+Shift+3" = "move container to workspace 3";

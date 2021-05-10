@@ -3,7 +3,8 @@ let
   # removes attrs in `nameList` from `set`
   filterAttrs = nameList: set: builtins.listToAttrs (map (x: lib.nameValuePair x set.${x}) nameList);
 
-  unstable_ = import <nixos-unstable> {};
+  baseconfig = { allowUnfree = true; };
+  unstable_ = import <nixos-unstable> { config = baseconfig; };
 
   renoisePath = ~/Downloads/rns_3_1_1_linux_x86_64.tar.gz;
   mozilla_overlay = import <mozilla-overlay>;
