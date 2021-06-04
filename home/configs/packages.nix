@@ -126,6 +126,7 @@
     ranger
     rclone
     reptyr
+    restic
     ripgrep
     ripgrep-all
     rsync

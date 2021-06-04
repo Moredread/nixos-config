@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    (pkgs.writeShellScriptBin "nixFlakes" ''
+      exec ${pkgs.nixUnstable}/bin/nix --experimental-features "nix-command flakes" "$@"
+    '')
     autocutsel
     bashInteractive
     borgbackup
