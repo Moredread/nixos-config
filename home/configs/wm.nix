@@ -160,7 +160,8 @@ in
       workspace 9 output DP1
     '';
 
-    config.fonts = [ "DejaVu Sans Mono 12" ];
+    config.fonts.names = [ "DejaVu Sans Mono" ];
+    config.fonts.size = 12.0;
 
     config.bars = [
       {

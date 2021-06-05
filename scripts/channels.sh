@@ -8,7 +8,7 @@ set -x
 # run once as root and once for each user
 
 ADD="nix-channel --add"
-NIXOS_VERSION="20.09"
+NIXOS_VERSION="21.05"
 
 # TODO: Less redundancy
 $ADD https://github.com/nix-community/home-manager/archive/release-$NIXOS_VERSION.tar.gz home-manager
