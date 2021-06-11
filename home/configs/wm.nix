@@ -165,7 +165,7 @@ in
 
     config.bars = [
       {
-        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
+        #statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ${i3status-rust-config}";
       }
     ];
 
